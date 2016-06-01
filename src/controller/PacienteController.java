@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.util.ArrayList;
@@ -17,8 +12,12 @@ public class PacienteController {
 
     private static List<Paciente> pacientes = new ArrayList<Paciente>();
 
-    public static void adicionarPaciente(Paciente paciente) {
+    public static int adicionarPaciente(Paciente paciente) {
+        if (getPacienteByNome(paciente.getNome()) == null) {
+            return 0;
+        }
         pacientes.add(paciente);
+        return 1;
     }
 
     public static void removePaciente(Paciente paciente) {
@@ -36,6 +35,9 @@ public class PacienteController {
             }
         }
         return null;
+    }
+
+    public PacienteController() {
     }
 
 }

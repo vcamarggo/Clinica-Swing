@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import controller.PacienteController;
@@ -62,13 +57,18 @@ public class PacienteView implements View {
     }
 
     private Paciente getPaciente() {
-        System.out.println("Insira o nome do paciente desejado:");
+        System.out.print("Insira o nome do paciente desejado: ");
         return PacienteController.getPacienteByNome(scan.next());
     }
 
     private void inserirPaciente() {
         Paciente paciente = new Paciente();
         pegaDadosPaciente(paciente);
+        if (PacienteController.adicionarPaciente(paciente) == 0) {
+            System.out.println("Paciente não inserido com sucesso.");
+        } else {
+            System.out.println("Paciente inserido com sucesso.");
+        }
         exibeInterface();
     }
 
@@ -78,6 +78,7 @@ public class PacienteView implements View {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
         } else {
             System.out.println("Nome: " + paciente.getNome());
+            // Mayza, use DateFormat aqui pra pegar o Date e converter em String dd/MM/yyyy
             System.out.println("Data nascimento: " + paciente.getDataNascimento());
             System.out.println("Contato: " + paciente.getContato());
             System.out.println("Endereço: " + paciente.getEndereco());
@@ -92,6 +93,7 @@ public class PacienteView implements View {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
         } else {
             PacienteController.removePaciente(paciente);
+            System.out.println("Paciente removido com sucesso.");
         }
         exibeInterface();
 
@@ -101,17 +103,17 @@ public class PacienteView implements View {
         boolean dadosCorretos = true;
         do {
             try {
-                System.out.println("Insira nome:");
+                System.out.print("Insira nome: ");
                 paciente.setNome(scan.next());
-                System.out.println("Insira data de nascimento:");
+                System.out.print("Insira data de nascimento: ");
                 DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
                 paciente.setDataNascimento((Date) formatter.parse(scan.next()));
-                System.out.println("Insira endereço:");
+                System.out.print("Insira endereço: ");
                 paciente.setEndereco(scan.next());
-                System.out.println("Insira contato:");
+                System.out.print("Insira contato: ");
                 paciente.setContato(scan.next());
-                System.out.println("Insira convênio: (1) PARTICULAR,"
-                        + " (2) PLANO DE SAÚDE");
+                System.out.print("Insira convênio: (1) PARTICULAR,"
+                        + " (2) PLANO DE SAÚDE  ");
                 paciente.setTipoConvenio(TipoConvenio.values()[scan.nextInt() - 1]);
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
@@ -127,8 +129,12 @@ public class PacienteView implements View {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
         } else {
             pegaDadosPaciente(paciente);
+            System.out.println("Paciente alterado com sucesso.");
         }
         exibeInterface();
+    }
+
+    public PacienteView() {
     }
 
 }
