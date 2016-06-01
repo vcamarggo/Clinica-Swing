@@ -16,7 +16,7 @@ public class ConsultaController {
         if (getConsultaByCodigo(consulta.getCodigo()) != null) {
             return 1;
         } else if (PacienteController.
-                getPacienteByNome(consulta.getPaciente()) != null) {
+                getPacienteByNome(consulta.getPaciente()) == null) {
             return 2;
         } else {
             consultas.add(consulta);

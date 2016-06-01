@@ -73,11 +73,11 @@ public class ConsultaView implements View {
                 break;
             case 1:
                 System.out.println("Consulta não inserida com sucesso. "
-                        + "Código da consulta já existente.");
+                        + " Código da consulta já existente.");
                 break;
             case 2:
                 System.out.println("Consulta não inserida com sucesso."
-                        + "Paciente não existe.");
+                        + " Paciente não existe.");
                 break;
         }
         exibeInterface();
@@ -116,14 +116,14 @@ public class ConsultaView implements View {
                 System.out.print("Insira data: ");
                 DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
                 consulta.setDataConsulta((Date) formatter.parse(scan.next()));
-                System.out.print("Insira hora:");
+                System.out.print("Insira hora: ");
                 consulta.setHora(scan.next());
                 System.out.print("Insira nome do paciente: ");
                 consulta.setPaciente(scan.next());
                 System.out.print("Insira médico: ");
                 consulta.setMedico(scan.next());
                 System.out.print("Insira convênio: (1) NORMAL,"
-                        + " (2) RETORNO");
+                        + " (2) RETORNO   ");
                 consulta.setTipoConsulta(TipoConsulta.values()[scan.nextInt() - 1]);
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
