@@ -91,7 +91,8 @@ public class ConsultaView implements View {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
         } else {
             System.out.println("Cod.: " + consulta.getCodigo());
-            System.out.println("Data: " + consulta.getDataConsulta());
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
             System.out.println("Hora: " + consulta.getHora());
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());

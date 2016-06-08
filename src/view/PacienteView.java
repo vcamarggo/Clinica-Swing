@@ -81,8 +81,8 @@ public class PacienteView implements View {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
         } else {
             System.out.println("Nome: " + paciente.getNome());
-            // Mayza, use DateFormat aqui pra pegar o Date e converter em String dd/MM/yyyy
-            System.out.println("Data nascimento: " + paciente.getDataNascimento());
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            System.out.println("Data nascimento: " + formatter.format(paciente.getDataNascimento()));
             System.out.println("Endereço: " + paciente.getEndereco());
             System.out.println("Telefone: " + paciente.getTelefone());
             System.out.println("Celular: " + paciente.getCelular());
