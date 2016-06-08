@@ -13,7 +13,7 @@ public class PacienteController {
     private static List<Paciente> pacientes = new ArrayList<Paciente>();
 
     public static int adicionarPaciente(Paciente paciente) {
-        if (getPacienteByNome(paciente.getNome()) == null) {
+        if (getPacienteByNome(paciente.getNome()) != null) {
             return 0;
         }
         pacientes.add(paciente);

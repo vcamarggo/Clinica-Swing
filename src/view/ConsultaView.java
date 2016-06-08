@@ -5,7 +5,6 @@ import enumeration.TipoConsulta;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 import model.Consulta;
 
@@ -15,19 +14,21 @@ import model.Consulta;
  */
 public class ConsultaView implements View {
 
-    private static List<Consulta> consultas;
+    //private static List<Consulta> consultas;
 
-    static Scanner scan = new Scanner(System.in);
+    //static Scanner scan = new Scanner(System.in);
     static final String CONSULTA_NAO_ENCONTRADA = "Consulta não encontrada.";
 
     @Override
     public void exibeInterface() {
+        Scanner scan = new Scanner(System.in);
+        
         System.out.println("\nPerfil Secretária.");
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Inserir Consulta");
         System.out.println("2 - Alterar Consulta");
         System.out.println("3 - Remover Consulta");
-        System.out.println("4 - Gerar Relatório do Consulta");
+        System.out.println("4 - Gerar Relatório de Consulta");
         System.out.println("5 - Voltar à seleção de usuários");
         System.out.println("6 - Sair");
 
@@ -60,6 +61,7 @@ public class ConsultaView implements View {
     }
 
     private Consulta getConsulta() {
+        Scanner scan = new Scanner(System.in);
         System.out.print("Insira o cód da consulta desejada: ");
         return ConsultaController.getConsultaByCodigo(scan.nextInt());
     }
@@ -88,9 +90,13 @@ public class ConsultaView implements View {
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
         } else {
-            System.out.println("Nome: " + consulta.getCodigo());
-            // Mayza, use DateFormat aqui pra pegar o Date e converter em String dd/MM/yyyy
-            System.out.println("Data nascimento: " + consulta.getDataConsulta());
+            System.out.println("Cod.: " + consulta.getCodigo());
+            System.out.println("Data: " + consulta.getDataConsulta());
+            System.out.println("Hora: " + consulta.getHora());
+            System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
+            System.out.println("Nome do Paciente: " + consulta.getPaciente());
+            System.out.println("Doutor: " + consulta.getMedico());
+       
         }
         exibeInterface();
     }
@@ -108,21 +114,22 @@ public class ConsultaView implements View {
     }
 
     private void pegaDadosConsulta(Consulta consulta) {
+        Scanner scan = new Scanner(System.in);
         boolean dadosCorretos = true;
         do {
             try {
                 System.out.print("Insira cod: ");
-                consulta.setCodigo(scan.nextInt());
+                consulta.setCodigo(Integer.parseInt(scan.nextLine()));
                 System.out.print("Insira data: ");
                 DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-                consulta.setDataConsulta((Date) formatter.parse(scan.next()));
+                consulta.setDataConsulta((Date) formatter.parse(scan.nextLine()));
                 System.out.print("Insira hora: ");
-                consulta.setHora(scan.next());
+                consulta.setHora(scan.nextLine());
                 System.out.print("Insira nome do paciente: ");
-                consulta.setPaciente(scan.next());
+                consulta.setPaciente(scan.nextLine());
                 System.out.print("Insira médico: ");
-                consulta.setMedico(scan.next());
-                System.out.print("Insira convênio: (1) NORMAL,"
+                consulta.setMedico(scan.nextLine());
+                System.out.print("Insira tipo de consulta: (1) NORMAL,"
                         + " (2) RETORNO   ");
                 consulta.setTipoConsulta(TipoConsulta.values()[scan.nextInt() - 1]);
             } catch (Exception ex) {

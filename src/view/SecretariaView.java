@@ -29,6 +29,8 @@ public class SecretariaView implements View {
                 consultaView.exibeInterface();
                 break;
             case 3:
+                RelatorioConsultasView relatorioView = new RelatorioConsultasView();
+                relatorioView.exibeInterface();
                 break;
             case 4:
                 fecharInterface();

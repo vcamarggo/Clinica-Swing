@@ -14,11 +14,13 @@ import model.Paciente;
  */
 public class PacienteView implements View {
 
-    static Scanner scan = new Scanner(System.in);
+    //static Scanner scan = new Scanner(System.in);
     static final String PACIENTE_NAO_ENCONTRADO = "Paciente não encontrado.";
 
     @Override
     public void exibeInterface() {
+        Scanner scan = new Scanner(System.in);
+        
         System.out.println("\nPerfil Secretária.");
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Inserir Paciente");
@@ -57,8 +59,9 @@ public class PacienteView implements View {
     }
 
     private Paciente getPaciente() {
+        Scanner scan = new Scanner(System.in);
         System.out.print("Insira o nome do paciente desejado: ");
-        return PacienteController.getPacienteByNome(scan.next());
+        return PacienteController.getPacienteByNome(scan.nextLine());
     }
 
     private void inserirPaciente() {
@@ -80,8 +83,10 @@ public class PacienteView implements View {
             System.out.println("Nome: " + paciente.getNome());
             // Mayza, use DateFormat aqui pra pegar o Date e converter em String dd/MM/yyyy
             System.out.println("Data nascimento: " + paciente.getDataNascimento());
-            System.out.println("Telefone: " + paciente.getTelefone());
             System.out.println("Endereço: " + paciente.getEndereco());
+            System.out.println("Telefone: " + paciente.getTelefone());
+            System.out.println("Celular: " + paciente.getCelular());
+            System.out.println("Email: " + paciente.getEmail());
             System.out.println("Tipo convênio: " + paciente.getTipoConvenio().toString());
         }
         exibeInterface();
@@ -100,24 +105,23 @@ public class PacienteView implements View {
     }
 
     private void pegaDadosPaciente(Paciente paciente) {
+        Scanner scan = new Scanner(System.in);
         boolean dadosCorretos = true;
         do {
             try {
                 System.out.print("Insira nome: ");
-                paciente.setNome(scan.next());
+                paciente.setNome(scan.nextLine());
                 System.out.print("Insira data de nascimento: ");
                 DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-                paciente.setDataNascimento((Date) formatter.parse(scan.next()));
+                paciente.setDataNascimento((Date) formatter.parse(scan.nextLine()));
                 System.out.print("Insira endereço: ");
-                paciente.setEndereco(scan.next());
+                paciente.setEndereco(scan.nextLine());
                 System.out.print("Insira telefone residencial: ");
-                paciente.setTelefone(scan.next());
-                
-                //ARRUMAR OPCIONAL QQ O SCAN VAI PEGAR
-                System.out.print("Insira celular (opcional): ");
-                paciente.setCelular(scan.next());
-                System.out.print("Insira email (opcional): ");
-                paciente.setEmail(scan.next());
+                paciente.setTelefone(scan.nextLine());
+                System.out.print("Insira celular (Enter caso não tenha): ");
+                paciente.setCelular(scan.nextLine());
+                System.out.print("Insira email (Enter caso não tenha): ");
+                paciente.setEmail(scan.nextLine());
                 System.out.print("Insira convênio: (1) PARTICULAR,"
                         + " (2) PLANO DE SAÚDE  ");
                 paciente.setTipoConvenio(TipoConvenio.values()[scan.nextInt() - 1]);
