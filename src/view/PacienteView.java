@@ -80,7 +80,7 @@ public class PacienteView implements View {
             System.out.println("Nome: " + paciente.getNome());
             // Mayza, use DateFormat aqui pra pegar o Date e converter em String dd/MM/yyyy
             System.out.println("Data nascimento: " + paciente.getDataNascimento());
-            System.out.println("Contato: " + paciente.getContato());
+            System.out.println("Telefone: " + paciente.getTelefone());
             System.out.println("Endereço: " + paciente.getEndereco());
             System.out.println("Tipo convênio: " + paciente.getTipoConvenio().toString());
         }
@@ -110,8 +110,14 @@ public class PacienteView implements View {
                 paciente.setDataNascimento((Date) formatter.parse(scan.next()));
                 System.out.print("Insira endereço: ");
                 paciente.setEndereco(scan.next());
-                System.out.print("Insira contato: ");
-                paciente.setContato(scan.next());
+                System.out.print("Insira telefone residencial: ");
+                paciente.setTelefone(scan.next());
+                
+                //ARRUMAR OPCIONAL QQ O SCAN VAI PEGAR
+                System.out.print("Insira celular (opcional): ");
+                paciente.setCelular(scan.next());
+                System.out.print("Insira email (opcional): ");
+                paciente.setEmail(scan.next());
                 System.out.print("Insira convênio: (1) PARTICULAR,"
                         + " (2) PLANO DE SAÚDE  ");
                 paciente.setTipoConvenio(TipoConvenio.values()[scan.nextInt() - 1]);
