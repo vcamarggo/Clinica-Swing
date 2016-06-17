@@ -21,8 +21,7 @@ public class SecretariaView implements View {
 
         switch (scan.nextInt()) {
             case 1:
-                PacienteView pacienteView = new PacienteView();
-                pacienteView.exibeInterface();
+                exibeSubInterfacePaciente();
                 break;
             case 2:
                 ConsultaView consultaView = new ConsultaView();
@@ -38,7 +37,6 @@ public class SecretariaView implements View {
             default:
                 System.exit(0);
                 break;
-
         }
 
     }
@@ -46,6 +44,47 @@ public class SecretariaView implements View {
     @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
+    }
+    
+    
+    public void exibeSubInterfacePaciente(){
+        Scanner scan = new Scanner(System.in);
+        PacienteView pacienteView = new PacienteView();
+        
+        System.out.println("\nPerfil Secretária para Pacientes.");
+        System.out.println("Selecione uma ação: ");
+        System.out.println("1 - Inserir paciente");
+        System.out.println("2 - Alterar paciente");
+        System.out.println("3 - Remover paciente");
+        System.out.println("4 - Gerar relatório do paciente");
+        System.out.println("5 - Voltar à menu secretária");
+        System.out.println("6 - Voltar à seleção de usuários");
+
+        switch (scan.nextInt()) {
+            case 1:
+                pacienteView.inserirPaciente();
+                break;
+            case 2:
+                pacienteView.alterarPaciente();
+                break;
+            case 3:
+                pacienteView.removerPaciente();
+                break;
+            case 4:
+                pacienteView.gerarRelatorioPaciente();
+                break;
+            case 5:
+                exibeInterface();
+                break;
+            case 6:
+                fecharInterface();
+                break;
+            default:
+                System.err.println("Opção inválida!\n");
+                exibeSubInterfacePaciente();
+                break;
+
+        }
     }
 
     public SecretariaView() {

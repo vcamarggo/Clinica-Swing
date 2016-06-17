@@ -19,38 +19,8 @@ public class PacienteView implements View {
 
     @Override
     public void exibeInterface() {
-        Scanner scan = new Scanner(System.in);
-        
-        System.out.println("\nPerfil Secretária.");
-        System.out.println("Selecione uma ação: ");
-        System.out.println("1 - Inserir Paciente");
-        System.out.println("2 - Alterar Paciente");
-        System.out.println("3 - Remover Paciente");
-        System.out.println("4 - Gerar Relatório do Paciente");
-        System.out.println("5 - Voltar à seleção de usuários");
-        System.out.println("6 - Sair");
-
-        switch (scan.nextInt()) {
-            case 1:
-                inserirPaciente();
-                break;
-            case 2:
-                alterarPaciente();
-                break;
-            case 3:
-                removerPaciente();
-                break;
-            case 4:
-                gerarRelatorioPaciente();
-                break;
-            case 5:
-                fecharInterface();
-                break;
-            default:
-                System.exit(0);
-                break;
-
-        }
+        //USAR ESTE METODO COMO SIMULADOR DE MENSAGEM
+        System.out.println("PacienteView.exibeInterface()");
     }
 
     @Override
@@ -64,7 +34,7 @@ public class PacienteView implements View {
         return PacienteController.getPacienteByNome(scan.nextLine());
     }
 
-    private void inserirPaciente() {
+    public void inserirPaciente() {
         Paciente paciente = new Paciente();
         pegaDadosPaciente(paciente);
         if (PacienteController.adicionarPaciente(paciente) == 0) {
@@ -75,7 +45,7 @@ public class PacienteView implements View {
         exibeInterface();
     }
 
-    private void gerarRelatorioPaciente() {
+    public void gerarRelatorioPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
@@ -92,7 +62,7 @@ public class PacienteView implements View {
         exibeInterface();
     }
 
-    private void removerPaciente() {
+    public void removerPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
@@ -133,7 +103,7 @@ public class PacienteView implements View {
         } while (!dadosCorretos);
     }
 
-    private void alterarPaciente() {
+    public void alterarPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
             System.out.println(PACIENTE_NAO_ENCONTRADO);
@@ -145,6 +115,49 @@ public class PacienteView implements View {
     }
 
     public PacienteView() {
+    }
+
+    void gerarRelatorioMedicoPaciente() {
+        //IMPLEMENTAR RELATÒRIO MÉDICO -> PACIENTE AQUI
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void removerDadosAdicionaisPaciente() {
+        
+    }
+
+    void alterarDadosAdicionaisPaciente() {
+    }
+
+    void inserirDadosAdicionaisPaciente() {
+        Scanner scan = new Scanner(System.in);
+        Paciente paciente = getPaciente();
+        boolean dadosCorretos = true;
+        do {
+            try {
+                System.out.println("Responda [S]Sim [N]Não");
+                System.out.print("Paciente fuma?: ");
+                paciente.setFuma( geraBooleano( scan.nextLine() ) );
+                System.out.print("Paciente bebe?: ");
+                paciente.setBebe( geraBooleano( scan.nextLine() ) );
+                System.out.print("Paciente tem colesterol?: ");
+                paciente.setColesterol( geraBooleano( scan.nextLine() ) );
+                System.out.print("Paciente tem diabete?: ");
+                paciente.setDiabete( geraBooleano( scan.nextLine() ) );
+                                
+                System.out.print("Insira convênio: (1) PARTICULAR,"
+                        + " (2) PLANO DE SAÚDE  ");
+                paciente.setTipoConvenio(TipoConvenio.values()[scan.nextInt() - 1]);
+            } catch (Exception ex) {
+                System.out.println("Houve um erro nos dados inseridos. "
+                        + "Favor reiniciar o preenchimento dos dados do paciente.");
+                dadosCorretos = false;
+            }
+        } while (!dadosCorretos);
+    }
+    
+    private boolean geraBooleano( String resposta ){
+        return resposta.equalsIgnoreCase( "Sim" ) || resposta.equalsIgnoreCase( "S" );
     }
 
 }

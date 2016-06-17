@@ -2,6 +2,7 @@ package model;
 
 import enumeration.TipoConvenio;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -16,6 +17,15 @@ public class Paciente {
     private String celular;
     private String email;
     private TipoConvenio tipoConvenio;
+    
+    private Boolean fuma;
+    private Boolean bebe;
+    private Boolean colesterol;
+    private Boolean diabete;
+    private List<String> cirurgias;
+    private List<String> alergias;
+    
+    
 
     public String getNome() {
         return nome;
@@ -76,8 +86,53 @@ public class Paciente {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    public Paciente() {
+
+    public Boolean getFuma() {
+        return fuma;
     }
 
+    public void setFuma(Boolean fuma) {
+        this.fuma = fuma;
+    }
+
+    public Boolean getBebe() {
+        return bebe;
+    }
+
+    public void setBebe(Boolean bebe) {
+        this.bebe = bebe;
+    }
+
+    public Boolean getColesterol() {
+        return colesterol;
+    }
+
+    public void setColesterol(Boolean colesterol) {
+        this.colesterol = colesterol;
+    }
+
+    public Boolean getDiabete() {
+        return diabete;
+    }
+
+    public void setDiabete(Boolean diabete) {
+        this.diabete = diabete;
+    }
+
+    public List<String> getCirurgias() {
+        return cirurgias;
+    }
+
+    public void setCirurgias(List<String> cirurgias) {
+        this.cirurgias = cirurgias;
+    }
+
+    public List<String> getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(List<String> alergias) {
+        this.alergias = alergias;
+    }    
+    
 }
