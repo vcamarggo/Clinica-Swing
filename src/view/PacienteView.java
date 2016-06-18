@@ -42,13 +42,13 @@ public class PacienteView implements View {
         } else {
             System.out.println("Paciente inserido com sucesso.");
         }
-        exibeInterface();
+        //exibeInterface();
     }
 
     public void gerarRelatorioPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
-            System.out.println(PACIENTE_NAO_ENCONTRADO);
+            exibeMensagemPacienteNaoEncontrado();
         } else {
             System.out.println("Nome: " + paciente.getNome());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
@@ -65,7 +65,7 @@ public class PacienteView implements View {
     public void removerPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
-            System.out.println(PACIENTE_NAO_ENCONTRADO);
+            exibeMensagemPacienteNaoEncontrado();
         } else {
             PacienteController.removePaciente(paciente);
             System.out.println("Paciente removido com sucesso.");
@@ -106,7 +106,7 @@ public class PacienteView implements View {
     public void alterarPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
-            System.out.println(PACIENTE_NAO_ENCONTRADO);
+            System.err.println(PACIENTE_NAO_ENCONTRADO);
         } else {
             pegaDadosPaciente(paciente);
             System.out.println("Paciente alterado com sucesso.");
@@ -132,6 +132,10 @@ public class PacienteView implements View {
     void inserirDadosAdicionaisPaciente() {
         Scanner scan = new Scanner(System.in);
         Paciente paciente = getPaciente();
+        if (paciente == null){
+            exibeMensagemPacienteNaoEncontrado();
+            return;
+        }
         boolean dadosCorretos = true;
         do {
             try {
@@ -151,6 +155,7 @@ public class PacienteView implements View {
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
                         + "Favor reiniciar o preenchimento dos dados do paciente.");
+                ex.printStackTrace();
                 dadosCorretos = false;
             }
         } while (!dadosCorretos);
@@ -158,6 +163,10 @@ public class PacienteView implements View {
     
     private boolean geraBooleano( String resposta ){
         return resposta.equalsIgnoreCase( "Sim" ) || resposta.equalsIgnoreCase( "S" );
+    }
+    
+    private void exibeMensagemPacienteNaoEncontrado(){
+        System.err.println(PACIENTE_NAO_ENCONTRADO);
     }
 
 }

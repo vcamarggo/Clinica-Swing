@@ -20,8 +20,7 @@ public class MedicoView implements View {
 
         switch (scan.nextInt()) {
             case 1:
-                PacienteView pacienteView = new PacienteView();
-                pacienteView.exibeInterface();
+                exibeSubInterfacePaciente();
                 break;
             case 2:
                 RelatorioConsultasView relatorioView = new RelatorioConsultasView();
@@ -39,6 +38,7 @@ public class MedicoView implements View {
 
     @Override
     public void fecharInterface() {
+        TrabalhoPOO1.iniciaSistema();
     }
 
     public MedicoView() {
@@ -47,33 +47,37 @@ public class MedicoView implements View {
     public void exibeSubInterfacePaciente(){
         Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
+        int opcao;
+        do {
+            System.out.println("\nPerfil Médico para Pacientes.");
+            System.out.println("Selecione uma ação: ");
+            System.out.println("1 - Inserir Dados Adicionais Paciente");
+            System.out.println("2 - Alterar Dados Adicionais Paciente");
+            System.out.println("3 - Remover Dados Adicionais Paciente");
+            System.out.println("4 - Relatório Dados Adicionais Paciente");
+            System.out.println("5 - Voltar");
+            System.out.println("6 - Sair");
         
-        System.out.println("\nPerfil Médico para Pacientes.");
-        System.out.println("Selecione uma ação: ");
-        System.out.println("1 - Inserir Dados Adicionais Paciente");
-        System.out.println("2 - Alterar Dados Adicionais Paciente");
-        System.out.println("3 - Remover Dados Adicionais Paciente");
-        System.out.println("6 - Sair");
-
-        switch (scan.nextInt()) {
-            case 1:
-                pacienteView.inserirDadosAdicionaisPaciente();
-                break;
-            case 2:
-                pacienteView.alterarDadosAdicionaisPaciente();
-                break;
-            case 3:
-                pacienteView.removerDadosAdicionaisPaciente();
-                break;
-            case 4:
-                pacienteView.gerarRelatorioMedicoPaciente();
-                break;
-            case 5:
-                fecharInterface();
-                break;
-            default:
-                System.exit(0);
-                break;
-        }
+            switch ( opcao = scan.nextInt()) {
+                case 1:
+                    pacienteView.inserirDadosAdicionaisPaciente();
+                    break;
+                case 2:
+                    pacienteView.alterarDadosAdicionaisPaciente();
+                    break;
+                case 3:
+                    pacienteView.removerDadosAdicionaisPaciente();
+                    break;
+                case 4:
+                    pacienteView.gerarRelatorioMedicoPaciente();
+                    break;
+                case 5:
+                    fecharInterface();
+                    break;
+                default:
+                    System.exit(0);
+                    break;
+            }
+        }while( opcao != 5);
     }
 }
