@@ -76,8 +76,9 @@ public class PacienteView implements View {
 
     private void pegaDadosPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
-        boolean dadosCorretos = true;
+        boolean dadosCorretos;
         do {
+            dadosCorretos = true;
             try {
                 System.out.print("Insira nome: ");
                 paciente.setNome(scan.nextLine());
@@ -148,10 +149,9 @@ public class PacienteView implements View {
                 paciente.setColesterol( geraBooleano( scan.nextLine() ) );
                 System.out.print("Paciente tem diabete?: ");
                 paciente.setDiabete( geraBooleano( scan.nextLine() ) );
-                                
-                System.out.print("Insira convênio: (1) PARTICULAR,"
-                        + " (2) PLANO DE SAÚDE  ");
-                paciente.setTipoConvenio(TipoConvenio.values()[scan.nextInt() - 1]);
+                
+                digitarCirurgiasPaciente( paciente );
+                
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
                         + "Favor reiniciar o preenchimento dos dados do paciente.");
@@ -167,6 +167,15 @@ public class PacienteView implements View {
     
     private void exibeMensagemPacienteNaoEncontrado(){
         System.err.println(PACIENTE_NAO_ENCONTRADO);
+    }
+    
+    private void digitarCirurgiasPaciente(Paciente paciente){
+        Scanner scan = new Scanner(System.in);
+        String cirurgia;
+        System.out.println("Entre com as Cirurgias do paciente. Digite 0 para sair");
+        while( !( cirurgia = scan.nextLine() ).equals("0") ){
+            paciente.getCirurgias().add(cirurgia);
+        }
     }
 
 }

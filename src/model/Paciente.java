@@ -1,6 +1,7 @@
 package model;
 
 import enumeration.TipoConvenio;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class Paciente {
     private Boolean bebe;
     private Boolean colesterol;
     private Boolean diabete;
-    private List<String> cirurgias;
-    private List<String> alergias;
+    private List<String> cirurgias = new ArrayList<>();
+    private List<String> alergias = new ArrayList<>();
     
     
 
