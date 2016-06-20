@@ -5,7 +5,11 @@
  */
 package view;
 
+import controller.RelatorioConsultasController;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
+import model.Consulta;
 
 /**
  *
@@ -44,11 +48,22 @@ public class RelatorioConsultasView implements View{
     }
 
     private void gerarRelatorioEmail() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("oookk");
+        for(Consulta consulta: RelatorioConsultasController.relatoriosEmail()){
+            System.out.println("\n");
+            System.out.println("Cod.: " + consulta.getCodigo());
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
+            System.out.println("Hora: " + consulta.getHora());
+            System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
+            System.out.println("Nome do Paciente: " + consulta.getPaciente());
+            System.out.println("Doutor: " + consulta.getMedico());
+        }  
     }
 
     private void gerarRelatorioCelular() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
-    
 }

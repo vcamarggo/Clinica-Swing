@@ -70,7 +70,7 @@ public class Paciente {
 
     public String getCelular() {
         if(celular.equals(""))
-            return "Não possui";
+            return null;
         return celular;
     }
 
@@ -80,7 +80,7 @@ public class Paciente {
 
     public String getEmail() {
         if(email.equals(""))
-            return "Não possui";
+            return null;
         return email;
     }
 
