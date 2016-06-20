@@ -16,7 +16,7 @@ public class GerenciadorMensagemController {
     public static List<Consulta> consultasDoDia(Date data) {
         for (Consulta consulta : ConsultaController.getConsultas()) {
             //pega as consultas em que o paciente tem celular/email e põe na lista de consultas;
-            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) || (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null)) && consulta.getDataConsulta().equals(data)) {
+            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) || (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail()!= null)) && (consulta.getDataConsulta().compareTo(data) == 0)) {
 
                 consultasDoDia.add(consulta);
             } else {
