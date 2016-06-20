@@ -1,25 +1,30 @@
 package controller;
 
-import java.util.Scanner;
-import view.View;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import model.Consulta;
 
 /**
  *
  * @author guest-xc8RJZ
  */
-public class GerenciadorMensagemController implements View{
+public class GerenciadorMensagemController {
 
-    @Override
-    public void exibeInterface() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("");
-    }
+    private static List<Consulta> consultasDoDia = new ArrayList<>();
 
-    @Override
-    public void fecharInterface() {
-    }
+    public static List<Consulta> consultasDoDia(Date data) {
+        for (Consulta consulta : ConsultaController.getConsultas()) {
+            //pega as consultas em que o paciente tem celular/email e põe na lista de consultas;
+            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) || (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null)) && consulta.getDataConsulta().equals(data)) {
 
-    public GerenciadorMensagemController() {
+                consultasDoDia.add(consulta);
+            } else {
+                System.out.println("O paciente não possui celular/email");
+            }
+        }
+
+        return consultasDoDia;
     }
 
 }
