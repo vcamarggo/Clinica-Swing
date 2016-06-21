@@ -30,12 +30,9 @@ public class RelatorioConsultasController {
      * @return
      */
     public static List<Consulta> relatoriosEmail() {
-        System.out.println("TESTE");
         for (Consulta consulta : ConsultaController.getConsultas()) {
-            System.out.println("TESTE2222");
             if (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
-                consultasDesejadas.add(consulta);
-                System.out.println("OK");
+                consultasDesejadas.add(consulta);            
             }
         }
         return consultasDesejadas;

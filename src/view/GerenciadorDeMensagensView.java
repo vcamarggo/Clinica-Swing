@@ -42,20 +42,18 @@ public class GerenciadorDeMensagensView implements View {
             data = formatter.parse(dataHoje);
         } catch (ParseException ex) {
             Logger.getLogger(GerenciadorDeMensagensView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //GerenciadorMensagemController gerenciadorMensagemController = new GerenciadorMensagemController();
+        }    
         System.out.println("Enviando SMS/Email para os pacientes . . .");
         for (Consulta consulta : GerenciadorMensagemController.consultasDoDia(data)) {
             if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
                 System.out.println("\n***SMS***");
-                System.out.println("Ola senhor(a) " + consulta.getPaciente() + ",");
-                System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha o senhor tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
-                System.out.println("Qualquer dúvida nos mande um email ou ligue para o telefone 3030-2021");
             } else {
                 System.out.println("\n***EMAIL***");
-                System.out.println("Ola senhor(a) " + consulta.getPaciente() + ",");
-                System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha o senhor tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
+
             }
+            System.out.println("Ola senhor(a) " + consulta.getPaciente() + ",");
+            System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha o senhor tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
+            System.out.println("Qualquer dúvida nos mande um email ou ligue para o telefone 3030-2021");
 
         }
         fecharInterface();
@@ -64,7 +62,6 @@ public class GerenciadorDeMensagensView implements View {
 
     @Override
     public void fecharInterface() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         TrabalhoPOO1.iniciaSistema();
     }
 
