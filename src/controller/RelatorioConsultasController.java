@@ -10,34 +10,49 @@ import java.util.List;
 import model.Consulta;
 
 /**
- *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class RelatorioConsultasController {
+
+    /**
+     * Construtor padrao.
+     */
+    public RelatorioConsultasController() {
+    }
     //private ConsultaController consultaController = new ConsultaController();
     /*private List<Consulta> consultasEmail = new ArrayList<>();
-    private List<Consulta> consultaCelular = new ArrayList<>();*/
+     private List<Consulta> consultaCelular = new ArrayList<>();*/
     private static List<Consulta> consultasDesejadas = new ArrayList<>();
-    
-    public static List<Consulta> relatoriosEmail(){
+
+    /**
+     * PREENCHER AQUI!
+     *
+     * @return
+     */
+    public static List<Consulta> relatoriosEmail() {
         System.out.println("TESTE");
-        for(Consulta consulta: ConsultaController.getConsultas()){
+        for (Consulta consulta : ConsultaController.getConsultas()) {
             System.out.println("TESTE2222");
-            if(PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null){
+            if (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
                 consultasDesejadas.add(consulta);
                 System.out.println("OK");
             }
         }
-    return consultasDesejadas;
+        return consultasDesejadas;
     }
-    
-    public static List<Consulta> relatoriosCelular(){
-        for(Consulta consulta: ConsultaController.getConsultas()){
-            if(PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null){
+
+    /**
+     * PREENCHER AQUI!
+     *
+     * @return
+     */
+    public static List<Consulta> relatoriosCelular() {
+        for (Consulta consulta : ConsultaController.getConsultas()) {
+            if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
                 //if(consulta.getDataConsulta())
-                    consultasDesejadas.add(consulta);
+                consultasDesejadas.add(consulta);
             }
         }
-    return consultasDesejadas;
+        return consultasDesejadas;
     }
 }

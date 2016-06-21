@@ -1,11 +1,9 @@
 package view;
 
-import controller.PacienteController;
 import java.util.Scanner;
 
 /**
- *
- * @author guest-xc8RJZ
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class MedicoView implements View {
 
@@ -34,7 +32,7 @@ public class MedicoView implements View {
                 System.exit(0);
                 break;
         }
-        
+
     }
 
     @Override
@@ -42,10 +40,17 @@ public class MedicoView implements View {
         TrabalhoPOO1.iniciaSistema();
     }
 
+    /**
+     * Construtor padrao.
+     */
     public MedicoView() {
     }
-    
-    public void exibeSubInterfacePaciente(){
+
+    /**
+     * Exibe a subinterface referente ao paciente com as ações que a secretária
+     * pode executar.
+     */
+    public void exibeSubInterfacePaciente() {
         Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
         int opcao;
@@ -58,13 +63,13 @@ public class MedicoView implements View {
             System.out.println("4 - Relatório Dados Adicionais Paciente");
             System.out.println("5 - Voltar");
             System.out.println("6 - Sair");
-        
-            switch ( opcao = scan.nextInt()) {
+
+            switch (opcao = scan.nextInt()) {
                 case 1:
-                    pacienteView.dadosAdicionaisPaciente( false );
+                    pacienteView.dadosAdicionaisPaciente(false);
                     break;
                 case 2:
-                    pacienteView.dadosAdicionaisPaciente( true );
+                    pacienteView.dadosAdicionaisPaciente(true);
                     break;
                 case 3:
                     pacienteView.removerDadosAdicionaisPaciente();
@@ -79,6 +84,6 @@ public class MedicoView implements View {
                     System.exit(0);
                     break;
             }
-        }while( opcao != 5);
+        } while (opcao != 5);
     }
 }

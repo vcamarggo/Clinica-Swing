@@ -1,37 +1,53 @@
 package enumeration;
 
 import view.View;
-import controller.GerenciadorMensagemController;
 import view.GerenciadorDeMensagensView;
 import view.MedicoView;
 import view.SecretariaView;
 
 /**
- *
- * @author guest-xc8RJZ
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public enum Usuario {
 
+    /**
+     * Retorna a view do usuario medico.
+     */
     MEDICO {
 
         @Override
-        public View iniciaController() {
+        public View iniciaView() {
             return new MedicoView();
         }
-    }, SECRETARIA {
+    },
+
+    /**
+     * Retorna a view do usuario secretaria.
+     */
+    SECRETARIA {
 
         @Override
-        public View iniciaController() {
+        public View iniciaView() {
             return new SecretariaView();
         }
-    }, GERENCIADORMENSAGEM {
+    },
+
+    /**
+     * Retorna a view do usuario gerenciador de mensagem.
+     */
+    GERENCIADORMENSAGEM {
 
         @Override
-        public View iniciaController() {
+        public View iniciaView() {
             return new GerenciadorDeMensagensView();
         }
     };
 
-    public abstract View iniciaController();
+    /**
+     * garan
+     * 
+     * @return uma classe que implementa view.
+     */
+    public abstract View iniciaView();
 
 }

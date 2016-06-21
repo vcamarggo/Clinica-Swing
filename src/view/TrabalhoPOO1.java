@@ -4,17 +4,24 @@ import enumeration.Usuario;
 import java.util.Scanner;
 
 /**
- *
- * @author guest-xc8RJZ
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class TrabalhoPOO1 {
 
     private static Usuario usuario;
 
+    /**
+     * Metodo main. Inicia o sistema.
+     * @param args.
+     */
     public static void main(String[] args) {
         iniciaSistema();
     }
 
+    /**
+     * Abre a primeira interface para selecao de usuario e redireciona para a
+     * view correspondente.
+     */
     public static void iniciaSistema() {
         Scanner scan = new Scanner(System.in);
         int opcao;
@@ -34,10 +41,13 @@ public class TrabalhoPOO1 {
 
         usuario = Usuario.values()[opcao];
 
-        View controller = usuario.iniciaController();
-        controller.exibeInterface();
+        View view = usuario.iniciaView();
+        view.exibeInterface();
     }
 
+    /**
+     * Construtor padrao.
+     */
     public TrabalhoPOO1() {
     }
 

@@ -9,20 +9,18 @@ import java.util.Scanner;
 import model.Consulta;
 
 /**
- *
- * @author guest-xc8RJZ
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class ConsultaView implements View {
 
     //private static List<Consulta> consultas;
-
     //static Scanner scan = new Scanner(System.in);
     static final String CONSULTA_NAO_ENCONTRADA = "Consulta não encontrada.";
 
     @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
-        
+
         System.out.println("\nPerfil Secretária.");
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Inserir Consulta");
@@ -60,12 +58,18 @@ public class ConsultaView implements View {
         TrabalhoPOO1.iniciaSistema();
     }
 
+    /**
+     * Pega consulta atraves do codigo digitado.
+     */
     private Consulta getConsulta() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Insira o cód da consulta desejada: ");
         return ConsultaController.getConsultaByCodigo(scan.nextInt());
     }
 
+    /**
+     * Insere uma consulta para um paciente caso o mesmo exista.
+     */
     private void inserirConsulta() {
         Consulta consulta = new Consulta();
         pegaDadosConsulta(consulta);
@@ -85,6 +89,9 @@ public class ConsultaView implements View {
         exibeInterface();
     }
 
+    /**
+     * Gera um relatorio de uma consulta atraves do codigo.
+     */
     private void gerarRelatorioConsulta() {
         Consulta consulta = getConsulta();
         if (consulta == null) {
@@ -97,11 +104,14 @@ public class ConsultaView implements View {
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
             System.out.println("Doutor: " + consulta.getMedico());
-       
+
         }
         exibeInterface();
     }
 
+    /**
+     * Gera uma consulta correspondente ao codigo digitado.
+     */
     private void removerConsulta() {
         Consulta consulta = getConsulta();
         if (consulta == null) {
@@ -114,6 +124,9 @@ public class ConsultaView implements View {
 
     }
 
+    /**
+     * Pega os dados inseridos da consulta ate os mesmos serem validos.
+     */
     private void pegaDadosConsulta(Consulta consulta) {
         Scanner scan = new Scanner(System.in);
         boolean dadosCorretos = true;
@@ -152,6 +165,9 @@ public class ConsultaView implements View {
         exibeInterface();
     }
 
+    /**
+     * Construtor padrao.
+     */
     public ConsultaView() {
     }
 

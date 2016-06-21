@@ -3,8 +3,7 @@ package view;
 import java.util.Scanner;
 
 /**
- *
- * @author guest-xc8RJZ
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class SecretariaView implements View {
 
@@ -21,7 +20,7 @@ public class SecretariaView implements View {
             System.out.println("4 - Voltar");
             System.out.println("5 - Sair");
 
-            switch ( opcao =scan.nextInt()) {
+            switch (opcao = scan.nextInt()) {
                 case 1:
                     exibeSubInterfacePaciente();
                     break;
@@ -42,9 +41,9 @@ public class SecretariaView implements View {
                 default:
                     System.out.println("Opção inválida");
                     break;
-                    
+
             }
-        }while( opcao != 4 );
+        } while (opcao != 4);
 
     }
 
@@ -52,12 +51,15 @@ public class SecretariaView implements View {
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }
-    
-    
-    public void exibeSubInterfacePaciente(){
+
+    /**
+     * Exibe a subinterface referente ao paciente com as ações que a secretária
+     * pode executar.
+     */
+    public void exibeSubInterfacePaciente() {
         Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
-        
+
         System.out.println("\nPerfil Secretária para Pacientes.");
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Inserir paciente");
@@ -94,7 +96,10 @@ public class SecretariaView implements View {
         }
     }
 
+    /**
+     * Construtor padrao.
+     */
     public SecretariaView() {
     }
-    
+
 }

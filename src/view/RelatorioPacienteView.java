@@ -6,10 +6,15 @@
 package view;
 
 /**
- *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class RelatorioPacienteView implements View{
+public class RelatorioPacienteView implements View {
+
+    /**
+     * Construtor padrao.
+     */
+    public RelatorioPacienteView() {
+    }
 
     @Override
     public void exibeInterface() {
@@ -20,5 +25,5 @@ public class RelatorioPacienteView implements View{
     public void fecharInterface() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

@@ -9,8 +9,7 @@ import java.util.Scanner;
 import model.Paciente;
 
 /**
- *
- * @author V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class PacienteView implements View {
 
@@ -28,12 +27,18 @@ public class PacienteView implements View {
         TrabalhoPOO1.iniciaSistema();
     }
 
+    /**
+     * Retorna o paciente segundo o nome digitado.
+     */
     private Paciente getPaciente() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Insira o nome do paciente desejado: ");
         return PacienteController.getPacienteByNome(scan.nextLine());
     }
 
+    /**
+     * Insere um paciente segundo os dados inseridos.
+     */
     public void inserirPaciente() {
         Paciente paciente = new Paciente();
         pegaDadosPaciente(paciente);
@@ -42,9 +47,11 @@ public class PacienteView implements View {
         } else {
             System.out.println("Paciente inserido com sucesso.");
         }
-        //exibeInterface();
     }
 
+    /**
+     * Gera relatorio do paciente segundo o nome digitado.
+     */
     public void gerarRelatorioPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
@@ -62,6 +69,9 @@ public class PacienteView implements View {
         exibeInterface();
     }
 
+    /**
+     * Remove um paciente por nome.
+     */
     public void removerPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
@@ -74,6 +84,9 @@ public class PacienteView implements View {
 
     }
 
+    /**
+     * Recebe os dados digitados via teclado.
+     */
     private void pegaDadosPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
         boolean dadosCorretos;
@@ -104,10 +117,13 @@ public class PacienteView implements View {
         } while (!dadosCorretos);
     }
 
+    /**
+     * Altera o paciente selecionado pelo nome.
+     */
     public void alterarPaciente() {
         Paciente paciente = getPaciente();
         if (paciente == null) {
-            System.err.println(PACIENTE_NAO_ENCONTRADO);
+            exibeMensagemPacienteNaoEncontrado();
         } else {
             pegaDadosPaciente(paciente);
             System.out.println("Paciente alterado com sucesso.");
@@ -115,38 +131,53 @@ public class PacienteView implements View {
         exibeInterface();
     }
 
+    /**
+     * Construtor padrao.
+     */
     public PacienteView() {
     }
 
+    /**
+     * PREENCHER AQUI!
+     */
     void gerarRelatorioMedicoPaciente() {
         //IMPLEMENTAR RELATÒRIO MÉDICO -> PACIENTE AQUI
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * PREENCHER AQUI!
+     */
     void removerDadosAdicionaisPaciente() {
         Scanner scan = new Scanner(System.in);
         Paciente paciente = getPaciente();
-        if (paciente == null){
+        if (paciente == null) {
             exibeMensagemPacienteNaoEncontrado();
             return;
         }
         System.out.println("Confirma a remoção dos dados adicionais do paciente?");
-        if ( geraBooleano( scan.nextLine() ) ){
+        if (geraBooleano(scan.nextLine())) {
             PacienteController.removeDadosAdicionaisPaciente(paciente);
         }
     }
 
+    /**
+     * PREENCHER AQUI!
+     */
     void alterarDadosAdicionaisPaciente() {
     }
 
-    void dadosAdicionaisPaciente( boolean alteracao ) {
+    /**
+     * PREENCHER AQUI!
+     */
+    void dadosAdicionaisPaciente(boolean alteracao) {
         Scanner scan = new Scanner(System.in);
         Paciente paciente = getPaciente();
-        if (paciente == null){
+        if (paciente == null) {
             exibeMensagemPacienteNaoEncontrado();
             return;
         }
-        if ( alteracao ){
+        if (alteracao) {
             PacienteController.removeDadosAdicionaisPaciente(paciente);
         }
         boolean dadosCorretos = true;
@@ -154,17 +185,17 @@ public class PacienteView implements View {
             try {
                 System.out.println("Responda [S]Sim [N]Não");
                 System.out.print("Paciente fuma?: ");
-                paciente.setFuma( geraBooleano( scan.nextLine() ) );
+                paciente.setFuma(geraBooleano(scan.nextLine()));
                 System.out.print("Paciente bebe?: ");
-                paciente.setBebe( geraBooleano( scan.nextLine() ) );
+                paciente.setBebe(geraBooleano(scan.nextLine()));
                 System.out.print("Paciente tem colesterol?: ");
-                paciente.setColesterol( geraBooleano( scan.nextLine() ) );
+                paciente.setColesterol(geraBooleano(scan.nextLine()));
                 System.out.print("Paciente tem diabete?: ");
-                paciente.setDiabete( geraBooleano( scan.nextLine() ) );
-                
-                digitarCirurgiasPaciente( paciente );
-                digitarAlergiasPaciente( paciente );
-                
+                paciente.setDiabete(geraBooleano(scan.nextLine()));
+
+                digitarCirurgiasPaciente(paciente);
+                digitarAlergiasPaciente(paciente);
+
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
                         + "Favor reiniciar o preenchimento dos dados do paciente.");
@@ -173,29 +204,41 @@ public class PacienteView implements View {
             }
         } while (!dadosCorretos);
     }
-    
-    private boolean geraBooleano( String resposta ){
-        return resposta.equalsIgnoreCase( "Sim" ) || resposta.equalsIgnoreCase( "S" );
+
+    /**
+     * Conversor basico de string para booleano.
+     */
+    private boolean geraBooleano(String resposta) {
+        return resposta.equalsIgnoreCase("Sim") || resposta.equalsIgnoreCase("S");
     }
-    
-    private void exibeMensagemPacienteNaoEncontrado(){
+
+    /**
+     * Exibe mensagem de erro de paciente nao encontrado.
+     */
+    private void exibeMensagemPacienteNaoEncontrado() {
         System.err.println(PACIENTE_NAO_ENCONTRADO);
     }
-    
-    private void digitarCirurgiasPaciente(Paciente paciente){
+
+    /**
+     * PREENCHER AQUI!
+     */
+    private void digitarCirurgiasPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
         String cirurgia;
         System.out.println("Entre com as Cirurgias do paciente. Digite 0 para sair");
-        while( !( cirurgia = scan.nextLine() ).equals("0") ){
+        while (!(cirurgia = scan.nextLine()).equals("0")) {
             paciente.getCirurgias().add(cirurgia);
         }
     }
-    
-    private void digitarAlergiasPaciente(Paciente paciente){
+
+    /**
+     * PREENCHER AQUI!
+     */
+    private void digitarAlergiasPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
         String alergia;
         System.out.println("Entre com as Alergias do paciente. Digite 0 para sair");
-        while( !( alergia = scan.nextLine() ).equals("0") ){
+        while (!(alergia = scan.nextLine()).equals("0")) {
             paciente.getAlergias().add(alergia);
         }
     }
