@@ -26,7 +26,11 @@ public class RelatorioConsultasView implements View {
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nPerfil Secretária.");
+        System.out.println("\n***Perfil Secretária***");
+        System.out.println("Criacao de Relatórios de Consultas");
+        System.out.println("Insira a data desejada");
+        
+        
         System.out.println("Selecione o Filtro:");
         System.out.println("1. Email");
         System.out.println("2. Celular");
@@ -53,12 +57,27 @@ public class RelatorioConsultasView implements View {
     }
 
     /**
-     * Gera o relatorio de email a partir de ????????? kkkk
+     * Gera o relatorio de email a partir da lista criada no RelatorioConsultasController referente aos emails
      */
-    private void gerarRelatorioEmail() {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        System.out.println("oookk");
-        for (Consulta consulta : RelatorioConsultasController.relatoriosEmail()) {
+    private void gerarRelatorioEmail() {   
+        System.out.println("\nPacientes que possuem Email cadastrado no sistema:");
+        for (Consulta consulta : RelatorioConsultasController.pacientesComEmail()) {
+            System.out.println("\n");
+            System.out.println("Cod. da consulta: " + consulta.getCodigo());
+            System.out.println("Nome do Paciente: " + consulta.getPaciente());
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+            System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
+            System.out.println("Hora: " + consulta.getHora());
+            System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
+            System.out.println("Doutor: " + consulta.getMedico());
+        }
+    }
+
+    /**
+     * Gera o relatorio de celular a partir da lista criada no RelatorioConsultasController referente aos pacientes que tem celular celular
+     */
+    private void gerarRelatorioCelular() {
+        for (Consulta consulta : RelatorioConsultasController.pacientesComCelular()) {
             System.out.println("\n");
             System.out.println("Cod.: " + consulta.getCodigo());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
@@ -68,13 +87,6 @@ public class RelatorioConsultasView implements View {
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
             System.out.println("Doutor: " + consulta.getMedico());
         }
-    }
-
-    /**
-     * Gera o relatorio de celular a partir de ????????? kkkk
-     */
-    private void gerarRelatorioCelular() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
     }
 }

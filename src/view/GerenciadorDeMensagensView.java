@@ -34,11 +34,13 @@ public class GerenciadorDeMensagensView implements View {
         Scanner scan = new Scanner(System.in);
         String dataHoje;
 
-        System.out.println("\nPerfil Gerenciador de Mensagens.");
-        System.out.println("Favor, entre com a data de hoje: ");
+        System.out.println("\n-----------------------------------");
+        System.out.println("| Perfil Gerenciador de Mensagens |");
+        System.out.println("-----------------------------------");
+        System.out.println("Favor, entre com a data de hoje (dd/mm/aaaa): ");
         dataHoje = scan.nextLine();
         
-        System.out.println("\nO Sistema está verificando as consultas relativas ao dia seguinte. . . .");
+        System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
 
         /**
          * Transformo a string que contêm a data de usamoshoje em um tipo Date. 
@@ -72,7 +74,7 @@ public class GerenciadorDeMensagensView implements View {
                 System.out.println("Para: " + PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail());
             }
             System.out.println("\nOla senhor(a) " + consulta.getPaciente() + ",");
-            System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha (" + consulta.getDataConsulta() + ") o senhor(a) tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
+            System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha (" + formatter.format(consulta.getDataConsulta()) + ") o senhor(a) tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
             System.out.println("Qualquer dúvida mande nos um email ou ligue para o telefone " + NUMERO_CONSULTORIO + "\n");           
         }
         System.out.println("Tecle para sair");

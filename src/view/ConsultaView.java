@@ -19,7 +19,7 @@ public class ConsultaView implements View {
 
     @Override
     public void exibeInterface() {
-        Scanner scan = new Scanner(System.in);
+       /* Scanner scan = new Scanner(System.in);
 
         System.out.println("\nPerfil Secretária.");
         System.out.println("Selecione uma ação: ");
@@ -50,7 +50,7 @@ public class ConsultaView implements View {
                 System.exit(0);
                 break;
 
-        }
+        }*/
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ConsultaView implements View {
     /**
      * Insere uma consulta para um paciente caso o mesmo exista.
      */
-    private void inserirConsulta() {
+    public void inserirConsulta() {
         Consulta consulta = new Consulta();
         pegaDadosConsulta(consulta);
         switch (ConsultaController.adicionarConsulta(consulta)) {
@@ -92,7 +92,7 @@ public class ConsultaView implements View {
     /**
      * Gera um relatorio de uma consulta atraves do codigo.
      */
-    private void gerarRelatorioConsulta() {
+    public void gerarRelatorioConsulta() {
         Consulta consulta = getConsulta();
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
@@ -112,7 +112,7 @@ public class ConsultaView implements View {
     /**
      * Gera uma consulta correspondente ao codigo digitado.
      */
-    private void removerConsulta() {
+    public void removerConsulta() {
         Consulta consulta = getConsulta();
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
@@ -127,7 +127,7 @@ public class ConsultaView implements View {
     /**
      * Pega os dados inseridos da consulta ate os mesmos serem validos.
      */
-    private void pegaDadosConsulta(Consulta consulta) {
+    public void pegaDadosConsulta(Consulta consulta) {
         Scanner scan = new Scanner(System.in);
         boolean dadosCorretos = true;
         do {
@@ -154,7 +154,7 @@ public class ConsultaView implements View {
         } while (!dadosCorretos);
     }
 
-    private void alterarConsulta() {
+    public void alterarConsulta() {
         Consulta consulta = getConsulta();
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);

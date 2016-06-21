@@ -31,17 +31,19 @@ public class GerenciadorMensagemController {
         //Percorre a lista de Consultas cadastradas
         for (Consulta consulta : ConsultaController.getConsultas()) {
             //Pega as consultas do dia seguinte em que o paciente tem celular/email põe na lista de consultas;
-            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null)
-                    || (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null))
-                        && (consulta.getDataConsulta().compareTo(data) == 0)) {
+            if (consulta.getDataConsulta().compareTo(data) == 0) {
+                if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null)
+                        || (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null))){
+                        //&& (consulta.getDataConsulta().compareTo(data) == 0)) {
 
-                consultasDoDiaSeguinte.add(consulta);
-            } else {
-                System.out.println("O paciente não possui celular/email");
+                    consultasDoDiaSeguinte.add(consulta);
+                } else {
+                    System.out.println("Há uma consulta mas o paciente não possui celular/email");
+                }
             }
         }
-        if(consultasDoDiaSeguinte.isEmpty()){
-            System.out.println("O Consultório nao tem consultas agendadas para amanhã");
+        if (consultasDoDiaSeguinte.isEmpty()) {
+            System.err.println("O Consultório nao tem consultas agendadas para esta data");
         }
 
         return consultasDoDiaSeguinte;
