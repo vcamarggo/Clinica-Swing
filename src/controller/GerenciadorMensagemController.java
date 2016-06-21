@@ -16,25 +16,35 @@ public class GerenciadorMensagemController {
     public GerenciadorMensagemController() {
     }
 
-    private static List<Consulta> consultasDoDia = new ArrayList<>();
+    private static List<Consulta> consultasDoDiaSeguinte;
 
     /**
-     * PREENCHER AQUI!
+     * Método que recebe como parâmetro a data de hoje e verifica todas as
+     * consultas cadastradas. Insere na lista apenas os pacientes que possuem
+     * email/celular e que tem consulta no dia seguinte
+     *
      * @param data
      * @return
      */
-    public static List<Consulta> consultasDoDia(Date data) {
+    public static List<Consulta> consultasDoDiaSeguinte(Date data) {
+        consultasDoDiaSeguinte = new ArrayList<>();
+        //Percorre a lista de Consultas cadastradas
         for (Consulta consulta : ConsultaController.getConsultas()) {
-            //pega as consultas em que o paciente tem celular/email e põe na lista de consultas;
-            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) || (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null)) && (consulta.getDataConsulta().compareTo(data) == 0)) {
+            //Pega as consultas do dia seguinte em que o paciente tem celular/email põe na lista de consultas;
+            if (((PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null)
+                    || (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null))
+                        && (consulta.getDataConsulta().compareTo(data) == 0)) {
 
-                consultasDoDia.add(consulta);
+                consultasDoDiaSeguinte.add(consulta);
             } else {
                 System.out.println("O paciente não possui celular/email");
             }
         }
+        if(consultasDoDiaSeguinte.isEmpty()){
+            System.out.println("O Consultório nao tem consultas agendadas para amanhã");
+        }
 
-        return consultasDoDia;
+        return consultasDoDiaSeguinte;
     }
 
 }
