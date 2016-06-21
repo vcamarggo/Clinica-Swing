@@ -1,5 +1,6 @@
 package view;
 
+import controller.PacienteController;
 import java.util.Scanner;
 
 /**
@@ -60,10 +61,10 @@ public class MedicoView implements View {
         
             switch ( opcao = scan.nextInt()) {
                 case 1:
-                    pacienteView.inserirDadosAdicionaisPaciente();
+                    pacienteView.dadosAdicionaisPaciente( false );
                     break;
                 case 2:
-                    pacienteView.alterarDadosAdicionaisPaciente();
+                    pacienteView.dadosAdicionaisPaciente( true );
                     break;
                 case 3:
                     pacienteView.removerDadosAdicionaisPaciente();

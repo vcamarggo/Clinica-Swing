@@ -36,6 +36,14 @@ public class PacienteController {
         }
         return null;
     }
+    
+    public static void removeDadosAdicionaisPaciente( Paciente paciente ){
+        paciente.setFuma( null );
+        paciente.setBebe( null );
+        paciente.setColesterol( null );
+        paciente.setDiabete( null );
+        paciente.setCirurgias( new ArrayList<>());        
+    }
 
     public PacienteController() {
     }

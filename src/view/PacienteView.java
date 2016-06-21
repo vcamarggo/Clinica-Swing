@@ -124,18 +124,30 @@ public class PacienteView implements View {
     }
 
     void removerDadosAdicionaisPaciente() {
-        
-    }
-
-    void alterarDadosAdicionaisPaciente() {
-    }
-
-    void inserirDadosAdicionaisPaciente() {
         Scanner scan = new Scanner(System.in);
         Paciente paciente = getPaciente();
         if (paciente == null){
             exibeMensagemPacienteNaoEncontrado();
             return;
+        }
+        System.out.println("Confirma a remoção dos dados adicionais do paciente?");
+        if ( geraBooleano( scan.nextLine() ) ){
+            PacienteController.removeDadosAdicionaisPaciente(paciente);
+        }
+    }
+
+    void alterarDadosAdicionaisPaciente() {
+    }
+
+    void dadosAdicionaisPaciente( boolean alteracao ) {
+        Scanner scan = new Scanner(System.in);
+        Paciente paciente = getPaciente();
+        if (paciente == null){
+            exibeMensagemPacienteNaoEncontrado();
+            return;
+        }
+        if ( alteracao ){
+            PacienteController.removeDadosAdicionaisPaciente(paciente);
         }
         boolean dadosCorretos = true;
         do {
@@ -151,6 +163,7 @@ public class PacienteView implements View {
                 paciente.setDiabete( geraBooleano( scan.nextLine() ) );
                 
                 digitarCirurgiasPaciente( paciente );
+                digitarAlergiasPaciente( paciente );
                 
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
@@ -175,6 +188,15 @@ public class PacienteView implements View {
         System.out.println("Entre com as Cirurgias do paciente. Digite 0 para sair");
         while( !( cirurgia = scan.nextLine() ).equals("0") ){
             paciente.getCirurgias().add(cirurgia);
+        }
+    }
+    
+    private void digitarAlergiasPaciente(Paciente paciente){
+        Scanner scan = new Scanner(System.in);
+        String alergia;
+        System.out.println("Entre com as Alergias do paciente. Digite 0 para sair");
+        while( !( alergia = scan.nextLine() ).equals("0") ){
+            paciente.getAlergias().add(alergia);
         }
     }
 
