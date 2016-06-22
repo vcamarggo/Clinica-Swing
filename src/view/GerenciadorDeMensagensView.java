@@ -10,19 +10,19 @@ import controller.PacienteController;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Consulta;
+import model.MensagemEmail;
+import model.MensagemSMS;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GerenciadorDeMensagensView implements View {
 
-    private static final String NUMERO_CONSULTORIO =  "(44) 3034-0608";
-    private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
     /**
      * Construtor padrao.
      */
@@ -47,35 +47,34 @@ public class GerenciadorDeMensagensView implements View {
          * Como pode ocorrer erro na transformação, usamos o try catch
          */
         DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-        Date data = null;
+        Calendar dataAmanha = Calendar.getInstance();
+        
+        /**
+         * Transformo a string recebida no formato certo da data e adiciono um dia.
+         */
         try {
-            data = formatter.parse(dataHoje);
+            dataAmanha.setTime(formatter.parse(dataHoje));
+            dataAmanha.add(Calendar.DAY_OF_MONTH,1);
         } catch (ParseException ex) {
             Logger.getLogger(GerenciadorDeMensagensView.class.getName()).log(Level.SEVERE, null, ex);
         }    
-        
-        /**
-         * Preciso somar +1 dia na data
-         */
-        
+
         /**
          * Envia SMS ou email. Se o paciente tiver tanto SMS quanto EMAIL, envia apenas SMS
          */
         System.out.println("\nEnviando SMS/Email para os pacientes que tem consulta amanhã. . . .");
-        for (Consulta consulta : GerenciadorMensagemController.consultasDoDiaSeguinte(data)) {
-            if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
-                System.out.println("\n***SMS***");
-                System.out.println("De: " + CELULAR_CONSULTORIO);
-                System.out.println("Para: " + PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular());
+        for (Consulta consulta : GerenciadorMensagemController.consultasDoDiaSeguinte(dataAmanha)) {
+            if (GerenciadorMensagemController.pacientePossuiCelular(consulta)) {
+                MensagemSMS sms = new MensagemSMS();
+                sms.ExibirMensagem(consulta);    
             } 
-            else {
-                System.out.println("\n***EMAIL***");
-                System.out.println("De: saudeecia@gmail.com");
-                System.out.println("Para: " + PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail());
+            else if(GerenciadorMensagemController.pacientePossuiEmail(consulta)){
+                MensagemEmail email = new MensagemEmail();
+                email.ExibirMensagem(consulta);
             }
-            System.out.println("\nOla senhor(a) " + consulta.getPaciente() + ",");
-            System.out.println("A clinica Saude e CIA gostaria de lembra-lo que amanha (" + formatter.format(consulta.getDataConsulta()) + ") o senhor(a) tem uma consulta as " + consulta.getHora() + " com o Doutor(a) " + consulta.getMedico());
-            System.out.println("Qualquer dúvida mande nos um email ou ligue para o telefone " + NUMERO_CONSULTORIO + "\n");           
+            else{
+                System.out.println("Há uma consulta do paciente " + consulta.getPaciente() +" mas este não possui celular/email");
+            }
         }
         System.out.println("Tecle para sair");
         scan.nextLine();
