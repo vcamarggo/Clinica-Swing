@@ -28,8 +28,12 @@ public class Paciente {
     private Boolean bebe;
     private Boolean colesterol;
     private Boolean diabete;
+    private String diagnostico;
+    private String tratamento;
     private List<String> cirurgias = new ArrayList<>();
     private List<String> alergias = new ArrayList<>();
+    private List<String> sintomas = new ArrayList<>();
+    
 
     /**
      * @return nome do paciente.
@@ -252,5 +256,56 @@ public class Paciente {
     public void setAlergias(List<String> alergias) {
         this.alergias = alergias;
     }
+
+    /**
+     * 
+     * @return 
+     */
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    /**
+     * 
+     * @param diagnostico 
+     */
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    /**
+     * 
+     * @return 
+     */
+    public String getTratamento() {
+        return tratamento;
+    }
+
+    /**
+     * 
+     * @param tratamento 
+     */
+    public void setTratamento(String tratamento) {
+        this.tratamento = tratamento;
+    }
+
+    
+    /**
+     * 
+     * @return 
+     */
+    public List<String> getSintomas() {
+        return sintomas;
+    }
+
+    /**
+     * 
+     * @param sintomas 
+     */
+    public void setSintomas(List<String> sintomas) {
+        this.sintomas = sintomas;
+    }
+    
+    
 
 }

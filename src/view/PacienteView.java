@@ -180,17 +180,18 @@ public class PacienteView implements View {
         if (alteracao) {
             PacienteController.removeDadosAdicionaisPaciente(paciente);
         }
-        boolean dadosCorretos = true;
+        boolean dadosCorretos;
         do {
+            dadosCorretos = true;
             try {
                 System.out.println("Responda [S]Sim [N]Não");
-                System.out.print("Paciente fuma?: ");
+                System.out.print("Paciente fuma? ");
                 paciente.setFuma(geraBooleano(scan.nextLine()));
-                System.out.print("Paciente bebe?: ");
+                System.out.print("Paciente bebe? ");
                 paciente.setBebe(geraBooleano(scan.nextLine()));
-                System.out.print("Paciente tem colesterol?: ");
+                System.out.print("Paciente tem colesterol? ");
                 paciente.setColesterol(geraBooleano(scan.nextLine()));
-                System.out.print("Paciente tem diabete?: ");
+                System.out.print("Paciente tem diabete? ");
                 paciente.setDiabete(geraBooleano(scan.nextLine()));
 
                 digitarCirurgiasPaciente(paciente);
@@ -199,7 +200,6 @@ public class PacienteView implements View {
             } catch (Exception ex) {
                 System.out.println("Houve um erro nos dados inseridos. "
                         + "Favor reiniciar o preenchimento dos dados do paciente.");
-                ex.printStackTrace();
                 dadosCorretos = false;
             }
         } while (!dadosCorretos);
@@ -240,6 +240,67 @@ public class PacienteView implements View {
         System.out.println("Entre com as Alergias do paciente. Digite 0 para sair");
         while (!(alergia = scan.nextLine()).equals("0")) {
             paciente.getAlergias().add(alergia);
+        }
+    }
+
+    /**
+     * 
+     * @param paciente 
+     */
+    private void digitarSintomasPaciente(Paciente paciente) {
+        Scanner scan = new Scanner(System.in);
+        String sintoma;
+        System.out.println("Entre com os sintomas do paciente. Digite 0 para sair");
+        while (!(sintoma = scan.nextLine()).equals("0")) {
+            paciente.getAlergias().add(sintoma);
+        }
+    }
+
+    /**
+     * 
+     * @param alteracao 
+     */
+    public void prontuarioPaciente(boolean alteracao) {
+        Scanner scan = new Scanner(System.in);
+        Paciente paciente = getPaciente();
+        if (paciente == null) {
+            exibeMensagemPacienteNaoEncontrado();
+            return;
+        }
+        if (alteracao) {
+            PacienteController.removeDadosAdicionaisPaciente(paciente);
+        }
+        boolean dadosCorretos;
+        do {
+            dadosCorretos = true;
+            try {
+                digitarSintomasPaciente(paciente);
+                System.out.print("Insira o diagnostico:");
+                paciente.setDiagnostico(scan.nextLine());
+                System.out.print("Insira o tratamento: ");
+                paciente.setTratamento(scan.nextLine());
+
+            } catch (Exception ex) {
+                System.out.println("Houve um erro nos dados inseridos. "
+                        + "Favor reiniciar o preenchimento dos dados do paciente.");
+                dadosCorretos = false;
+            }
+        } while (!dadosCorretos);
+    }
+    
+    /**
+     * 
+     */
+    public void removerDadosProntuarioPaciente() {
+        Scanner scan = new Scanner(System.in);
+        Paciente paciente = getPaciente();
+        if (paciente == null) {
+            exibeMensagemPacienteNaoEncontrado();
+            return;
+        }
+        System.out.println("Confirma a remoção do prontuário do paciente?");
+        if (geraBooleano(scan.nextLine())) {
+            PacienteController.removeDadosProntuarioPaciente(paciente);
         }
     }
 

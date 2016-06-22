@@ -68,6 +68,12 @@ public class PacienteController {
         paciente.setDiabete(null);
         paciente.setCirurgias(new ArrayList<>());
     }
+    
+    public static void removeDadosProntuarioPaciente(Paciente paciente) {
+        paciente.setDiagnostico(null);
+        paciente.setTratamento(null);
+        paciente.setSintomas(new ArrayList<>());
+    }
 
     /**
      * Construtor padrao.

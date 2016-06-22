@@ -37,7 +37,7 @@ public class TrabalhoPOO1 {
         do {
             opcao = scan.nextInt() - 1;
         } while (opcao < -1 && opcao > 5);
-        if (opcao == 3) {
+        if (opcao == 4) {
             System.exit(0);
         }
 
