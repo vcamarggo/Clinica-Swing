@@ -21,6 +21,10 @@ public class PacienteView implements View {
         //USAR ESTE METODO COMO SIMULADOR DE MENSAGEM
         System.out.println("PacienteView.exibeInterface()");
     }
+    
+    /**
+     * metodo responsavel por fachar  a interface
+     */
 
     @Override
     public void fecharInterface() {
@@ -146,7 +150,7 @@ public class PacienteView implements View {
     }
 
     /**
-     * PREENCHER AQUI!
+     * Interface referente a remoção de dados adicionais do paciente
      */
     void removerDadosAdicionaisPaciente() {
         Scanner scan = new Scanner(System.in);
@@ -162,13 +166,8 @@ public class PacienteView implements View {
     }
 
     /**
-     * PREENCHER AQUI!
-     */
-    void alterarDadosAdicionaisPaciente() {
-    }
-
-    /**
-     * PREENCHER AQUI!
+     * Dados referentes a Inclusão e alteração do paciente
+     * @param alteracao -> se verdadeiro é uma alteração se falso é inclusao
      */
     void dadosAdicionaisPaciente(boolean alteracao) {
         Scanner scan = new Scanner(System.in);
@@ -220,7 +219,7 @@ public class PacienteView implements View {
     }
 
     /**
-     * PREENCHER AQUI!
+     * Metodo responsavel pela digitação da lista de cirurgias do paciente
      */
     private void digitarCirurgiasPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
@@ -232,7 +231,7 @@ public class PacienteView implements View {
     }
 
     /**
-     * PREENCHER AQUI!
+     * metodo responsavel pela digitação das alergias do paciente
      */
     private void digitarAlergiasPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
@@ -244,7 +243,7 @@ public class PacienteView implements View {
     }
 
     /**
-     * 
+     * metodo responsavel pela digitação dos sintomas do paciente
      * @param paciente 
      */
     private void digitarSintomasPaciente(Paciente paciente) {
@@ -257,8 +256,8 @@ public class PacienteView implements View {
     }
 
     /**
-     * 
-     * @param alteracao 
+     * metodo responsavel pela inclusao e alteração do prontuario do paciente
+     * @param alteracao -> se verdadeiro = alteração | se falso = inclusao
      */
     public void prontuarioPaciente(boolean alteracao) {
         Scanner scan = new Scanner(System.in);
@@ -289,7 +288,7 @@ public class PacienteView implements View {
     }
     
     /**
-     * 
+     * metodo responsavel pela remoção dos dados de prontuario do paciente
      */
     public void removerDadosProntuarioPaciente() {
         Scanner scan = new Scanner(System.in);

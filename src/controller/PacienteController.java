@@ -58,7 +58,7 @@ public class PacienteController {
     }
 
     /**
-     * PREENCHER AQUI!
+     * Remove informações relacionadas aos dados adicionais do paciente
      * @param paciente
      */
     public static void removeDadosAdicionaisPaciente(Paciente paciente) {
@@ -69,6 +69,11 @@ public class PacienteController {
         paciente.setCirurgias(new ArrayList<>());
     }
     
+    
+    /**
+     * Remove informações relacionadas ao prontuario do paciente
+     * @param paciente 
+     */
     public static void removeDadosProntuarioPaciente(Paciente paciente) {
         paciente.setDiagnostico(null);
         paciente.setTratamento(null);

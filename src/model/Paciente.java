@@ -33,7 +33,6 @@ public class Paciente {
     private List<String> cirurgias = new ArrayList<>();
     private List<String> alergias = new ArrayList<>();
     private List<String> sintomas = new ArrayList<>();
-    
 
     /**
      * @return nome do paciente.
@@ -226,15 +225,16 @@ public class Paciente {
     }
 
     /**
-     * PREENCHER AQUI!
-     * @return
+     *
+     * @return lista de cirurgias que foram feitas no paciente
      */
     public List<String> getCirurgias() {
         return cirurgias;
     }
 
     /**
-     * PREENCHER AQUI!
+     * seta lista cirurgias que ja foram feitas no paciente
+     *
      * @param cirurgias
      */
     public void setCirurgias(List<String> cirurgias) {
@@ -242,15 +242,16 @@ public class Paciente {
     }
 
     /**
-     * PREENCHER AQUI!
-     * @return
+     *
+     * @return lista de alergia
      */
     public List<String> getAlergias() {
         return alergias;
     }
 
     /**
-     * PREENCHER AQUI!
+     * seta lista de alergias
+     *
      * @param alergias
      */
     public void setAlergias(List<String> alergias) {
@@ -258,54 +259,54 @@ public class Paciente {
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return diagnostico
      */
     public String getDiagnostico() {
         return diagnostico;
     }
 
     /**
-     * 
-     * @param diagnostico 
+     * seta diagnostico
+     *
+     * @param diagnostico
      */
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return tratamento
      */
     public String getTratamento() {
         return tratamento;
     }
 
     /**
-     * 
-     * @param tratamento 
+     * seta tratamento
+     *
+     * @param tratamento
      */
     public void setTratamento(String tratamento) {
         this.tratamento = tratamento;
     }
 
-    
     /**
-     * 
-     * @return 
+     *
+     * @return lista de sintomas
      */
     public List<String> getSintomas() {
         return sintomas;
     }
 
     /**
-     * 
-     * @param sintomas 
+     * seta lista de sintomas
+     *
+     * @param sintomas
      */
     public void setSintomas(List<String> sintomas) {
         this.sintomas = sintomas;
     }
-    
-    
 
 }

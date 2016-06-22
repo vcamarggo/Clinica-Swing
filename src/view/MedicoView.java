@@ -7,6 +7,10 @@ import java.util.Scanner;
  */
 public class MedicoView implements View {
 
+    
+    /**
+     * Interface inicial do Perfil de médico
+     */
     @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
@@ -43,6 +47,9 @@ public class MedicoView implements View {
 
     }
 
+    /**
+     * Fecha a interface do médico
+     */
     @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
@@ -53,12 +60,11 @@ public class MedicoView implements View {
      */
     public MedicoView() {
     }
-    
-    
+
     /**
-     * 
+     *  Exibe subinterface relacionada aos dados adicionais do paciente
      */
-    public void exibeInterfaceDadosAdicionais(){
+    public void exibeInterfaceDadosAdicionais() {
         Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
         int opcao;
@@ -75,7 +81,7 @@ public class MedicoView implements View {
             case 1:
                 pacienteView.dadosAdicionaisPaciente(false);
                 break;
-            case 2: 
+            case 2:
                 pacienteView.dadosAdicionaisPaciente(true);
                 break;
             case 3:
@@ -93,11 +99,11 @@ public class MedicoView implements View {
                 break;
         }
     }
-    
+
     /**
-     * 
+     *  Exibe subinterface relacionada ao prontuario do paciente
      */
-    public void exibeInterfaceProntuario(){
+    public void exibeInterfaceProntuario() {
         Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
         int opcao;
@@ -114,7 +120,7 @@ public class MedicoView implements View {
             case 1:
                 pacienteView.prontuarioPaciente(false);
                 break;
-            case 2: 
+            case 2:
                 pacienteView.prontuarioPaciente(true);
                 break;
             case 3:
@@ -130,15 +136,15 @@ public class MedicoView implements View {
                 System.err.println("Opção inválida! \n");
                 exibeSubInterfacePaciente();
                 break;
-        }    
+        }
     }
 
     /**
-     * Exibe a subinterface referente ao paciente com as ações que o médico
-     * pode executar.
+     * Exibe a subinterface referente ao paciente com as ações que o médico pode
+     * executar.
      */
     public void exibeSubInterfacePaciente() {
-       Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         PacienteView pacienteView = new PacienteView();
         int opcao;
 
@@ -146,14 +152,14 @@ public class MedicoView implements View {
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Dados Adicionais");
         System.out.println("2 - Prontuário");
-        System.out.println("3 - Gerar Relatório" );
+        System.out.println("3 - Gerar Relatório");
         System.out.println("3 - Volta à seleção de usuários");
 
         switch (opcao = scan.nextInt()) {
             case 1:
                 exibeInterfaceDadosAdicionais();
                 break;
-            case 2: 
+            case 2:
                 exibeInterfaceProntuario();
                 break;
             case 3:
@@ -166,7 +172,7 @@ public class MedicoView implements View {
                 System.err.println("Opção inválida! \n");
                 exibeSubInterfacePaciente();
                 break;
-        }  
+        }
 
     }
 }
