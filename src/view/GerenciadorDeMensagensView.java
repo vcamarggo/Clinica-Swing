@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import controller.GerenciadorMensagemController;
-import controller.PacienteController;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,21 +31,16 @@ public class GerenciadorDeMensagensView implements View {
         System.out.println("\n-----------------------------------");
         System.out.println("| Perfil Gerenciador de Mensagens |");
         System.out.println("-----------------------------------");
+        System.out.println("O Gerenciador de Mensagens irá enviar mensagem para os pacientes que tem consulta amanhã.");
         System.out.println("Favor, entre com a data de hoje (dd/mm/aaaa): ");
         dataHoje = scan.nextLine();
         
-        System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
-
-        /**
-         * Transformo a string que contêm a data de usamoshoje em um tipo Date. 
-         * Como pode ocorrer erro na transformação, usamos o try catch
-         */
+        /*
+        Transformo a string recebida no formato certo da data e adiciono um dia.
+        Tratamento de erro em caso de erro na formatação
+        */
         DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-        Calendar dataAmanha = Calendar.getInstance();
-        
-        /**
-         * Transformo a string recebida no formato certo da data e adiciono um dia.
-         */
+        Calendar dataAmanha = Calendar.getInstance();       
         try {
             dataAmanha.setTime(formatter.parse(dataHoje));
             dataAmanha.add(Calendar.DAY_OF_MONTH,1);
@@ -59,10 +48,12 @@ public class GerenciadorDeMensagensView implements View {
             Logger.getLogger(GerenciadorDeMensagensView.class.getName()).log(Level.SEVERE, null, ex);
         }    
 
-        /**
-         * Envia SMS ou email. Se o paciente tiver tanto SMS quanto EMAIL, envia apenas SMS
-         */
-        System.out.println("\nEnviando SMS/Email para os pacientes que tem consulta amanhã. . . .");
+        
+        /*
+        Verifica todas as consultas da data de amanhã.
+        Envia SMS ou email. Se o paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
+        */
+        System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
         for (Consulta consulta : GerenciadorMensagemController.consultasDoDiaSeguinte(dataAmanha)) {
             if (GerenciadorMensagemController.pacientePossuiCelular(consulta)) {
                 MensagemSMS sms = new MensagemSMS();
@@ -76,7 +67,7 @@ public class GerenciadorDeMensagensView implements View {
                 System.out.println("Há uma consulta do paciente " + consulta.getPaciente() +" mas este não possui celular/email");
             }
         }
-        System.out.println("Tecle para sair");
+        System.out.println("\nTecle para sair");
         scan.nextLine();
         fecharInterface();
 

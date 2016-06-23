@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.text.DateFormat;
@@ -17,7 +12,7 @@ public abstract class Mensagem {
     private static final String NUMERO_CONSULTORIO =  "(44) 3034-0608";
     private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
     private static final String EMAIL_CONSULTORIO = "saudeecia@gmail.com";
-    private static final DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+    private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
     
     public String getNumeroConsultorio(){
         return NUMERO_CONSULTORIO;
@@ -32,8 +27,12 @@ public abstract class Mensagem {
     }
     
     public DateFormat getDateFormat(){
-        return formatter;
+        return FORMATTER;
     }
     
+    /**
+     * Método abstrato para a exibição de mensagens.
+     * @param consulta 
+     */
     public abstract void ExibirMensagem(Consulta consulta);
 }

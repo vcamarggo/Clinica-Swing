@@ -7,8 +7,12 @@ package view;
 
 import controller.RelatorioConsultasController;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Consulta;
 
 /**
@@ -25,15 +29,29 @@ public class RelatorioConsultasView implements View {
     @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
+        String dataDesejada;
 
         System.out.println("\n***Perfil Secretária***");
         System.out.println("Criacao de Relatórios de Consultas");
         System.out.println("Insira a data desejada");
-        
+        dataDesejada = scan.nextLine();
         
         System.out.println("Selecione o Filtro:");
         System.out.println("1. Email");
         System.out.println("2. Celular");
+        System.out.println("3. Retornar");
+        
+        /*
+        Transformo a string recebida no formato certo da data e adiciono um dia.
+        Tratamento de erro em caso de erro na formatação
+        */
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+        Calendar dataAmanha = Calendar.getInstance();
+        try {
+            dataAmanha.setTime(formatter.parse(dataDesejada));
+        } catch (ParseException ex) {
+            Logger.getLogger(GerenciadorDeMensagensView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         switch (scan.nextInt()) {
             case 1:
@@ -53,7 +71,7 @@ public class RelatorioConsultasView implements View {
 
     @Override
     public void fecharInterface() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TrabalhoPOO1.iniciaSistema();
     }
 
     /**

@@ -30,7 +30,7 @@ public class MedicoView implements View {
                     exibeSubInterfacePaciente();
                     break;
                 case 2:
-                    RelatorioPacienteView relatorioView = new RelatorioPacienteView();
+                    RelatoriosMedicosView relatorioView = new RelatoriosMedicosView();
                     relatorioView.exibeInterface();
                     break;
                 case 3:

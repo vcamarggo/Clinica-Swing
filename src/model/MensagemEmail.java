@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import controller.PacienteController;
@@ -13,6 +8,10 @@ import controller.PacienteController;
  */
 public class MensagemEmail extends Mensagem {
 
+    /**
+     * Método que imprime a mensagem referente ao email 
+     * @param consulta 
+     */
     @Override
     public void ExibirMensagem(Consulta consulta) {
         System.out.println("\n***EMAIL***");

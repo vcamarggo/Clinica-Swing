@@ -8,12 +8,12 @@ package view;
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class RelatorioPacienteView implements View {
+public class RelatoriosMedicosView implements View {
 
     /**
      * Construtor padrao.
      */
-    public RelatorioPacienteView() {
+    public RelatoriosMedicosView() {
     }
 
     @Override
