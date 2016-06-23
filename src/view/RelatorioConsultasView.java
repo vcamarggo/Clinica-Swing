@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import controller.RelatorioConsultasController;
@@ -19,7 +14,11 @@ import model.Consulta;
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class RelatorioConsultasView implements View {
-
+    
+    private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
+    private static Calendar dataFormatada = Calendar.getInstance();
+    private static String dataDesejada;
+    
     /**
      * Construtor padrao.
      */
@@ -29,7 +28,6 @@ public class RelatorioConsultasView implements View {
     @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
-        String dataDesejada;
 
         System.out.println("\n***Perfil Secretária***");
         System.out.println("Criacao de Relatórios de Consultas");
@@ -41,17 +39,7 @@ public class RelatorioConsultasView implements View {
         System.out.println("2. Celular");
         System.out.println("3. Retornar");
         
-        /*
-        Transformo a string recebida no formato certo da data e adiciono um dia.
-        Tratamento de erro em caso de erro na formatação
-        */
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-        Calendar dataAmanha = Calendar.getInstance();
-        try {
-            dataAmanha.setTime(formatter.parse(dataDesejada));
-        } catch (ParseException ex) {
-            Logger.getLogger(GerenciadorDeMensagensView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        formatarData();
 
         switch (scan.nextInt()) {
             case 1:
@@ -74,6 +62,18 @@ public class RelatorioConsultasView implements View {
         TrabalhoPOO1.iniciaSistema();
     }
 
+    /**
+     * Transformo a string recebida no formato certo da data
+     * Tratamento de erro em caso de erro na formatação
+     */
+    public void formatarData(){
+        try {
+            dataFormatada.setTime(FORMATTER.parse(dataDesejada));
+        } catch (ParseException ex) {
+            Logger.getLogger(RelatorioConsultasView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * Gera o relatorio de email a partir da lista criada no RelatorioConsultasController referente aos emails
      */

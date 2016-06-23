@@ -22,7 +22,7 @@ public class GerenciadorMensagemController {
     /**
      * Método que recebe como parâmetro a data de amanhã e verifica todas as
      * consultas cadastradas. Insere na lista consultasDoDiaSeguinte apenas os
-     * pacientes que possuem que tem consulta no dia seguinte.
+     * pacientes que tem consulta no dia seguinte.
      *
      * @param dataAmanha
      * @return
@@ -47,12 +47,11 @@ public class GerenciadorMensagemController {
      * @return 
      */
     public static boolean pacientePossuiCelular(Consulta consulta) {
-
         if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
             return true;
-        }
+        }else{
         return false;
-        
+        }
 
     }
     
