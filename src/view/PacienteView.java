@@ -14,7 +14,6 @@ import model.Paciente;
  */
 public class PacienteView implements View {
 
-    //static Scanner scan = new Scanner(System.in);
     static final String PACIENTE_NAO_ENCONTRADO = "Paciente não encontrado.";
 
     @Override
@@ -142,14 +141,6 @@ public class PacienteView implements View {
      * Construtor padrao.
      */
     public PacienteView() {
-    }
-
-    /**
-     * PREENCHER AQUI!
-     */
-    void gerarRelatorioMedicoPaciente() {
-        //IMPLEMENTAR RELATÒRIO MÉDICO -> PACIENTE AQUI
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
