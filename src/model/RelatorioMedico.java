@@ -1,20 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
  *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo 
  */
-public abstract class RelatorioMedico{
+
+/** Classe abstrata para criação de relatórios médicos. 
+ * Os relatórios de consultas não possui tipos (atestado,
+ * receita, etc), por isso nao foi criada uma classe modelo só para ela.
+ */
+public abstract class RelatorioMedico {
+
     private String nomePaciente;
     private String dataConsulta;
     private String assinaturaMedico;
-    
-    public abstract void preencheDados();    
+
+    public abstract void preencheDados();
+
     public abstract void exibeRelatorio();
 
     public String getNomePaciente() {

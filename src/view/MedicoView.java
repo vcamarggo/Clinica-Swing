@@ -153,7 +153,7 @@ public class MedicoView implements View {
         System.out.println("1 - Dados Adicionais");
         System.out.println("2 - Prontuário");
         System.out.println("3 - Gerar Relatório");
-        System.out.println("3 - Volta à seleção de usuários");
+        System.out.println("4 - Volta à seleção de usuários");
 
         switch (opcao = scan.nextInt()) {
             case 1:

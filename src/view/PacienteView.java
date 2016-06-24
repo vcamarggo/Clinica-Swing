@@ -19,7 +19,6 @@ public class PacienteView implements View {
     @Override
     public void exibeInterface() {
         //USAR ESTE METODO COMO SIMULADOR DE MENSAGEM
-        System.out.println("PacienteView.exibeInterface()");
     }
     
     /**

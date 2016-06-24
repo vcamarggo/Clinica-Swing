@@ -29,7 +29,7 @@ public class RelatorioConsultasView implements View {
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\n***Perfil Secretária***");
+        System.out.println("\nPerfil Secretária");
         System.out.println("Criacao de Relatórios de Consultas");
         System.out.println("Insira a data desejada");
         dataDesejada = scan.nextLine();
@@ -78,8 +78,8 @@ public class RelatorioConsultasView implements View {
      * Gera o relatorio de email a partir da lista criada no RelatorioConsultasController referente aos emails
      */
     private void gerarRelatorioEmail() {   
-        System.out.println("\nPacientes que possuem Email cadastrado no sistema:");
-        for (Consulta consulta : RelatorioConsultasController.pacientesComEmail()) {
+        System.out.println("\nPacientes que tem consulta nesta data e possuem Email cadastrado no sistema:");
+        for (Consulta consulta : RelatorioConsultasController.pacientesComEmail(dataFormatada)) {
             System.out.println("\n");
             System.out.println("Cod. da consulta: " + consulta.getCodigo());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
@@ -87,7 +87,7 @@ public class RelatorioConsultasView implements View {
             System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
             System.out.println("Hora: " + consulta.getHora());
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
-            System.out.println("Doutor: " + consulta.getMedico());
+            System.out.println("Doutor: " + consulta.getMedico() + "\n");
         }
     }
 
@@ -95,7 +95,8 @@ public class RelatorioConsultasView implements View {
      * Gera o relatorio de celular a partir da lista criada no RelatorioConsultasController referente aos pacientes que tem celular celular
      */
     private void gerarRelatorioCelular() {
-        for (Consulta consulta : RelatorioConsultasController.pacientesComCelular()) {
+        System.out.println("\nPacientes que tem consulta nesta data e possuem Celular cadastrado no sistema:");
+        for (Consulta consulta : RelatorioConsultasController.pacientesComCelular(dataFormatada)) {
             System.out.println("\n");
             System.out.println("Cod.: " + consulta.getCodigo());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
@@ -103,7 +104,7 @@ public class RelatorioConsultasView implements View {
             System.out.println("Hora: " + consulta.getHora());
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
-            System.out.println("Doutor: " + consulta.getMedico());
+            System.out.println("Doutor: " + consulta.getMedico() + "\n");
         }
 
     }

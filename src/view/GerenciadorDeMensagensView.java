@@ -5,7 +5,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -66,7 +65,7 @@ public class GerenciadorDeMensagensView implements View {
      * Envia SMS ou email. Se o paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
      */
     public void verificaSeHaConsultasParaAmanha() {
-        //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. é instnciada em tempo de execução
+        //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. é instanciada em tempo de execução
         Mensagem mensagem;
         
         System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");

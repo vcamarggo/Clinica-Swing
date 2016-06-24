@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 /**
  *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class Atestado extends RelatorioMedico{   
+public class AtestadoMedico extends RelatorioMedico {
+
     private String rg;
     private String horarioConsulta;
     private String diasDescanso;
-    
+
+    /**
+     * Método que recebe os dados para criacao do atestado médico
+     */
     @Override
-    public void preencheDados(){
+    public void preencheDados() {
         Scanner scan = new Scanner(System.in);
-        
+
         System.out.println("Nome do paciente: ");
         this.setNomePaciente(scan.nextLine());
         System.out.println("RG do paciente: ");
@@ -28,11 +32,21 @@ public class Atestado extends RelatorioMedico{
         System.out.println("Assinatura do medico: ");
         this.setAssinaturaMedico(scan.nextLine());
         System.out.println("Atestado gerado com sucesso!\n");
-    }   
+    }
     
+    /**
+     * Método que exibe o atestado com os dados fornecidos pelo médico
+     */
     @Override
-    public void exibeRelatorio(){
-        
+    public void exibeRelatorio() {
+        System.out.println("----------------------------------------------------");
+        System.out.println("*****Atestado Médico*****\n");
+        System.out.println("Atesto, para os devidos fins, a pedido do interessado, que o paciente " + this.getNomePaciente()
+                + "," + "\nportador do RG " + getRg() + ", foi submetido à consulta médica nesta data, no horário das " + getHorarioConsulta() + " horas.");
+        System.out.println("Em decorrência, deverá permanecer afastado de suas atividades por um perídio de " + getDiasDescanso() + " dias.");
+        System.out.println("\n\nData: " + this.getDataConsulta());
+        System.out.println("\n\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
+        System.out.println("----------------------------------------------------");
     }
 
     public String getRg() {
@@ -58,6 +72,5 @@ public class Atestado extends RelatorioMedico{
     public void setDiasDescanso(String diasDescanso) {
         this.diasDescanso = diasDescanso;
     }
-    
-    
+
 }

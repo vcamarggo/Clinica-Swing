@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public abstract class Mensagem {
     
@@ -14,18 +14,34 @@ public abstract class Mensagem {
     private static final String EMAIL_CONSULTORIO = "saudeecia@gmail.com";
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
     
+    /**
+     *
+     * @return telefone do consultório
+     */
     public String getNumeroConsultorio(){
         return NUMERO_CONSULTORIO;
     }
     
+    /**
+     *
+     * @return celular do consultório
+     */
     public String getCelularConsultorio(){
         return CELULAR_CONSULTORIO;
     }
     
+    /**
+     *
+     * @return email do consultório
+     */
     public String getEmailConsultorio(){
         return EMAIL_CONSULTORIO;
     }
     
+    /**
+     *
+     * @return formato padrão das datas
+     */
     public DateFormat getDateFormat(){
         return FORMATTER;
     }

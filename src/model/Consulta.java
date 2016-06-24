@@ -16,16 +16,15 @@ public class Consulta {
     private TipoConsulta tipoConsulta;
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return data da consulta
      */
     public Date getDataConsulta() {
         return dataConsulta;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui uma data à consulta
      *
      * @param dataConsulta
      */
@@ -34,16 +33,15 @@ public class Consulta {
     }
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return hora da consulta
      */
     public String getHora() {
         return hora;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui hora à consulta
      *
      * @param hora
      */
@@ -52,16 +50,15 @@ public class Consulta {
     }
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return medico responsável
      */
     public String getMedico() {
         return medico;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui o médico responsável pela consulta
      *
      * @param medico
      */
@@ -70,16 +67,15 @@ public class Consulta {
     }
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return paciente relacionado à consulta
      */
     public String getPaciente() {
         return paciente;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui um paciente à consulta
      *
      * @param paciente
      */
@@ -88,16 +84,15 @@ public class Consulta {
     }
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return tipo de consulta
      */
     public TipoConsulta getTipoConsulta() {
         return tipoConsulta;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui um tipo de consulta
      *
      * @param tipoConsulta
      */
@@ -106,16 +101,15 @@ public class Consulta {
     }
 
     /**
-     * PREENCHER AQUI!
      *
-     * @return
+     * @return código da consulta
      */
     public int getCodigo() {
         return codigo;
     }
 
     /**
-     * PREENCHER AQUI!
+     * atribui um código à consulta
      *
      * @param codigo
      */

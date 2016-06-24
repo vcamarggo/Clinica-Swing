@@ -19,38 +19,7 @@ public class ConsultaView implements View {
 
     @Override
     public void exibeInterface() {
-       /* Scanner scan = new Scanner(System.in);
-
-        System.out.println("\nPerfil Secretária.");
-        System.out.println("Selecione uma ação: ");
-        System.out.println("1 - Inserir Consulta");
-        System.out.println("2 - Alterar Consulta");
-        System.out.println("3 - Remover Consulta");
-        System.out.println("4 - Gerar Relatório de Consulta");
-        System.out.println("5 - Voltar à seleção de usuários");
-        System.out.println("6 - Sair");
-
-        switch (scan.nextInt()) {
-            case 1:
-                inserirConsulta();
-                break;
-            case 2:
-                alterarConsulta();
-                break;
-            case 3:
-                removerConsulta();
-                break;
-            case 4:
-                gerarRelatorioConsulta();
-                break;
-            case 5:
-                fecharInterface();
-                break;
-            default:
-                System.exit(0);
-                break;
-
-        }*/
+       
     }
 
     @Override

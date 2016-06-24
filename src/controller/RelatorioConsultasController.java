@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import model.Consulta;
 
@@ -22,31 +18,36 @@ public class RelatorioConsultasController {
     }
 
     /**
-     * Adiciona na lista os pacientes que possuem email cadastrado no sistema
+     * Adiciona na lista os pacientes que possuem email cadastrado no sistema e que tem consulta na data solicitada
      *
+     * @param dataDesejada
      * @return
      */
-    public static List<Consulta> pacientesComEmail() {
+    public static List<Consulta> pacientesComEmail(Calendar dataDesejada) {
         consultasDesejadas = new ArrayList<>();
         for (Consulta consulta : ConsultaController.getConsultas()) {
-            if (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
-                consultasDesejadas.add(consulta);            
+            if(consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0){
+                if (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
+                    consultasDesejadas.add(consulta);            
+                }
             }
         }
         return consultasDesejadas;
     }
 
     /**
-     * Adiciona na lista os pacientes que possuem celular cadastrado no sistema
+     * Adiciona na lista os pacientes que possuem celular cadastrado no sistema e que tem consulta na data solicitda
      *
+     * @param dataDesejada
      * @return
      */
-    public static List<Consulta> pacientesComCelular() {
+    public static List<Consulta> pacientesComCelular(Calendar dataDesejada) {
         consultasDesejadas = new ArrayList<>();
         for (Consulta consulta : ConsultaController.getConsultas()) {
-            if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
-                //if(consulta.getDataConsulta())
-                consultasDesejadas.add(consulta);
+            if(consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0){
+                if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
+                    consultasDesejadas.add(consulta);
+                }
             }
         }
         return consultasDesejadas;

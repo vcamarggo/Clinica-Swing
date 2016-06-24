@@ -4,7 +4,7 @@ import controller.PacienteController;
 
 /**
  *
- * @author MayzaHirose
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class MensagemSMS extends Mensagem {
 
