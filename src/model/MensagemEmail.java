@@ -14,7 +14,7 @@ public class MensagemEmail extends Mensagem {
      * @param consulta
      */
     @Override
-    public void ExibirMensagem(Consulta consulta) {
+    public void exibirMensagem(Consulta consulta) {
         System.out.println(" -------------------------");
         System.out.println("|***EMAIL***");
         System.out.println("|De: " + this.getEmailConsultorio());

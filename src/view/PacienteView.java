@@ -4,6 +4,7 @@ import controller.PacienteController;
 import enumeration.TipoConvenio;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import model.Paciente;
@@ -18,13 +19,13 @@ public class PacienteView implements View {
 
     @Override
     public void exibeInterface() {
-        //USAR ESTE METODO COMO SIMULADOR DE MENSAGEM
+        DateFormat formatter = new SimpleDateFormat("HH:mm");
+        System.out.println("Operação realizada às: " + formatter.format(Calendar.getInstance().getTime()));
     }
-    
-    /**
-     * metodo responsavel por fachar  a interface
-     */
 
+    /**
+     * metodo responsavel por fachar a interface
+     */
     @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
@@ -50,6 +51,7 @@ public class PacienteView implements View {
         } else {
             System.out.println("Paciente inserido com sucesso.");
         }
+        exibeInterface();
     }
 
     /**
@@ -162,10 +164,12 @@ public class PacienteView implements View {
         if (geraBooleano(scan.nextLine())) {
             PacienteController.removeDadosAdicionaisPaciente(paciente);
         }
+        exibeInterface();
     }
 
     /**
      * Dados referentes a Inclusão e alteração do paciente
+     *
      * @param alteracao -> se verdadeiro é uma alteração se falso é inclusao
      */
     void dadosAdicionaisPaciente(boolean alteracao) {
@@ -243,7 +247,8 @@ public class PacienteView implements View {
 
     /**
      * metodo responsavel pela digitação dos sintomas do paciente
-     * @param paciente 
+     *
+     * @param paciente
      */
     private void digitarSintomasPaciente(Paciente paciente) {
         Scanner scan = new Scanner(System.in);
@@ -256,6 +261,7 @@ public class PacienteView implements View {
 
     /**
      * metodo responsavel pela inclusao e alteração do prontuario do paciente
+     *
      * @param alteracao -> se verdadeiro = alteração | se falso = inclusao
      */
     public void prontuarioPaciente(boolean alteracao) {
@@ -285,7 +291,7 @@ public class PacienteView implements View {
             }
         } while (!dadosCorretos);
     }
-    
+
     /**
      * metodo responsavel pela remoção dos dados de prontuario do paciente
      */
@@ -300,6 +306,7 @@ public class PacienteView implements View {
         if (geraBooleano(scan.nextLine())) {
             PacienteController.removeDadosProntuarioPaciente(paciente);
         }
+        exibeInterface();
     }
 
 }

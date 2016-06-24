@@ -14,7 +14,7 @@ public class MensagemSMS extends Mensagem {
      * @param consulta
      */
     @Override
-    public void ExibirMensagem(Consulta consulta) {
+    public void exibirMensagem(Consulta consulta) {
         System.out.println(" -------------------------");
         System.out.println("|***SMS***");
         System.out.println("|De: " + this.getCelularConsultorio());

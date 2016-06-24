@@ -4,6 +4,7 @@ import controller.ConsultaController;
 import enumeration.TipoConsulta;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import model.Consulta;
@@ -19,7 +20,8 @@ public class ConsultaView implements View {
 
     @Override
     public void exibeInterface() {
-       
+        DateFormat formatter = new SimpleDateFormat("HH:mm");
+        System.out.println("Operação realizada às: " + formatter.format(Calendar.getInstance().getTime()));
     }
 
     @Override

@@ -50,5 +50,5 @@ public abstract class Mensagem {
      * Método abstrato para a exibição de mensagens.
      * @param consulta 
      */
-    public abstract void ExibirMensagem(Consulta consulta);
+    public abstract void exibirMensagem(Consulta consulta);
 }

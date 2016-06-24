@@ -20,7 +20,8 @@ public class GerenciadorDeMensagensView implements View {
 
     private static String dataHoje;
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
-    private static Calendar dataAmanha = Calendar.getInstance(); 
+    private static Calendar dataAmanha = Calendar.getInstance();
+
     /**
      * Construtor padrao.
      */
@@ -30,7 +31,7 @@ public class GerenciadorDeMensagensView implements View {
     @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
-        
+
         System.out.println("\n-----------------------------------");
         System.out.println("| Perfil Gerenciador de Mensagens |");
         System.out.println("-----------------------------------");
@@ -40,7 +41,7 @@ public class GerenciadorDeMensagensView implements View {
 
         transformaDataHojeParaDataAmanha();
         verificaSeHaConsultasParaAmanha();
-      
+
         System.out.println("\nTecle para voltar");
         scan.nextLine();
         fecharInterface();
@@ -49,7 +50,7 @@ public class GerenciadorDeMensagensView implements View {
 
     /**
      * Transformo a string recebida no formato certo da data e adiciono um dia.
-     * Tratamento de erro em caso de erro na formatação 
+     * Tratamento de erro em caso de erro na formatação
      */
     public void transformaDataHojeParaDataAmanha() {
         try {
@@ -61,32 +62,32 @@ public class GerenciadorDeMensagensView implements View {
     }
 
     /**
-     * Verifica todas as consultas da data de amanhã.
-     * Envia SMS ou email. Se o paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
+     * Verifica todas as consultas da data de amanhã. Envia SMS ou email. Se o
+     * paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
      */
     public void verificaSeHaConsultasParaAmanha() {
         //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. é instanciada em tempo de execução
-        Mensagem mensagem;
-        
+        Mensagem mensagem = null;
+
         System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
-        
+
         //percorre a lista de consultas da data de amanhã
         for (Consulta consulta : GerenciadorMensagemController.consultasDoDiaSeguinte(dataAmanha)) {
             if (GerenciadorMensagemController.pacientePossuiCelular(consulta)) {
                 mensagem = new MensagemSMS();
-                mensagem.ExibirMensagem(consulta);
             } else if (GerenciadorMensagemController.pacientePossuiEmail(consulta)) {
                 mensagem = new MensagemEmail();
-                mensagem.ExibirMensagem(consulta);
             } else {
                 System.out.println("Há uma consulta do paciente " + consulta.getPaciente() + " mas este não possui celular/email");
+                return;
             }
+            mensagem.exibirMensagem(consulta);
         }
     }
-    
+
     @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }
-    
+
 }
