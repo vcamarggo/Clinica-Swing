@@ -8,17 +8,17 @@ import model.Consulta;
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class RelatorioConsultasController {
+public class RelatoriosController {
     private static List<Consulta> consultasDesejadas;
 
     /**
      * Construtor padrao.
      */
-    public RelatorioConsultasController() {
+    public RelatoriosController() {
     }
 
     /**
-     * Adiciona na lista os pacientes que possuem email cadastrado no sistema e que tem consulta na data solicitada
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e possuem email cadastrado no sistema.
      *
      * @param dataDesejada
      * @return
@@ -36,7 +36,7 @@ public class RelatorioConsultasController {
     }
 
     /**
-     * Adiciona na lista os pacientes que possuem celular cadastrado no sistema e que tem consulta na data solicitda
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e possuem celular cadastrado no sistema.
      *
      * @param dataDesejada
      * @return
@@ -52,4 +52,5 @@ public class RelatorioConsultasController {
         }
         return consultasDesejadas;
     }
+    
 }

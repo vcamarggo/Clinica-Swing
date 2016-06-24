@@ -19,18 +19,18 @@ public class RelatoriosMedicosView implements View {
 
     @Override
     public void exibeInterface(){ 
+        Scanner scan = new Scanner(System.in);
         
+        //Objeto abstrato que receberá uma instancia de seu tipo em tempo de execução.
         RelatorioMedico relatorioMedico;
     
-        Scanner scan = new Scanner(System.in);
-
         System.out.println("\nPerfil Médico para relatórios");
         System.out.println("Criacao de Relatórios Médicos");
         System.out.println("Selecione o relatório desejado:");
         System.out.println("1. Receita médica");
         System.out.println("2. Atestado");
         System.out.println("3. Declaração de Acompanhamento");
-        System.out.println("4. Retornar");
+        System.out.println("4. Retornar à seleção de usuários");
         
         switch (scan.nextInt()) {
             case 1:
@@ -52,7 +52,8 @@ public class RelatoriosMedicosView implements View {
                 fecharInterface();
                 break;
             default:
-                System.exit(0);
+                System.err.println("Opção inválida! \n");
+                exibeInterface();
                 break;
         }
     }
@@ -61,9 +62,5 @@ public class RelatoriosMedicosView implements View {
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }
-
-    
-    
-    
-    
+ 
 }

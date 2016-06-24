@@ -68,6 +68,7 @@ public class ConsultaView implements View {
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
         } else {
+            System.out.println(" -------------------------");
             System.out.println("Cod.: " + consulta.getCodigo());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
             System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
@@ -75,6 +76,7 @@ public class ConsultaView implements View {
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
             System.out.println("Doutor: " + consulta.getMedico());
+            System.out.println(" -------------------------\n");
 
         }
         exibeInterface();

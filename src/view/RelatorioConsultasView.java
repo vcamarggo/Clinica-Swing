@@ -1,6 +1,6 @@
 package view;
 
-import controller.RelatorioConsultasController;
+import controller.RelatoriosController;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,7 +16,7 @@ import model.Consulta;
 public class RelatorioConsultasView implements View {
     
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
-    private static Calendar dataFormatada = Calendar.getInstance();
+    private static Calendar dataDesejadaFormatada = Calendar.getInstance();
     private static String dataDesejada;
     
     /**
@@ -29,15 +29,15 @@ public class RelatorioConsultasView implements View {
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\nPerfil Secretária");
+        System.out.println("\nPerfil Secretária para relatórios");
         System.out.println("Criacao de Relatórios de Consultas");
         System.out.println("Insira a data desejada");
         dataDesejada = scan.nextLine();
         
         System.out.println("Selecione o Filtro:");
-        System.out.println("1. Email");
-        System.out.println("2. Celular");
-        System.out.println("3. Retornar");
+        System.out.println("1. Pacientes que possuem Email");
+        System.out.println("2. Pacientes que possuem Celular");
+        System.out.println("3. Retornar à seleção de usuários");
         
         formatarData();
 
@@ -52,60 +52,61 @@ public class RelatorioConsultasView implements View {
                 fecharInterface();
                 break;
             default:
-                System.exit(0);
+                System.err.println("Opção inválida! \n");
+                exibeInterface();
                 break;
         }
     }
 
-    @Override
-    public void fecharInterface() {
-        TrabalhoPOO1.iniciaSistema();
-    }
-
     /**
-     * Transformo a string recebida no formato certo da data
-     * Tratamento de erro em caso de erro na formatação
+     * Transformo a string recebida na formatação certa.
+     * Tratamento de erro em caso de erro na formatação.
      */
     public void formatarData(){
         try {
-            dataFormatada.setTime(FORMATTER.parse(dataDesejada));
+            dataDesejadaFormatada.setTime(FORMATTER.parse(dataDesejada));
         } catch (ParseException ex) {
             Logger.getLogger(RelatorioConsultasView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     /**
-     * Gera o relatorio de email a partir da lista criada no RelatorioConsultasController referente aos emails
+     * Gera o relatorio de pacientes que possuem email e cunsulta no dia a partir da lista criada no RelatoriosController.
      */
     private void gerarRelatorioEmail() {   
-        System.out.println("\nPacientes que tem consulta nesta data e possuem Email cadastrado no sistema:");
-        for (Consulta consulta : RelatorioConsultasController.pacientesComEmail(dataFormatada)) {
-            System.out.println("\n");
+        System.out.println("\nPacientes que tem consulta nesta data e possuem Email cadastrado no sistema:\n");
+        for (Consulta consulta : RelatoriosController.pacientesComEmail(dataDesejadaFormatada)) {
+            System.out.println("------------------------------------------------------------");
             System.out.println("Cod. da consulta: " + consulta.getCodigo());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-            System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
+            System.out.println("Data: " + FORMATTER.format(consulta.getDataConsulta()));
             System.out.println("Hora: " + consulta.getHora());
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
-            System.out.println("Doutor: " + consulta.getMedico() + "\n");
+            System.out.println("Doutor: " + consulta.getMedico());
+            System.out.println("------------------------------------------------------------\n");
         }
     }
 
     /**
-     * Gera o relatorio de celular a partir da lista criada no RelatorioConsultasController referente aos pacientes que tem celular celular
+     * Gera o relatorio de pacientes que possuem celular e consulta no dia a partir da lista criada no RelatoriosController.
      */
     private void gerarRelatorioCelular() {
-        System.out.println("\nPacientes que tem consulta nesta data e possuem Celular cadastrado no sistema:");
-        for (Consulta consulta : RelatorioConsultasController.pacientesComCelular(dataFormatada)) {
-            System.out.println("\n");
+        System.out.println("\nPacientes que tem consulta nesta data e possuem Celular cadastrado no sistema:\n");
+        for (Consulta consulta : RelatoriosController.pacientesComCelular(dataDesejadaFormatada)) {
+            System.out.println("------------------------------------------------------------");
             System.out.println("Cod.: " + consulta.getCodigo());
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
-            System.out.println("Data: " + formatter.format(consulta.getDataConsulta()));
+            System.out.println("Data: " + FORMATTER.format(consulta.getDataConsulta()));
             System.out.println("Hora: " + consulta.getHora());
             System.out.println("Tipo: " + consulta.getTipoConsulta().getDuracao());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
-            System.out.println("Doutor: " + consulta.getMedico() + "\n");
+            System.out.println("Doutor: " + consulta.getMedico());
+            System.out.println("------------------------------------------------------------\n");
         }
 
+    }
+    
+    @Override
+    public void fecharInterface() {
+        TrabalhoPOO1.iniciaSistema();
     }
 }

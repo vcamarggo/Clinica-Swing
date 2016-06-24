@@ -18,8 +18,8 @@ import model.MensagemSMS;
  */
 public class GerenciadorDeMensagensView implements View {
 
-    private static String dataHoje;
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
+    private static String dataHoje;
     private static Calendar dataAmanha = Calendar.getInstance();
 
     /**
@@ -36,7 +36,7 @@ public class GerenciadorDeMensagensView implements View {
         System.out.println("| Perfil Gerenciador de Mensagens |");
         System.out.println("-----------------------------------");
         System.out.println("O Gerenciador de Mensagens irá enviar mensagem para os pacientes que tem consulta amanhã.");
-        System.out.println("Favor, entre com a data de hoje (dd/mm/aaaa): ");
+        System.out.println("Favor, entre com a data de HOJE (dd/mm/aaaa): ");
         dataHoje = scan.nextLine();
 
         transformaDataHojeParaDataAmanha();
@@ -49,8 +49,8 @@ public class GerenciadorDeMensagensView implements View {
     }
 
     /**
-     * Transformo a string recebida no formato certo da data e adiciono um dia.
-     * Tratamento de erro em caso de erro na formatação
+     * Transformo a string dataHoje recebida na formatação certa e adiciono um dia.
+     * Tratamento de erro em caso de erro na formatação.
      */
     public void transformaDataHojeParaDataAmanha() {
         try {
@@ -66,19 +66,20 @@ public class GerenciadorDeMensagensView implements View {
      * paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
      */
     public void verificaSeHaConsultasParaAmanha() {
-        //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. é instanciada em tempo de execução
+        //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. É instanciada em tempo de execução.
         Mensagem mensagem = null;
 
         System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
 
-        //percorre a lista de consultas da data de amanhã
+        //Percorre a lista de consultas da data de amanhã. 
         for (Consulta consulta : GerenciadorMensagemController.consultasDoDiaSeguinte(dataAmanha)) {
+            //Verifica se o Paciente da Consulta possui celular/email ou nada.
             if (GerenciadorMensagemController.pacientePossuiCelular(consulta)) {
                 mensagem = new MensagemSMS();
             } else if (GerenciadorMensagemController.pacientePossuiEmail(consulta)) {
                 mensagem = new MensagemEmail();
             } else {
-                System.out.println("Há uma consulta do paciente " + consulta.getPaciente() + " mas este não possui celular/email");
+                System.out.println("\n*Há uma consulta do paciente " + consulta.getPaciente() + " mas este não possui celular/email.");
                 return;
             }
             mensagem.exibirMensagem(consulta);

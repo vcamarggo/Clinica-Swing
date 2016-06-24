@@ -19,7 +19,7 @@ public class ReceitaMedica extends RelatorioMedico{
     public void preencheDados(){
         Scanner scan = new Scanner(System.in);
         
-        System.out.println("Nome do paciente: ");
+        System.out.println("\nNome do paciente: ");
         this.setNomePaciente(scan.nextLine());
         System.out.println("Data da Consulta (dd/mm/aaaa): ");
         this.setDataConsulta(scan.nextLine());
@@ -32,7 +32,7 @@ public class ReceitaMedica extends RelatorioMedico{
             setRemedios(remedio);
             remedio = scan.nextLine();
         }while(!(remedio.equals("0")));
-        System.out.println("Receita criada com sucesso!\n");                
+        System.out.println("*Receita criada com sucesso!\n");                
     }  
     
     /**
@@ -43,18 +43,27 @@ public class ReceitaMedica extends RelatorioMedico{
         System.out.println("---------------------------------------------");
         System.out.println("*****Receita Médica*****\n");
         System.out.println("Nome do paciente: " + this.getNomePaciente());
-        System.out.println("Data da Consulta: " + this.getDataConsulta());
         System.out.println("Remédios:\n");
         for(String remedio: getRemedios()){        
             System.out.println("      -" + remedio);
         }
-        System.out.println("---------------------------------------------");
+        System.out.println("\n\nData da Consulta: " + this.getDataConsulta());
+        System.out.println("\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
+        System.out.println("---------------------------------------------\n");
     }
 
+    /**
+     * @return lista de remedios receitados.
+     */
     public List<String> getRemedios() {
         return remedios;
     }
 
+    /**
+     * Seta remedios para inserir na receita.
+     *
+     * @param remedio 
+     */
     public void setRemedios(String remedio) {
         this.remedios.add(remedio);
     }

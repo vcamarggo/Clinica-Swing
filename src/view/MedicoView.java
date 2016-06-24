@@ -7,7 +7,12 @@ import java.util.Scanner;
  */
 public class MedicoView implements View {
 
-    
+    /**
+     * Construtor padrao.
+     */
+    public MedicoView() {
+    }
+
     /**
      * Interface inicial do Perfil de médico
      */
@@ -48,21 +53,7 @@ public class MedicoView implements View {
     }
 
     /**
-     * Fecha a interface do médico
-     */
-    @Override
-    public void fecharInterface() {
-        TrabalhoPOO1.iniciaSistema();
-    }
-
-    /**
-     * Construtor padrao.
-     */
-    public MedicoView() {
-    }
-
-    /**
-     *  Exibe subinterface relacionada aos dados adicionais do paciente
+     * Exibe subinterface relacionada aos dados adicionais do paciente
      */
     public void exibeInterfaceDadosAdicionais() {
         Scanner scan = new Scanner(System.in);
@@ -101,7 +92,7 @@ public class MedicoView implements View {
     }
 
     /**
-     *  Exibe subinterface relacionada ao prontuario do paciente
+     * Exibe subinterface relacionada ao prontuario do paciente
      */
     public void exibeInterfaceProntuario() {
         Scanner scan = new Scanner(System.in);
@@ -152,8 +143,7 @@ public class MedicoView implements View {
         System.out.println("Selecione uma ação: ");
         System.out.println("1 - Dados Adicionais");
         System.out.println("2 - Prontuário");
-        System.out.println("3 - Gerar Relatório");
-        System.out.println("4 - Volta à seleção de usuários");
+        System.out.println("3 - Volta à seleção de usuários");
 
         switch (opcao = scan.nextInt()) {
             case 1:
@@ -163,9 +153,6 @@ public class MedicoView implements View {
                 exibeInterfaceProntuario();
                 break;
             case 3:
-                pacienteView.gerarRelatorioMedicoPaciente();
-                break;
-            case 4:
                 fecharInterface();
                 break;
             default:
@@ -174,5 +161,13 @@ public class MedicoView implements View {
                 break;
         }
 
+    }
+
+    /**
+     * Fecha a interface do médico
+     */
+    @Override
+    public void fecharInterface() {
+        TrabalhoPOO1.iniciaSistema();
     }
 }

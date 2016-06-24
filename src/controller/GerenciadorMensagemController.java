@@ -21,8 +21,8 @@ public class GerenciadorMensagemController {
 
     /**
      * Método que recebe como parâmetro a data de amanhã e verifica todas as
-     * consultas cadastradas. Insere na lista consultasDoDiaSeguinte apenas os
-     * pacientes que tem consulta no dia seguinte.
+     * consultas cadastradas no sistema. Insere na lista consultasDoDiaSeguinte apenas os
+     * pacientes que tem consulta nesta data recebida.
      *
      * @param dataAmanha
      * @return
@@ -36,7 +36,7 @@ public class GerenciadorMensagemController {
             }
         }
         if (consultasDoDiaSeguinte.isEmpty()) {
-            System.out.println("O Consultório nao tem consultas agendadas para amanhã.");
+            System.out.println("*O Consultório nao tem consultas agendadas para amanhã.\n");
         }
         return consultasDoDiaSeguinte;
     }
@@ -49,14 +49,12 @@ public class GerenciadorMensagemController {
     public static boolean pacientePossuiCelular(Consulta consulta) {
         if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
             return true;
-        }else{
-        return false;
         }
-
+        return false;       
     }
     
     /**
-     * Método que recebe uma consulta como parâmetro e retorna false se o paciente possui email
+     * Método que recebe uma Consulta como parâmetro e retorna true se o paciente possui email.
      * @param consulta
      * @return 
      */

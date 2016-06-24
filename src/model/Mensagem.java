@@ -11,19 +11,17 @@ public abstract class Mensagem {
     
     private static final String NUMERO_CONSULTORIO =  "(44) 3034-0608";
     private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
-    private static final String EMAIL_CONSULTORIO = "saudeecia@gmail.com";
+    private static final String EMAIL_CONSULTORIO = "consultoriosaudeecia@gmail.com";
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
     
     /**
-     *
      * @return telefone do consultório
      */
     public String getNumeroConsultorio(){
         return NUMERO_CONSULTORIO;
     }
     
-    /**
-     *
+    /***
      * @return celular do consultório
      */
     public String getCelularConsultorio(){
@@ -31,7 +29,6 @@ public abstract class Mensagem {
     }
     
     /**
-     *
      * @return email do consultório
      */
     public String getEmailConsultorio(){
@@ -39,7 +36,6 @@ public abstract class Mensagem {
     }
     
     /**
-     *
      * @return formato padrão das datas
      */
     public DateFormat getDateFormat(){

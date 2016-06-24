@@ -62,6 +62,7 @@ public class PacienteView implements View {
         if (paciente == null) {
             exibeMensagemPacienteNaoEncontrado();
         } else {
+            System.out.println(" --------------------------------");
             System.out.println("Nome: " + paciente.getNome());
             DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
             System.out.println("Data nascimento: " + formatter.format(paciente.getDataNascimento()));
@@ -70,6 +71,7 @@ public class PacienteView implements View {
             System.out.println("Celular: " + paciente.getCelular());
             System.out.println("Email: " + paciente.getEmail());
             System.out.println("Tipo convênio: " + paciente.getTipoConvenio().toString());
+            System.out.println(" --------------------------------");
         }
         exibeInterface();
     }
