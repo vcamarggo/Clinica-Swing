@@ -1,7 +1,7 @@
 package enumeration;
 
 import view.View;
-import view.GerenciadorDeMensagensView;
+import view.GerenciadorMensagemView;
 import view.MedicoView;
 import view.SecretariaView;
 
@@ -39,7 +39,7 @@ public enum Usuario {
 
         @Override
         public View iniciaView() {
-            return new GerenciadorDeMensagensView();
+            return new GerenciadorMensagemView();
         }
     };
 

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Consulta;
+import model.Paciente;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -75,7 +76,7 @@ public class RelatorioConsultasView implements View {
      */
     private void gerarRelatorioEmail() {   
         System.out.println("\nPacientes que tem consulta nesta data e possuem Email cadastrado no sistema:\n");
-        for (Consulta consulta : RelatoriosController.pacientesComEmail(dataDesejadaFormatada)) {
+        for (Consulta consulta : Paciente.pacientesComEmail(dataDesejadaFormatada)) {
             System.out.println("------------------------------------------------------------");
             System.out.println("Cod. da consulta: " + consulta.getCodigo());
             System.out.println("Nome do Paciente: " + consulta.getPaciente());
@@ -92,7 +93,7 @@ public class RelatorioConsultasView implements View {
      */
     private void gerarRelatorioCelular() {
         System.out.println("\nPacientes que tem consulta nesta data e possuem Celular cadastrado no sistema:\n");
-        for (Consulta consulta : RelatoriosController.pacientesComCelular(dataDesejadaFormatada)) {
+        for (Consulta consulta : Paciente.pacientesComCelular(dataDesejadaFormatada)) {
             System.out.println("------------------------------------------------------------");
             System.out.println("Cod.: " + consulta.getCodigo());
             System.out.println("Data: " + FORMATTER.format(consulta.getDataConsulta()));

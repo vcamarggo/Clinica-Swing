@@ -2,6 +2,7 @@ package model;
 
 import enumeration.TipoConvenio;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,8 @@ public class Paciente {
      */
     public Paciente() {
     }
+
+    private static List<Paciente> pacientes = new ArrayList<Paciente>();
 
     private String nome;
     private Date dataNascimento;
@@ -307,6 +310,136 @@ public class Paciente {
      */
     public void setSintomas(List<String> sintomas) {
         this.sintomas = sintomas;
+    }
+
+    /**
+     * Se o paciente nao esta na lista, adiciona.
+     *
+     * @param paciente
+     * @return 1, caso deu tudo certo, 0 caso haja erro.
+     */
+    public static int adicionarPaciente(Paciente paciente) {
+        if (getPacienteByNome(paciente.getNome()) != null) {
+            return 0;
+        }
+        pacientes.add(paciente);
+        return 1;
+    }
+
+    /**
+     * Remove um paciente recebido como parametro.
+     *
+     * @param paciente
+     */
+    public static void removePaciente(Paciente paciente) {
+        pacientes.remove(paciente);
+    }
+
+    /**
+     *
+     * @return lista de pacientes da aplicacao.
+     */
+    public static List<Paciente> getPacientes() {
+        return pacientes;
+    }
+
+    /**
+     * Procura um paciente na lista atraves do seu nome
+     *
+     * @param nome
+     * @return paciente encontrado.
+     */
+    public static Paciente getPacienteByNome(String nome) {
+        for (Paciente paciente : pacientes) {
+            if (paciente.getNome().equals(nome)) {
+                return paciente;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Remove informações relacionadas aos dados adicionais do paciente
+     *
+     * @param paciente
+     */
+    public static void removeDadosAdicionaisPaciente(Paciente paciente) {
+        paciente.setFuma(null);
+        paciente.setBebe(null);
+        paciente.setColesterol(null);
+        paciente.setDiabete(null);
+        paciente.setCirurgias(new ArrayList<>());
+    }
+
+    /**
+     * Remove informações relacionadas ao prontuario do paciente
+     *
+     * @param paciente
+     */
+    public static void removeDadosProntuarioPaciente(Paciente paciente) {
+        paciente.setDiagnostico(null);
+        paciente.setTratamento(null);
+        paciente.setSintomas(new ArrayList<>());
+    }
+
+    /**
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e
+     * possuem email cadastrado no sistema.
+     *
+     * @param dataDesejada
+     * @return
+     */
+    public static List<Consulta> pacientesComEmail(Calendar dataDesejada) {
+        List<Consulta> consultasDesejadas = new ArrayList<>();
+        for (Consulta consulta : Consulta.getConsultas()) {
+            if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
+                if (getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
+                    consultasDesejadas.add(consulta);
+                }
+            }
+        }
+        return consultasDesejadas;
+    }
+
+    /**
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e
+     * possuem celular cadastrado no sistema.
+     *
+     * @param dataDesejada
+     * @return
+     */
+    public static List<Consulta> pacientesComCelular(Calendar dataDesejada) {
+        List<Consulta> consultasDesejadas = new ArrayList<>();
+        for (Consulta consulta : Consulta.getConsultas()) {
+            if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
+                if (getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
+                    consultasDesejadas.add(consulta);
+                }
+            }
+        }
+        return consultasDesejadas;
+    }
+
+    /**
+     * Método que recebe uma Consulta como parâmetro e retorna true se o
+     * paciente possui celular.
+     *
+     * @param consulta
+     * @return
+     */
+    public static boolean pacientePossuiCelular(Consulta consulta) {
+        return getPacienteByNome(consulta.getPaciente()).getCelular() != null;
+    }
+
+    /**
+     * Método que recebe uma Consulta como parâmetro e retorna true se o
+     * paciente possui email.
+     *
+     * @param consulta
+     * @return
+     */
+    public static boolean pacientePossuiEmail(Consulta consulta) {
+        return Paciente.getPacienteByNome(consulta.getPaciente()).getEmail() != null;
     }
 
 }

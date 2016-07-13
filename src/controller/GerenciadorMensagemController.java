@@ -1,15 +1,16 @@
 package controller;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 import model.Consulta;
+import model.Mensagem;
+import model.MensagemEmail;
+import model.MensagemSMS;
+import model.Paciente;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GerenciadorMensagemController {
-
 
     /**
      * Construtor padrao.
@@ -17,52 +18,29 @@ public class GerenciadorMensagemController {
     public GerenciadorMensagemController() {
     }
 
-    private static List<Consulta> consultasDoDiaSeguinte;
+    /**
+     * Verifica todas as consultas da data de amanhã. Envia SMS ou email. Se o
+     * paciente tiver tanto SMS quanto EMAIL, envia apenas SMS.
+     */
+    public void verificaSeHaConsultasParaAmanha(Calendar dataAmanha) {
+        //Objeto abstrato, poderá receber instancia de qlq classe que herde dela. É instanciada em tempo de execução.
+        Mensagem mensagem = null;
 
-    /**
-     * Método que recebe como parâmetro a data de amanhã e verifica todas as
-     * consultas cadastradas no sistema. Insere na lista consultasDoDiaSeguinte apenas os
-     * pacientes que tem consulta nesta data recebida.
-     *
-     * @param dataAmanha
-     * @return
-     */
-    public static List<Consulta> consultasDoDiaSeguinte(Calendar dataAmanha) {
-        consultasDoDiaSeguinte = new ArrayList<>();
-        //Percorre a lista de Consultas cadastradas
-        for (Consulta consulta : ConsultaController.getConsultas()) {
-            if (consulta.getDataConsulta().compareTo(dataAmanha.getTime()) == 0) {
-                consultasDoDiaSeguinte.add(consulta);
+        System.out.println("\nO Sistema está verificando se possui consultas relativas ao dia seguinte. . . .");
+
+        //Percorre a lista de consultas da data de amanhã. 
+        for (Consulta consulta : Consulta.consultasDoDiaSeguinte(dataAmanha)) {
+            //Verifica se o Paciente da Consulta possui celular/email ou nada.
+            if (Paciente.pacientePossuiCelular(consulta)) {
+                mensagem = new MensagemSMS();
+            } else if (Paciente.pacientePossuiEmail(consulta)) {
+                mensagem = new MensagemEmail();
+            } else {
+                System.out.println("\n*Há uma consulta do paciente " + consulta.getPaciente() + " mas este não possui celular/email.");
+                return;
             }
+            mensagem.exibirMensagem(consulta);
         }
-        if (consultasDoDiaSeguinte.isEmpty()) {
-            System.out.println("*O Consultório nao tem consultas agendadas para amanhã.\n");
-        }
-        return consultasDoDiaSeguinte;
-    }
-    
-    /**
-     * Método que recebe uma Consulta como parâmetro e retorna true se o paciente possui celular.
-     * @param consulta
-     * @return 
-     */
-    public static boolean pacientePossuiCelular(Consulta consulta) {
-        if (PacienteController.getPacienteByNome(consulta.getPaciente()).getCelular() != null) {
-            return true;
-        }
-        return false;       
-    }
-    
-    /**
-     * Método que recebe uma Consulta como parâmetro e retorna true se o paciente possui email.
-     * @param consulta
-     * @return 
-     */
-    public static boolean pacientePossuiEmail(Consulta consulta) {
-        if (PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail() != null) {
-            return true;
-        }
-        return false;
     }
 
 }

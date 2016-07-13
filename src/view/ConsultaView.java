@@ -1,6 +1,5 @@
 package view;
 
-import controller.ConsultaController;
 import enumeration.TipoConsulta;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -35,7 +34,7 @@ public class ConsultaView implements View {
     private Consulta getConsulta() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Insira o cód da consulta desejada: ");
-        return ConsultaController.getConsultaByCodigo(scan.nextInt());
+        return Consulta.getConsultaByCodigo(scan.nextInt());
     }
 
     /**
@@ -44,7 +43,7 @@ public class ConsultaView implements View {
     public void inserirConsulta() {
         Consulta consulta = new Consulta();
         pegaDadosConsulta(consulta);
-        switch (ConsultaController.adicionarConsulta(consulta)) {
+        switch (Consulta.adicionarConsulta(consulta)) {
             case 0:
                 System.out.println("Consulta inserida com sucesso.");
                 break;
@@ -90,7 +89,7 @@ public class ConsultaView implements View {
         if (consulta == null) {
             System.out.println(CONSULTA_NAO_ENCONTRADA);
         } else {
-            ConsultaController.removeConsulta(consulta);
+            Consulta.removeConsulta(consulta);
             System.out.println("Consulta removida com sucesso.");
         }
         exibeInterface();

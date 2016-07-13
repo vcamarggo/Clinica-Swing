@@ -1,7 +1,5 @@
 package model;
 
-import controller.PacienteController;
-
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -18,7 +16,7 @@ public class MensagemEmail extends Mensagem {
         System.out.println(" -------------------------");
         System.out.println("|***EMAIL***");
         System.out.println("|De: " + this.getEmailConsultorio());
-        System.out.println("|Para: " + PacienteController.getPacienteByNome(consulta.getPaciente()).getEmail());
+        System.out.println("|Para: " + Paciente.getPacienteByNome(consulta.getPaciente()).getEmail());
         System.out.println("|");
         System.out.println("|Ola senhor(a) " + consulta.getPaciente() + ",");
         System.out.println("|A clinica Saude e CIA gostaria de lembra-lo que amanha (" + this.getDateFormat().format(consulta.getDataConsulta())

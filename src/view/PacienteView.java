@@ -36,7 +36,7 @@ public class PacienteView implements View {
     private Paciente getPaciente() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Insira o nome do paciente desejado: ");
-        return PacienteController.getPacienteByNome(scan.nextLine());
+        return Paciente.getPacienteByNome(scan.nextLine());
     }
 
     /**
@@ -45,7 +45,7 @@ public class PacienteView implements View {
     public void inserirPaciente() {
         Paciente paciente = new Paciente();
         pegaDadosPaciente(paciente);
-        if (PacienteController.adicionarPaciente(paciente) == 0) {
+        if (Paciente.adicionarPaciente(paciente) == 0) {
             System.out.println("Paciente não inserido com sucesso.");
         } else {
             System.out.println("Paciente inserido com sucesso.");
@@ -83,7 +83,7 @@ public class PacienteView implements View {
         if (paciente == null) {
             exibeMensagemPacienteNaoEncontrado();
         } else {
-            PacienteController.removePaciente(paciente);
+            Paciente.removePaciente(paciente);
             System.out.println("Paciente removido com sucesso.");
         }
         exibeInterface();
@@ -155,7 +155,7 @@ public class PacienteView implements View {
         }
         System.out.println("Confirma a remoção dos dados adicionais do paciente?");
         if (geraBooleano(scan.nextLine())) {
-            PacienteController.removeDadosAdicionaisPaciente(paciente);
+            Paciente.removeDadosAdicionaisPaciente(paciente);
         }
         exibeInterface();
     }
@@ -173,7 +173,7 @@ public class PacienteView implements View {
             return;
         }
         if (alteracao) {
-            PacienteController.removeDadosAdicionaisPaciente(paciente);
+            Paciente.removeDadosAdicionaisPaciente(paciente);
         }
         boolean dadosCorretos;
         do {
@@ -265,7 +265,7 @@ public class PacienteView implements View {
             return;
         }
         if (alteracao) {
-            PacienteController.removeDadosAdicionaisPaciente(paciente);
+            Paciente.removeDadosAdicionaisPaciente(paciente);
         }
         boolean dadosCorretos;
         do {
@@ -297,7 +297,7 @@ public class PacienteView implements View {
         }
         System.out.println("Confirma a remoção do prontuário do paciente?");
         if (geraBooleano(scan.nextLine())) {
-            PacienteController.removeDadosProntuarioPaciente(paciente);
+            Paciente.removeDadosProntuarioPaciente(paciente);
         }
         exibeInterface();
     }
