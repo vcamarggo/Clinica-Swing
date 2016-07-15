@@ -7,16 +7,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import javax.swing.JFrame;
 import model.Paciente;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class PacienteView implements View {
+public class PacienteView extends JFrame {
 
     static final String PACIENTE_NAO_ENCONTRADO = "Paciente não encontrado.";
 
-    @Override
     public void exibeInterface() {
         DateFormat formatter = new SimpleDateFormat("HH:mm");
         System.out.println("Operação realizada às: " + formatter.format(Calendar.getInstance().getTime()));
@@ -25,7 +25,6 @@ public class PacienteView implements View {
     /**
      * metodo responsavel por fachar a interface
      */
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }

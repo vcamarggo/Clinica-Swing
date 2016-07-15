@@ -1,6 +1,6 @@
 package enumeration;
 
-import view.View;
+import javax.swing.JFrame;
 import view.GerenciadorMensagemView;
 import view.MedicoView;
 import view.SecretariaView;
@@ -16,7 +16,7 @@ public enum Usuario {
     MEDICO {
 
         @Override
-        public View iniciaView() {
+        public JFrame iniciaView() {
             return new MedicoView();
         }
     },
@@ -27,7 +27,7 @@ public enum Usuario {
     SECRETARIA {
 
         @Override
-        public View iniciaView() {
+        public JFrame iniciaView() {
             return new SecretariaView();
         }
     },
@@ -38,7 +38,7 @@ public enum Usuario {
     GERENCIADORMENSAGEM {
 
         @Override
-        public View iniciaView() {
+        public JFrame iniciaView() {
             return new GerenciadorMensagemView();
         }
     };
@@ -48,6 +48,6 @@ public enum Usuario {
      * 
      * @return uma classe que implementa view.
      */
-    public abstract View iniciaView();
+    public abstract JFrame iniciaView();
 
 }

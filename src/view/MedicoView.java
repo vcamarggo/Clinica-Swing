@@ -1,11 +1,12 @@
 package view;
 
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class MedicoView implements View {
+public class MedicoView extends JFrame {
 
     /**
      * Construtor padrao.
@@ -16,7 +17,6 @@ public class MedicoView implements View {
     /**
      * Interface inicial do Perfil de médico
      */
-    @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
         int opcao;
@@ -166,7 +166,6 @@ public class MedicoView implements View {
     /**
      * Fecha a interface do médico
      */
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }

@@ -1,13 +1,13 @@
 package view;
 
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class SecretariaView implements View {
+public class SecretariaView extends JFrame {
 
-    @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
         int opcao;
@@ -48,7 +48,6 @@ public class SecretariaView implements View {
 
     }
 
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }
@@ -96,7 +95,7 @@ public class SecretariaView implements View {
 
         }
     }
-    
+
     public void exibeSubInterfaceConsulta() {
         Scanner scan = new Scanner(System.in);
         ConsultaView consultaView = new ConsultaView();

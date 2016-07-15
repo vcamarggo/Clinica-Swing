@@ -45,7 +45,7 @@ public class Secretaria extends Usuario {
      * @param dataDesejada
      * @return
      */
-    public List<Consulta> getConsultasDataDesejaParaPacientesComEmail(Calendar dataDesejada) {
+    public List<Consulta> getConsultasDataDesejadaParaPacientesComEmail(Calendar dataDesejada) {
         List<Consulta> consultasDesejadas = new ArrayList<>();
         for (Consulta consulta : Consulta.getConsultas()) {
             if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
@@ -64,7 +64,7 @@ public class Secretaria extends Usuario {
      * @param dataDesejada
      * @return
      */
-    public List<Consulta> pacientesComCelular(Calendar dataDesejada) {
+    public List<Consulta> getConsultasDataDesejadaParaPacientesComCelular(Calendar dataDesejada) {
         List<Consulta> consultasDesejadas = new ArrayList<>();
         for (Consulta consulta : Consulta.getConsultas()) {
             if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
@@ -107,7 +107,7 @@ public class Secretaria extends Usuario {
      * @param codigo
      * @return A consulta com o codigo passado no parametro.
      */
-    public static Consulta getConsultaByCodigo(int codigo) {
+    public Consulta getConsultaByCodigo(int codigo) {
         for (Consulta consulta : Consulta.getConsultas()) {
             if (consulta.getCodigo() == codigo) {
                 return consulta;

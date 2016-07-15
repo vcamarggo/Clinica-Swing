@@ -8,11 +8,12 @@ import java.util.Calendar;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class GerenciadorMensagemView implements View {
+public class GerenciadorMensagemView extends JFrame {
 
     private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
     private static String dataHoje;
@@ -29,7 +30,6 @@ public class GerenciadorMensagemView implements View {
         this.gerenciadorDeMensagemController = gerenciadorDeMensagemController;
     }
 
-    @Override
     public void exibeInterface() {
         Scanner scan = new Scanner(System.in);
 
@@ -62,7 +62,6 @@ public class GerenciadorMensagemView implements View {
         }
     }
 
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }

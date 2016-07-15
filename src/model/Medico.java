@@ -18,7 +18,7 @@ public class Medico extends Usuario {
      *
      * @param paciente
      */
-    public static void removeDadosAdicionaisPaciente(Paciente paciente) {
+    public void removeDadosAdicionaisPaciente(Paciente paciente) {
         paciente.setFuma(null);
         paciente.setBebe(null);
         paciente.setColesterol(null);
@@ -31,7 +31,7 @@ public class Medico extends Usuario {
      *
      * @param paciente
      */
-    public static void removeDadosProntuarioPaciente(Paciente paciente) {
+    public void removeDadosProntuarioPaciente(Paciente paciente) {
         paciente.setDiagnostico(null);
         paciente.setTratamento(null);
         paciente.setSintomas(new ArrayList<>());

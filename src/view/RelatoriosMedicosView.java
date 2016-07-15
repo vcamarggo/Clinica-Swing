@@ -1,6 +1,7 @@
 package view;
 
 import java.util.Scanner;
+import javax.swing.JFrame;
 import model.AtestadoMedico;
 import model.DeclaracaoAcompanhamento;
 import model.ReceitaMedica;
@@ -9,7 +10,7 @@ import model.RelatorioMedico;
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class RelatoriosMedicosView implements View {
+public class RelatoriosMedicosView extends JFrame {
   
     /**
      * Construtor padrao.
@@ -17,7 +18,6 @@ public class RelatoriosMedicosView implements View {
     public RelatoriosMedicosView() {
     }
 
-    @Override
     public void exibeInterface(){ 
         Scanner scan = new Scanner(System.in);
         
@@ -36,17 +36,17 @@ public class RelatoriosMedicosView implements View {
             case 1:
                 relatorioMedico = new ReceitaMedica();
                 relatorioMedico.preencheDados();
-                relatorioMedico.geraRelatorio();
+                relatorioMedico.gerarRelatorio();
                 break;
             case 2:
                 relatorioMedico = new AtestadoMedico();
                 relatorioMedico.preencheDados();
-                relatorioMedico.geraRelatorio();
+                relatorioMedico.gerarRelatorio();
                 break;
             case 3:
                 relatorioMedico = new DeclaracaoAcompanhamento();
                 relatorioMedico.preencheDados();
-                relatorioMedico.geraRelatorio();
+                relatorioMedico.gerarRelatorio();
                 break;
             case 4:
                 fecharInterface();
@@ -58,7 +58,6 @@ public class RelatoriosMedicosView implements View {
         }
     }
 
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }

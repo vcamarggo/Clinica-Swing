@@ -6,24 +6,21 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import javax.swing.JFrame;
 import model.Consulta;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class ConsultaView implements View {
+public class ConsultaView extends JFrame {
 
-    //private static List<Consulta> consultas;
-    //static Scanner scan = new Scanner(System.in);
     static final String CONSULTA_NAO_ENCONTRADA = "Consulta não encontrada.";
 
-    @Override
     public void exibeInterface() {
         DateFormat formatter = new SimpleDateFormat("HH:mm");
         System.out.println("Operação realizada às: " + formatter.format(Calendar.getInstance().getTime()));
     }
 
-    @Override
     public void fecharInterface() {
         TrabalhoPOO1.iniciaSistema();
     }

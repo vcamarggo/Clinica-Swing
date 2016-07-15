@@ -37,20 +37,23 @@ public class ReceitaMedica extends RelatorioMedico {
 
     /**
      * Método que exibe a receita medica com os dados fornecidos pelo médico
+     *
+     * @return receitaMedica
      */
     @Override
     public String gerarRelatorio() {
-        System.out.println("---------------------------------------------");
-        System.out.println("*****Receita Médica*****\n");
-        System.out.println("Nome do paciente: " + this.getNomePaciente());
-        System.out.println("Remédios:\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append("---------------------------------------------");
+        sb.append("\n*****Receita Médica*****\n");
+        sb.append("Nome do paciente: ").append(this.getNomePaciente());
+        sb.append("Remédios:\n");
         for (String remedio : getRemedios()) {
-            System.out.println("      -" + remedio);
+            sb.append("      -").append(remedio);
         }
-        System.out.println("\n\nData da Consulta: " + this.getDataConsulta());
-        System.out.println("\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
-        System.out.println("---------------------------------------------\n");
-        return "";
+        sb.append("\n\nData da Consulta: ").append(this.getDataConsulta());
+        sb.append("\nAssinatura do medico responsável: ").append(this.getAssinaturaMedico());
+        sb.append("---------------------------------------------\n");
+        return sb.toString();
     }
 
     /**
