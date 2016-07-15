@@ -22,8 +22,9 @@ public abstract class RelatorioMedico {
     
     /**
      * Assinatura de método para exibição dos dados do relatório.
+     * @return relatorioGerado
      */
-    public abstract void exibeRelatorio();
+    public abstract String gerarRelatorio();
 
     /**
      * @return nome do paciente.

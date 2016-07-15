@@ -36,17 +36,17 @@ public class RelatoriosMedicosView implements View {
             case 1:
                 relatorioMedico = new ReceitaMedica();
                 relatorioMedico.preencheDados();
-                relatorioMedico.exibeRelatorio();
+                relatorioMedico.geraRelatorio();
                 break;
             case 2:
                 relatorioMedico = new AtestadoMedico();
                 relatorioMedico.preencheDados();
-                relatorioMedico.exibeRelatorio();
+                relatorioMedico.geraRelatorio();
                 break;
             case 3:
                 relatorioMedico = new DeclaracaoAcompanhamento();
                 relatorioMedico.preencheDados();
-                relatorioMedico.exibeRelatorio();
+                relatorioMedico.geraRelatorio();
                 break;
             case 4:
                 fecharInterface();

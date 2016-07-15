@@ -33,12 +33,12 @@ public class AtestadoMedico extends RelatorioMedico {
         this.setAssinaturaMedico(scan.nextLine());
         System.out.println("*Atestado gerado com sucesso!\n");
     }
-    
+
     /**
      * Método que exibe o atestado com os dados fornecidos pelo médico
      */
     @Override
-    public void exibeRelatorio() {
+    public String gerarRelatorio() {
         System.out.println("----------------------------------------------------------");
         System.out.println("*****Atestado Médico*****\n");
         System.out.println("Atesto, para os devidos fins, a pedido do interessado, que o paciente " + this.getNomePaciente()
@@ -47,6 +47,7 @@ public class AtestadoMedico extends RelatorioMedico {
         System.out.println("\n\nData: " + this.getDataConsulta());
         System.out.println("\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
         System.out.println("----------------------------------------------------------\n");
+        return "";
     }
 
     /**
@@ -59,7 +60,7 @@ public class AtestadoMedico extends RelatorioMedico {
     /**
      * Seta o rg do paciente.
      *
-     * @param rg 
+     * @param rg
      */
     public void setRg(String rg) {
         this.rg = rg;
@@ -75,7 +76,7 @@ public class AtestadoMedico extends RelatorioMedico {
     /**
      * Seta o horario da consulta do paciente.
      *
-     * @param horarioConsulta 
+     * @param horarioConsulta
      */
     public void setHorarioConsulta(String horarioConsulta) {
         this.horarioConsulta = horarioConsulta;
@@ -91,7 +92,7 @@ public class AtestadoMedico extends RelatorioMedico {
     /**
      * Seta a quantidade de dias de descanso para o paciente.
      *
-     * @param diasDescanso 
+     * @param diasDescanso
      */
     public void setDiasDescanso(String diasDescanso) {
         this.diasDescanso = diasDescanso;

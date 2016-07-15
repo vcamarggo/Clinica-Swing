@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public abstract class Mensagem {
+public abstract class GerenciadorMensagem {
     
     private static final String NUMERO_CONSULTORIO =  "(44) 3034-0608";
     private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
@@ -45,6 +45,7 @@ public abstract class Mensagem {
     /**
      * Método abstrato para a exibição de mensagens.
      * @param consulta 
+     * @return  mensagemGerada
      */
-    public abstract void exibirMensagem(Consulta consulta);
+    public abstract String gerarMensagem(Consulta consulta);
 }
