@@ -36,18 +36,25 @@ public class AtestadoMedico extends RelatorioMedico {
 
     /**
      * Método que exibe o atestado com os dados fornecidos pelo médico
+     *
+     * @return atestado
      */
     @Override
     public String gerarRelatorio() {
-        System.out.println("----------------------------------------------------------");
-        System.out.println("*****Atestado Médico*****\n");
-        System.out.println("Atesto, para os devidos fins, a pedido do interessado, que o paciente " + this.getNomePaciente()
-                + "," + "\nportador do RG " + getRg() + ", foi submetido à consulta médica nesta data, no horário das " + getHorarioConsulta() + " horas.");
-        System.out.println("Em decorrência, deverá permanecer afastado de suas atividades por um perídio de " + getDiasDescanso() + " dias.");
-        System.out.println("\n\nData: " + this.getDataConsulta());
-        System.out.println("\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
-        System.out.println("----------------------------------------------------------\n");
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append("----------------------------------------------------------\n");
+        sb.append("*****Atestado Médico*****\n");
+        sb.append("Atesto, para os devidos fins, a pedido do interessado, que o paciente ")
+                .append(this.getNomePaciente()).append(",").append("\nportador do RG ").append(getRg())
+                .append(", foi submetido à consulta médica nesta data, no horário das ")
+                .append(getHorarioConsulta()).append(" horas.");
+        sb.append("\nEm decorrência, deverá permanecer afastado de suas atividades por um perídio de ");
+        sb.append(getDiasDescanso());
+        sb.append(" dias.");
+        sb.append("\n\nData: ").append(this.getDataConsulta());
+        sb.append("\nAssinatura do medico responsável: ").append(this.getAssinaturaMedico());
+        sb.append("\n----------------------------------------------------------\n");
+        return sb.toString();
     }
 
     /**

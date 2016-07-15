@@ -34,17 +34,23 @@ public class DeclaracaoAcompanhamento extends RelatorioMedico {
     /**
      * Método que exibe a declaração de acompanhamento com os dados fornecidos
      * pelo médico
+     *
+     * @return declaracaoAcompanhamento
      */
     @Override
     public String gerarRelatorio() {
-        System.out.println("--------------------------------------------------------");
-        System.out.println("*****Declaracao de Acompanhamento*****\n");
-        System.out.println("Atesto, para os devidos fins, a pedido do interessado, que o senhor(a) " + getNomeAcompanhante() + "\n" + "acompanhou o paciente " + this.getNomePaciente()
-                + ", à consulta médica nesta data, no horário das " + getHorarioConsulta() + " horas.");
-        System.out.println("\n\nData: " + this.getDataConsulta());
-        System.out.println("\nAssinatura do medico responsável: " + this.getAssinaturaMedico());
-        System.out.println("--------------------------------------------------------\n");
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append("--------------------------------------------------------");
+        sb.append("\n*****Declaracao de Acompanhamento*****\n");
+        sb.append("Atesto, para os devidos fins, a pedido do interessado, que o senhor(a) ")
+                .append(getNomeAcompanhante())
+                .append("\n" + "acompanhou o paciente ").append(this.getNomePaciente()).append(
+                ", à consulta médica nesta data, no horário das ")
+                .append(getHorarioConsulta()).append(" horas.");
+        sb.append("\n\nData: ").append(this.getDataConsulta());
+        sb.append("\nAssinatura do medico responsável: ").append(this.getAssinaturaMedico());
+        sb.append("\n--------------------------------------------------------\n");
+        return sb.toString();
     }
 
     /**

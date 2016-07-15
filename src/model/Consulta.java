@@ -125,7 +125,7 @@ public class Consulta {
     public Consulta() {
     }
 
-    private static List<Consulta> consultas = new ArrayList<Consulta>();
+    private static List<Consulta> consultas = new ArrayList<>();
 
     /**
      *
