@@ -139,5 +139,7 @@ public class ConsultaView extends JFrame {
      */
     public ConsultaView() {
     }
+    
+    
 
 }
