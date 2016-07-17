@@ -54,7 +54,7 @@ public class SecretariaView extends javax.swing.JFrame {
         scrollConsulta = new javax.swing.JScrollPane();
         tabelaConsultas = new javax.swing.JTable();
         relatorioPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnConsultasDiaSeguinte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -308,12 +308,12 @@ public class SecretariaView extends javax.swing.JFrame {
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(abasSecretaria, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+            .addComponent(abasSecretaria)
         );
 
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
-        jButton1.setText("Consultas por Data");
+        btnConsultasDiaSeguinte.setText("Consultas do dia seguinte");
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
         relatorioPanel.setLayout(relatorioPanelLayout);
@@ -321,14 +321,14 @@ public class SecretariaView extends javax.swing.JFrame {
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relatorioPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jButton1)
+                .addComponent(btnConsultasDiaSeguinte)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         relatorioPanelLayout.setVerticalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relatorioPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
+                .addComponent(btnConsultasDiaSeguinte)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -373,6 +373,7 @@ public class SecretariaView extends javax.swing.JFrame {
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarConsulta;
     private javax.swing.JButton btnAlterarPaciente;
+    private javax.swing.JButton btnConsultasDiaSeguinte;
     private javax.swing.JButton btnDetalhesPaciente;
     private javax.swing.JButton btnDetalhesPaciente2;
     private javax.swing.JButton btnNovaConsulta;
@@ -382,7 +383,6 @@ public class SecretariaView extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltarSelecaoPerfil;
     private javax.swing.JPanel consultaPanel;
     private javax.swing.JPanel contentPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblNovaConsulta;
     private javax.swing.JLabel lblNovoPaciente;
     private javax.swing.JLabel lblSaudeCIA;

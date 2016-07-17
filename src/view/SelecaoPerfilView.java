@@ -55,6 +55,7 @@ public class SelecaoPerfilView extends JFrame {
         });
 
         btnSouSecretaria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-secretaria.png"))); // NOI18N
+        btnSouSecretaria.setSelected(true);
         btnSouSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSouSecretariaActionPerformed(evt);
@@ -199,4 +200,5 @@ public class SelecaoPerfilView extends JFrame {
     public JButton getBtnSouSecretaria() {
         return btnSouSecretaria;
     }
+
 }

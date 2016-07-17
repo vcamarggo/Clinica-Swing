@@ -27,8 +27,8 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="contentPanel" max="32767" attributes="0"/>
-                  <Component id="panelOK" max="32767" attributes="0"/>
+                  <Component id="panelOK" alignment="0" max="32767" attributes="0"/>
+                  <Component id="contentPanel" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -59,19 +59,19 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lblAtestado" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="157" max="32767" attributes="0"/>
+                  <Component id="lblReceita" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="174" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="lblAtestado" min="-2" max="-2" attributes="0"/>
+              <Component id="lblReceita" alignment="0" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblAtestado">
+        <Component class="javax.swing.JLabel" name="lblReceita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="24" style="0"/>
@@ -79,7 +79,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/view/imagens/prancheta (2).png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Atestado Medico"/>
+            <Property name="text" type="java.lang.String" value="Receita Medica"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -99,22 +99,20 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel4" alignment="0" pref="137" max="32767" attributes="0"/>
-                      <Component id="jLabel3" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel4" alignment="0" pref="137" max="32767" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel28" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txtNomePaciente" alignment="0" pref="217" max="32767" attributes="0"/>
-                      <Component id="txtRgPaciente" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtDataConsulta" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtHorarioConsulta" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtDiasDescanso" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtAssinaturaMedico" alignment="1" max="32767" attributes="0"/>
+                      <Component id="scrollRemedios" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -130,30 +128,20 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtRgPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtDataConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHorarioConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDiasDescanso" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtAssinaturaMedico" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                      <Component id="scrollRemedios" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -164,24 +152,9 @@
             <Property name="text" type="java.lang.String" value="Nome do Paciente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="RG:"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data da Consulta:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Horario da Consulta:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Dias de Descanso:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -191,16 +164,31 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNomePaciente">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtRgPaciente">
-        </Component>
         <Component class="javax.swing.JTextField" name="txtDataConsulta">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtHorarioConsulta">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtDiasDescanso">
         </Component>
         <Component class="javax.swing.JTextField" name="txtAssinaturaMedico">
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel28">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Remedios:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="scrollRemedios">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txtRemedios">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="panelOK">
@@ -210,7 +198,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                  <Component id="btnGerarAtestado" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGerarReceita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnCancelar" min="-2" pref="104" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -222,7 +210,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnGerarAtestado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnGerarReceita" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -231,9 +219,9 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnGerarAtestado">
+        <Component class="javax.swing.JButton" name="btnGerarReceita">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Gerar Atestado!"/>
+            <Property name="text" type="java.lang.String" value="Gerar Receita!"/>
             <Property name="selected" type="boolean" value="true"/>
           </Properties>
         </Component>

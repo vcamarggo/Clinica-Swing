@@ -321,7 +321,6 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="txtDiagnostico">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
@@ -338,7 +337,6 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="txtTratamento">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>

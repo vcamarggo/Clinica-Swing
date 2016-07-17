@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import model.GerenciadorMensagem;
 import model.Medico;
 import model.Secretaria;
 import view.MedicoView;
@@ -38,6 +39,11 @@ public class SelecaoPerfilController {
             view.dispose();
             SecretariaController secretariaController = new SecretariaController(new Secretaria(), new SecretariaView());
             secretariaController.controla();
+        });
+        view.getBtnGerenMsg().addActionListener((ActionEvent actionEvent) -> {
+            view.dispose();
+            /*GerenciadorMensagemController secretariaController = new GerenciadorMensagemController(new GerenciadorMensagem(), new SecretariaView());
+            secretariaController.controla();*/
         });
     }
 

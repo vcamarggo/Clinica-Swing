@@ -9,12 +9,12 @@ package view;
  *
  * @author mayza
  */
-public class NovoAtestadoView extends javax.swing.JFrame {
+public class NovaReceitaView extends javax.swing.JFrame {
 
     /**
-     * Creates new form NovoAtestadoView
+     * Creates new form NovaReceitaView
      */
-    public NovoAtestadoView() {
+    public NovaReceitaView() {
         initComponents();
     }
 
@@ -28,79 +28,74 @@ public class NovoAtestadoView extends javax.swing.JFrame {
     private void initComponents() {
 
         panelHeader = new javax.swing.JPanel();
-        lblAtestado = new javax.swing.JLabel();
+        lblReceita = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtNomePaciente = new javax.swing.JTextField();
-        txtRgPaciente = new javax.swing.JTextField();
         txtDataConsulta = new javax.swing.JTextField();
-        txtHorarioConsulta = new javax.swing.JTextField();
-        txtDiasDescanso = new javax.swing.JTextField();
         txtAssinaturaMedico = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        scrollRemedios = new javax.swing.JScrollPane();
+        txtRemedios = new javax.swing.JTextArea();
         panelOK = new javax.swing.JPanel();
-        btnGerarAtestado = new javax.swing.JButton();
+        btnGerarReceita = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblAtestado.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        lblAtestado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/prancheta (2).png"))); // NOI18N
-        lblAtestado.setText("Atestado Medico");
+        lblReceita.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        lblReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/prancheta (2).png"))); // NOI18N
+        lblReceita.setText("Receita Medica");
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
         panelHeaderLayout.setHorizontalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addComponent(lblAtestado)
-                .addGap(0, 157, Short.MAX_VALUE))
+                .addComponent(lblReceita)
+                .addGap(0, 174, Short.MAX_VALUE))
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAtestado)
+            .addComponent(lblReceita)
         );
 
         contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preencha os Dados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jLabel2.setText("Nome do Paciente:");
 
-        jLabel3.setText("RG:");
-
         jLabel4.setText("Data da Consulta:");
 
-        jLabel5.setText("Horario da Consulta:");
-
-        jLabel6.setText("Dias de Descanso:");
-
         jLabel7.setText("Assinatura do Medico:");
+
+        jLabel28.setText("Remedios:");
+
+        txtRemedios.setColumns(20);
+        txtRemedios.setLineWrap(true);
+        txtRemedios.setRows(5);
+        scrollRemedios.setViewportView(txtRemedios);
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
         contentPanelLayout.setHorizontalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contentPanelLayout.createSequentialGroup()
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNomePaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                    .addComponent(txtRgPaciente)
                     .addComponent(txtDataConsulta)
-                    .addComponent(txtHorarioConsulta)
-                    .addComponent(txtDiasDescanso)
-                    .addComponent(txtAssinaturaMedico, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(txtAssinaturaMedico, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scrollRemedios))
                 .addContainerGap())
         );
         contentPanelLayout.setVerticalGroup(
@@ -112,29 +107,21 @@ public class NovoAtestadoView extends javax.swing.JFrame {
                     .addComponent(txtNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtRgPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtDataConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtHorarioConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtDiasDescanso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtAssinaturaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(122, 122, 122))
+                .addGap(18, 18, 18)
+                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(scrollRemedios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(113, 113, 113))
         );
 
-        btnGerarAtestado.setText("Gerar Atestado!");
-        btnGerarAtestado.setSelected(true);
+        btnGerarReceita.setText("Gerar Receita!");
+        btnGerarReceita.setSelected(true);
 
         btnCancelar.setText("Cancelar");
 
@@ -144,7 +131,7 @@ public class NovoAtestadoView extends javax.swing.JFrame {
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
-                .addComponent(btnGerarAtestado)
+                .addComponent(btnGerarReceita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -154,7 +141,7 @@ public class NovoAtestadoView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOKLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGerarAtestado)
+                    .addComponent(btnGerarReceita)
                     .addComponent(btnCancelar))
                 .addContainerGap())
         );
@@ -167,8 +154,8 @@ public class NovoAtestadoView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -188,22 +175,19 @@ public class NovoAtestadoView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnGerarAtestado;
+    private javax.swing.JButton btnGerarReceita;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel lblAtestado;
+    private javax.swing.JLabel lblReceita;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelOK;
+    private javax.swing.JScrollPane scrollRemedios;
     private javax.swing.JTextField txtAssinaturaMedico;
     private javax.swing.JTextField txtDataConsulta;
-    private javax.swing.JTextField txtDiasDescanso;
-    private javax.swing.JTextField txtHorarioConsulta;
     private javax.swing.JTextField txtNomePaciente;
-    private javax.swing.JTextField txtRgPaciente;
+    private javax.swing.JTextArea txtRemedios;
     // End of variables declaration//GEN-END:variables
 }

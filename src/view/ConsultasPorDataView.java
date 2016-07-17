@@ -9,12 +9,12 @@ package view;
  *
  * @author mayza
  */
-public class PacientesNotificadosView extends javax.swing.JDialog {
+public class ConsultasPorDataView extends javax.swing.JDialog {
 
     /**
-     * Creates new form EmailsEnviadosView
+     * Creates new form ConsultasPorDataView
      */
-    public PacientesNotificadosView(java.awt.Frame parent, boolean modal) {
+    public ConsultasPorDataView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -29,12 +29,12 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
     private void initComponents() {
 
         panelHeader = new javax.swing.JPanel();
-        lblGerenciador = new javax.swing.JLabel();
+        lblConsultas = new javax.swing.JLabel();
         descricaoPanel = new javax.swing.JPanel();
         lblDescricao = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
-        scrollPacientesNotificados = new javax.swing.JScrollPane();
-        tabelaPacientesNotificados = new javax.swing.JTable();
+        scrollPacientesComConsulta = new javax.swing.JScrollPane();
+        tabelaPacientesComConsulta = new javax.swing.JTable();
         panelOK = new javax.swing.JPanel();
         btnOK1 = new javax.swing.JButton();
 
@@ -42,25 +42,25 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblGerenciador.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        lblGerenciador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-gerenciador.png"))); // NOI18N
-        lblGerenciador.setText("Gerenciador de Mensagens");
+        lblConsultas.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        lblConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-consulta.png"))); // NOI18N
+        lblConsultas.setText("Consultas Por Data");
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
         panelHeaderLayout.setHorizontalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addComponent(lblGerenciador)
-                .addGap(0, 53, Short.MAX_VALUE))
+                .addComponent(lblConsultas)
+                .addGap(0, 139, Short.MAX_VALUE))
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblGerenciador)
+            .addComponent(lblConsultas)
         );
 
         lblDescricao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblDescricao.setText("Os seguintes pacientes foram notificados:");
+        lblDescricao.setText("Os seguintes pacientes possuem consulta nesta data:");
 
         javax.swing.GroupLayout descricaoPanelLayout = new javax.swing.GroupLayout(descricaoPanel);
         descricaoPanel.setLayout(descricaoPanelLayout);
@@ -75,9 +75,9 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
             .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
         );
 
-        contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pacientes Notificados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pacientes que possuem consulta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        tabelaPacientesNotificados.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaPacientesComConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -102,17 +102,17 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        scrollPacientesNotificados.setViewportView(tabelaPacientesNotificados);
+        scrollPacientesComConsulta.setViewportView(tabelaPacientesComConsulta);
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
         contentPanelLayout.setHorizontalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPacientesNotificados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(scrollPacientesComConsulta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPacientesNotificados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+            .addComponent(scrollPacientesComConsulta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
         );
 
         btnOK1.setText("OK");
@@ -167,11 +167,11 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
     private javax.swing.JButton btnOK1;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JPanel descricaoPanel;
+    private javax.swing.JLabel lblConsultas;
     private javax.swing.JLabel lblDescricao;
-    private javax.swing.JLabel lblGerenciador;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelOK;
-    private javax.swing.JScrollPane scrollPacientesNotificados;
-    private javax.swing.JTable tabelaPacientesNotificados;
+    private javax.swing.JScrollPane scrollPacientesComConsulta;
+    private javax.swing.JTable tabelaPacientesComConsulta;
     // End of variables declaration//GEN-END:variables
 }

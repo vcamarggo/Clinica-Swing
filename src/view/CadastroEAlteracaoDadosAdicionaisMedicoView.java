@@ -132,13 +132,11 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
 
         jLabel29.setText("Cirurgias");
 
-        txtDiagnostico.setEditable(false);
         txtDiagnostico.setColumns(20);
         txtDiagnostico.setLineWrap(true);
         txtDiagnostico.setRows(5);
         scrollDiagnostico.setViewportView(txtDiagnostico);
 
-        txtTratamento.setEditable(false);
         txtTratamento.setColumns(20);
         txtTratamento.setLineWrap(true);
         txtTratamento.setRows(5);
