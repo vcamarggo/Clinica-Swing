@@ -15,6 +15,7 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
 
     /**
      * Creates new form DetalhesPacienteMedicoView
+     *
      * @param parent
      * @param modal
      */

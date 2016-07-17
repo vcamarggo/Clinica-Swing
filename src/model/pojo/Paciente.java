@@ -1,11 +1,11 @@
-package model;
+package model.pojo;
 
 import enumeration.TipoConvenio;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,6 +34,8 @@ public class Paciente implements Serializable {
     private String telefone;
     private String celular;
     private String email;
+
+    @Enumerated(EnumType.STRING)
     private TipoConvenio tipoConvenio;
 
     private Boolean fuma;
@@ -42,9 +44,9 @@ public class Paciente implements Serializable {
     private Boolean diabete;
     private String diagnostico;
     private String tratamento;
-    private List<String> cirurgias = new ArrayList<>();
-    private List<String> alergias = new ArrayList<>();
-    private List<String> sintomas = new ArrayList<>();
+    private String cirurgias;
+    private String alergias;
+    private String sintomas;
 
     /**
      * @return nome do paciente.
@@ -236,38 +238,28 @@ public class Paciente implements Serializable {
         this.diabete = diabete;
     }
 
-    /**
-     *
-     * @return lista de cirurgias que foram feitas no paciente
-     */
-    public List<String> getCirurgias() {
+    public String getCirurgias() {
         return cirurgias;
     }
 
-    /**
-     * seta lista cirurgias que ja foram feitas no paciente
-     *
-     * @param cirurgias
-     */
-    public void setCirurgias(List<String> cirurgias) {
+    public void setCirurgias(String cirurgias) {
         this.cirurgias = cirurgias;
     }
 
-    /**
-     *
-     * @return lista de alergia
-     */
-    public List<String> getAlergias() {
+    public String getAlergias() {
         return alergias;
     }
 
-    /**
-     * seta lista de alergias
-     *
-     * @param alergias
-     */
-    public void setAlergias(List<String> alergias) {
+    public void setAlergias(String alergias) {
         this.alergias = alergias;
+    }
+
+    public String getSintomas() {
+        return sintomas;
+    }
+
+    public void setSintomas(String sintomas) {
+        this.sintomas = sintomas;
     }
 
     /**
@@ -302,23 +294,6 @@ public class Paciente implements Serializable {
      */
     public void setTratamento(String tratamento) {
         this.tratamento = tratamento;
-    }
-
-    /**
-     *
-     * @return lista de sintomas
-     */
-    public List<String> getSintomas() {
-        return sintomas;
-    }
-
-    /**
-     * seta lista de sintomas
-     *
-     * @param sintomas
-     */
-    public void setSintomas(List<String> sintomas) {
-        this.sintomas = sintomas;
     }
 
     public Long getId() {

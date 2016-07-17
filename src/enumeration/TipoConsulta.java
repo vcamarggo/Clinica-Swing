@@ -16,6 +16,7 @@ public enum TipoConsulta {
 
     /**
      * transforma a duracao enum em String.
+     *
      * @return duracao em String.
      */
     public String getDuracao() {

@@ -2,11 +2,9 @@ package model;
 
 /**
  *
- * @author F.Carvalho / M. Hirose / V.Camargo 
- */
-
-/** 
- * Classe abstrata para criação de relatórios médicos.  
+ * Classe abstrata para criação de relatórios médicos.
+ *
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public abstract class RelatorioMedico {
 
@@ -19,9 +17,10 @@ public abstract class RelatorioMedico {
      * Assinatura de método para preenchimento de dados do relatório
      */
     public abstract void preencheDados();
-    
+
     /**
      * Assinatura de método para exibição dos dados do relatório.
+     *
      * @return relatorioGerado
      */
     public abstract String gerarRelatorio();
@@ -36,7 +35,7 @@ public abstract class RelatorioMedico {
     /**
      * Seta o nome do paciente do atestado.
      *
-     * @param nomePaciente 
+     * @param nomePaciente
      */
     public void setNomePaciente(String nomePaciente) {
         this.nomePaciente = nomePaciente;
@@ -52,7 +51,7 @@ public abstract class RelatorioMedico {
     /**
      * Seta uma data de consulta.
      *
-     * @param dataConsulta 
+     * @param dataConsulta
      */
     public void setDataConsulta(String dataConsulta) {
         this.dataConsulta = dataConsulta;
@@ -68,7 +67,7 @@ public abstract class RelatorioMedico {
     /**
      * Seta uma assinatura do medico.
      *
-     * @param assinaturaMedico 
+     * @param assinaturaMedico
      */
     public void setAssinaturaMedico(String assinaturaMedico) {
         this.assinaturaMedico = assinaturaMedico;

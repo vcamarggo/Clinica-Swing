@@ -1,5 +1,7 @@
 package model;
 
+import model.pojo.Consulta;
+
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo

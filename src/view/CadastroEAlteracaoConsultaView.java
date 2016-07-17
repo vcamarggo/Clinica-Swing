@@ -15,6 +15,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroEAlteracaoConsultaView
+     *
      * @param parent
      * @param modal
      */

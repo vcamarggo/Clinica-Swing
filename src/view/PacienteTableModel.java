@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author mayza
  */
-public class PacienteTableModel extends AbstractTableModel{
+public class PacienteTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
@@ -27,5 +27,5 @@ public class PacienteTableModel extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

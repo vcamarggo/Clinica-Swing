@@ -1,20 +1,38 @@
-package model;
+package model.pojo;
 
 import enumeration.TipoConsulta;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class Consulta {
+@Entity
+public class Consulta implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
+
+    @Temporal(TemporalType.DATE)
     private Date dataConsulta;
     private String hora;
     private String medico;
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
     private Paciente paciente;
+
+    @Enumerated(EnumType.STRING)
     private TipoConsulta tipoConsulta;
 
     /**
@@ -123,16 +141,6 @@ public class Consulta {
      * Construtor padrao.
      */
     public Consulta() {
-    }
-
-    private static List<Consulta> consultas = new ArrayList<>();
-
-    /**
-     *
-     * @return Retorna lista de consultas.
-     */
-    public static List<Consulta> getConsultas() {
-        return consultas;
     }
 
 }

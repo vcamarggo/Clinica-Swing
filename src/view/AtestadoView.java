@@ -15,6 +15,7 @@ public class AtestadoView extends javax.swing.JDialog {
 
     /**
      * Creates new form AtestadoView
+     *
      * @param parent
      * @param modal
      */

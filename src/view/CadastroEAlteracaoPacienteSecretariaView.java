@@ -15,6 +15,7 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
 
     /**
      * Creates new form AlterarDadosPacienteSecretariaView
+     *
      * @param parent
      * @param modal
      */

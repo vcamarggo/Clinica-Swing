@@ -15,6 +15,7 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
 
     /**
      * Creates new form DetalhesPacienteView
+     *
      * @param parent
      * @param modal
      */
@@ -386,7 +387,7 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
         // TODO add your handling code here
-        
+
         /*Retorna para a view de secretaria*/
     }//GEN-LAST:event_btnOKActionPerformed
 

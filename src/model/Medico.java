@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.util.ArrayList;
+import model.pojo.Paciente;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Medico extends Usuario {
         paciente.setBebe(null);
         paciente.setColesterol(null);
         paciente.setDiabete(null);
-        paciente.setCirurgias(new ArrayList<>());
+//        paciente.setCirurgias(new ArrayList<>());
     }
 
     /**
@@ -34,6 +34,6 @@ public class Medico extends Usuario {
     public void removeDadosProntuarioPaciente(Paciente paciente) {
         paciente.setDiagnostico(null);
         paciente.setTratamento(null);
-        paciente.setSintomas(new ArrayList<>());
+//        paciente.setSintomas(new ArrayList<>());
     }
 }

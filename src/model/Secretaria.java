@@ -5,11 +5,11 @@
  */
 package model;
 
-import java.util.ArrayList;
+import model.pojo.Consulta;
+import model.pojo.Paciente;
 import java.util.Calendar;
 import java.util.List;
-import javax.persistence.FlushModeType;
-import javax.transaction.Transactional;
+import javax.persistence.Query;
 
 /**
  *
@@ -20,27 +20,20 @@ public class Secretaria extends Usuario {
     /**
      * Remove um paciente recebido como parametro.
      *
-     * @param entidade
+     * @param paciente
      */
-    public void removePaciente(Paciente entidade) {
-        entidade = entityManager.merge(entidade);
-        entityManager.getTransaction().begin();
-        entityManager.remove(entidade);
-        entityManager.getTransaction().commit();
+    public void removePaciente(Paciente paciente) {
+        remove(paciente);
 
     }
 
     /**
      * Adiciona um paciente recebido como parametro.
      *
-     * @param entidade
+     * @param paciente
      */
-    public void adicionarPaciente(Paciente entidade) {
-        entityManager.getTransaction().begin();
-        entityManager.persist(entidade);
-        entityManager.setFlushMode(FlushModeType.COMMIT);
-        entityManager.flush();
-        entityManager.getTransaction().commit();
+    public void adicionaPaciente(Paciente paciente) {
+        adiciona(paciente);
     }
 
     /**
@@ -51,15 +44,14 @@ public class Secretaria extends Usuario {
      * @return
      */
     public List<Consulta> getConsultasDataDesejadaParaPacientesComEmail(Calendar dataDesejada) {
-        List<Consulta> consultasDesejadas = new ArrayList<>();
-        for (Consulta consulta : Consulta.getConsultas()) {
-            if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
-                if (consulta.getPaciente().getEmail() != null) {
-                    consultasDesejadas.add(consulta);
-                }
-            }
-        }
-        return consultasDesejadas;
+        Query q = entityManager.createQuery(
+                new StringBuilder("SELECT ob FROM Consulta ob,"
+                        + " INNER JOIN Paciente P WHERE"
+                        + " ob.p.email IS NOT NULL AND dataConsulta = :dataDesejada")
+                .toString(),
+                Consulta.class);
+        q.setParameter("dataDesejada", dataDesejada.getTime());
+        return q.getResultList();
     }
 
     /**
@@ -70,33 +62,23 @@ public class Secretaria extends Usuario {
      * @return
      */
     public List<Consulta> getConsultasDataDesejadaParaPacientesComCelular(Calendar dataDesejada) {
-        List<Consulta> consultasDesejadas = new ArrayList<>();
-        for (Consulta consulta : Consulta.getConsultas()) {
-            if (consulta.getDataConsulta().compareTo(dataDesejada.getTime()) == 0) {
-                if (consulta.getPaciente().getCelular() != null) {
-                    consultasDesejadas.add(consulta);
-                }
-            }
-        }
-        return consultasDesejadas;
+        Query q = entityManager.createQuery(
+                new StringBuilder("SELECT ob FROM Consulta ob,"
+                        + " INNER JOIN Paciente P WHERE"
+                        + " ob.p.celular IS NOT NULL AND dataConsulta = :dataDesejada")
+                .toString(),
+                Consulta.class);
+        q.setParameter("dataDesejada", dataDesejada.getTime());
+        return q.getResultList();
     }
 
     /**
      * Adiciona uma consulta para um paciente.
      *
      * @param consulta
-     * @return 1 caso consulta com codigo ja existe, 2 caso nao exista o
-     * paciente, 0 se tudo OK.
      */
-    public int adicionarConsulta(Consulta consulta) {
-        if (getConsultaByCodigo(consulta.getCodigo()) != null) {
-            return 1;
-        } else if (consulta.getPaciente() == null) {
-            return 2;
-        } else {
-            Consulta.getConsultas().add(consulta);
-            return 0;
-        }
+    public void adicionaConsulta(Consulta consulta) {
+        adiciona(consulta);
     }
 
     /**
@@ -105,20 +87,16 @@ public class Secretaria extends Usuario {
      * @param consulta
      */
     public void removeConsulta(Consulta consulta) {
-        Consulta.getConsultas().remove(consulta);
+        remove(consulta);
     }
 
     /**
      * @param codigo
      * @return A consulta com o codigo passado no parametro.
      */
-    public Consulta getConsultaByCodigo(int codigo) {
-        for (Consulta consulta : Consulta.getConsultas()) {
-            if (consulta.getCodigo() == codigo) {
-                return consulta;
-            }
-        }
-        return null;
+    public Consulta
+            getConsultaByCodigo(int codigo) {
+        return entityManager.find(Consulta.class, codigo);
     }
 
     /**
@@ -126,20 +104,18 @@ public class Secretaria extends Usuario {
      * consultas cadastradas no sistema. Insere na lista consultasDoDiaSeguinte
      * apenas os pacientes que tem consulta nesta data recebida.
      *
-     * @param dataAmanha
-     * @return
+     * @return consultasDeAmanha
      */
-    public List<Consulta> consultasDoDiaSeguinte(Calendar dataAmanha) {
-        List<Consulta> consultasDoDiaSeguinte = new ArrayList<>();
-        //Percorre a lista de Consultas cadastradas
-        for (Consulta consulta : Consulta.getConsultas()) {
-            if (consulta.getDataConsulta().compareTo(dataAmanha.getTime()) == 0) {
-                consultasDoDiaSeguinte.add(consulta);
-            }
-        }
-        if (consultasDoDiaSeguinte.isEmpty()) {
-            System.out.println("*O Consultório nao tem consultas agendadas para amanhã.\n");
-        }
-        return consultasDoDiaSeguinte;
+    public List<Consulta> listaConsultasDeAmanha() {
+        Query q = entityManager.createQuery(
+                new StringBuilder("SELECT ob FROM Consulta ob where dataConsulta = :dataAmanha")
+                .toString(),
+                Consulta.class
+        );
+        Calendar dataAmanha = Calendar.getInstance();
+        dataAmanha.add(Calendar.DAY_OF_MONTH, 1);
+        q.setParameter("dataAmanha", dataAmanha.getTime());
+        return q.getResultList();
     }
+
 }
