@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 
 /**
  *
@@ -53,6 +54,7 @@ public class SecretariaView extends javax.swing.JFrame {
         scrollConsulta = new javax.swing.JScrollPane();
         tabelaConsultas = new javax.swing.JTable();
         relatorioPanel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,7 +92,7 @@ public class SecretariaView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Perfil Secretaria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Calibri", 0, 12))); // NOI18N
+        contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Perfil Secretaria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Calibri", 1, 14))); // NOI18N
 
         tabelaPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -170,7 +172,7 @@ public class SecretariaView extends javax.swing.JFrame {
                 .addComponent(btnAlterarPaciente)
                 .addGap(18, 18, 18)
                 .addComponent(btnRemoverPaciente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnNovoPaciente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNovoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,7 +196,7 @@ public class SecretariaView extends javax.swing.JFrame {
 
         abasSecretaria.addTab("Pacientes Cadastrados", pacientePanel);
 
-        opcoesConsulta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opcoes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
+        opcoesConsulta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opcoes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         btnDetalhesPaciente2.setText("Detalhes do Paciente");
 
@@ -292,7 +294,7 @@ public class SecretariaView extends javax.swing.JFrame {
         );
         consultaPanelLayout.setVerticalGroup(
             consultaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+            .addComponent(scrollConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
             .addComponent(opcoesConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -306,20 +308,28 @@ public class SecretariaView extends javax.swing.JFrame {
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(abasSecretaria)
+            .addComponent(abasSecretaria, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
         );
 
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
+
+        jButton1.setText("Consultas por Data");
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
         relatorioPanel.setLayout(relatorioPanelLayout);
         relatorioPanelLayout.setHorizontalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         relatorioPanelLayout.setVerticalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(relatorioPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,10 +369,6 @@ public class SecretariaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNovaConsultaActionPerformed
 
-    public JButton getBtnVoltarSelecaoPerfil() {
-        return btnVoltarSelecaoPerfil;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarConsulta;
@@ -376,6 +382,7 @@ public class SecretariaView extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltarSelecaoPerfil;
     private javax.swing.JPanel consultaPanel;
     private javax.swing.JPanel contentPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblNovaConsulta;
     private javax.swing.JLabel lblNovoPaciente;
     private javax.swing.JLabel lblSaudeCIA;
@@ -389,4 +396,8 @@ public class SecretariaView extends javax.swing.JFrame {
     private javax.swing.JTable tabelaConsultas;
     private javax.swing.JTable tabelaPacientes;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnVoltarSelecaoPerfil() {
+        return btnVoltarSelecaoPerfil;
+    }
 }

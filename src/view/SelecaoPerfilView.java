@@ -115,7 +115,7 @@ public class SelecaoPerfilView extends JFrame {
                     .addComponent(lblSouMedico)
                     .addComponent(lblSouSecretaria)
                     .addComponent(lblGerenMsg))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
@@ -175,18 +175,6 @@ public class SelecaoPerfilView extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGerenMsgActionPerformed
 
-    public JButton getBtnGerenMsg() {
-        return btnGerenMsg;
-    }
-
-    public JButton getBtnSouMedico() {
-        return btnSouMedico;
-    }
-
-    public JButton getBtnSouSecretaria() {
-        return btnSouSecretaria;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGerenMsg;
     private javax.swing.JButton btnSouMedico;
@@ -199,4 +187,16 @@ public class SelecaoPerfilView extends JFrame {
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelLogin;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnGerenMsg() {
+        return btnGerenMsg;
+    }
+
+    public JButton getBtnSouMedico() {
+        return btnSouMedico;
+    }
+
+    public JButton getBtnSouSecretaria() {
+        return btnSouSecretaria;
+    }
 }

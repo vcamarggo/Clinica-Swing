@@ -137,7 +137,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Dados da Consulta"/>
+            <TitledBorder title="Dados da Consulta">
+              <Font PropertyName="font" name="Tahoma" size="11" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -239,9 +241,6 @@
         <Component class="javax.swing.JTextField" name="txtCodigoConsulta">
         </Component>
         <Component class="javax.swing.JTextField" name="txtNomePaciente">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomePacienteActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDataConsulta">
         </Component>

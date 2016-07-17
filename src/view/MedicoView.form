@@ -28,7 +28,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="contentPanel" max="32767" attributes="0"/>
-                  <Component id="relatorioPanel" alignment="1" max="32767" attributes="0"/>
+                  <Component id="relatorioPanel" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -39,7 +39,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panelHeader" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="contentPanel" max="32767" attributes="0"/>
+              <Component id="contentPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="relatorioPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder position="1" title="Perfil Medico">
-              <Font PropertyName="font" name="Calibri" size="12" style="0"/>
+              <Font PropertyName="font" name="Calibri" size="14" style="1"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -116,25 +116,25 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="abasMedico" max="32767" attributes="0"/>
+              <Component id="abasSecretaria" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="abasMedico" alignment="0" max="32767" attributes="0"/>
+              <Component id="abasSecretaria" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="abasMedico">
+        <Container class="javax.swing.JTabbedPane" name="abasSecretaria">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="pacientePanel">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Pacientes">
-                    <Property name="tabTitle" type="java.lang.String" value="Pacientes"/>
+                  <JTabbedPaneConstraints tabName="Pacientes Cadastrados">
+                    <Property name="tabTitle" type="java.lang.String" value="Pacientes Cadastrados"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -142,43 +142,17 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="scrollPaciente" pref="814" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnInserirDadosAdicionais" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnCadastrarProntuario" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnAlterarProntuario" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAlterarDadosAdicionais" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnRemoverProntuario" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRemoverDadosAdicionais" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="scrollPaciente" min="-2" pref="651" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="opcoesPaciente" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="scrollPaciente" min="-2" pref="144" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnCadastrarProntuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAlterarProntuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRemoverProntuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="11" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnInserirDadosAdicionais" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAlterarDadosAdicionais" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRemoverDadosAdicionais" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="scrollPaciente" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="opcoesPaciente" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -190,7 +164,7 @@
                     <Component class="javax.swing.JTable" name="tabelaPacientes">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="15">
+                          <Table columnCount="4" rowCount="15">
                             <Column editable="false" title="Nome do Paciente" type="java.lang.Object">
                               <Data value="aa"/>
                               <Data value="bbb"/>
@@ -208,25 +182,6 @@
                               <Data value="null"/>
                               <Data value="ddddd"/>
                             </Column>
-                            <Column editable="false" title="Nascimento" type="java.lang.Object">
-                              <Data value="aa"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="Endereco" type="java.lang.Object"/>
-                            <Column editable="false" title="Telefone" type="java.lang.Object"/>
                             <Column editable="false" title="Celular" type="java.lang.Object"/>
                             <Column editable="false" title="Email" type="java.lang.Object"/>
                             <Column editable="false" title="Tipo de Convenio" type="java.lang.Object"/>
@@ -236,54 +191,118 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btnInserirDadosAdicionais">
+                <Container class="javax.swing.JPanel" name="opcoesPaciente">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Inserir Dados Adicionais"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                        <TitledBorder position="1" title="Opcoes">
+                          <Font PropertyName="font" name="Tahoma" size="11" style="1"/>
+                        </TitledBorder>
+                      </Border>
+                    </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirDadosAdicionaisActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnAlterarDadosAdicionais">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Alterar Dados Adicionais"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarDadosAdicionaisActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnRemoverDadosAdicionais">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Remover Dados Adicionais"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverDadosAdicionaisActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnCadastrarProntuario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cadastrar Prontuario"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarProntuarioActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnAlterarProntuario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Alterar Prontuario"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarProntuarioActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnRemoverProntuario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Remover Prontuario"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverProntuarioActionPerformed"/>
-                  </Events>
-                </Component>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnCadastrarProntuario" max="32767" attributes="0"/>
+                                  <Component id="btnDetalhesPaciente" alignment="0" pref="179" max="32767" attributes="0"/>
+                                  <Component id="btnInserirDadosAdicionais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnAlterarDadosAdicionais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnRemoverDadosAdicionais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnAlterarProntuario" max="32767" attributes="0"/>
+                                  <Component id="btnRemoverProntuario" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnDetalhesPaciente" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnInserirDadosAdicionais" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnAlterarDadosAdicionais" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnRemoverDadosAdicionais" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnCadastrarProntuario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnAlterarProntuario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnRemoverProntuario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JButton" name="btnDetalhesPaciente">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Detalhes do Paciente"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnInserirDadosAdicionais">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Inserir Dados Adicionais"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirDadosAdicionaisActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAlterarDadosAdicionais">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Alterar Dados Adicionais"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarDadosAdicionaisActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRemoverDadosAdicionais">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remover Dados Adicionais"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverDadosAdicionaisActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JSeparator" name="jSeparator1">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnCadastrarProntuario">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Cadastrar Prontuario"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarProntuarioActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAlterarProntuario">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Alterar Prontuario"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarProntuarioActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRemoverProntuario">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remover Prontuario"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverProntuarioActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -302,7 +321,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnGerarReceita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -322,7 +341,7 @@
                       <Component id="btnGerarAtestado" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnGerarDeclaracaoAcompanhamento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

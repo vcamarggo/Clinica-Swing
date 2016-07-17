@@ -103,7 +103,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        panelAlterarPaciente.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados da Consulta"));
+        panelAlterarPaciente.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados da Consulta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jLabel1.setText("Codigo da Consulta:");
 
@@ -116,12 +116,6 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         jLabel5.setText("Medico Responsavel:");
 
         jLabel7.setText("Tipo de Consulta:");
-
-        txtNomePaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomePacienteActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelAlterarPacienteLayout = new javax.swing.GroupLayout(panelAlterarPaciente);
         panelAlterarPaciente.setLayout(panelAlterarPacienteLayout);
@@ -206,10 +200,6 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 
         /*Retorna para a view de secretaria*/
     }//GEN-LAST:event_btnGravarActionPerformed
-
-    private void txtNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomePacienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxTipoConsulta;
