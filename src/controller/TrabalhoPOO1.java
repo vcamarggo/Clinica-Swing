@@ -1,7 +1,6 @@
-package view;
+package controller;
 
-import enumeration.Usuario;
-import java.util.Scanner;
+import view.SelecaoPerfilView;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -17,8 +16,8 @@ public class TrabalhoPOO1 {
      * view correspondente.
      */
     public static void iniciaSistema() {
-        ViewInicial view = new ViewInicial();
-        ControllerInicial controllerInicial = new ControllerInicial();
+        SelecaoPerfilController controller = new SelecaoPerfilController(new SelecaoPerfilView());
+        controller.controla();
     }
 
     /**

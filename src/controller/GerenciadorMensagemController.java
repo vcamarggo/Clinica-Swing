@@ -5,6 +5,9 @@ package controller;
  */
 public class GerenciadorMensagemController {
 
+    public void controla() {
+    }
+
     /**
      * Construtor padrao.
      */

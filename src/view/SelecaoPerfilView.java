@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view2;
+package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -46,21 +47,21 @@ public class SelecaoPerfilView extends JFrame {
 
         lblSelecionePerfil.setText("Selecione seu Perfil:");
 
-        btnSouMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view2/imagens/icone-medico.png"))); // NOI18N
+        btnSouMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-medico.png"))); // NOI18N
         btnSouMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSouMedicoActionPerformed(evt);
             }
         });
 
-        btnSouSecretaria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view2/imagens/icone-secretaria.png"))); // NOI18N
+        btnSouSecretaria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-secretaria.png"))); // NOI18N
         btnSouSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSouSecretariaActionPerformed(evt);
             }
         });
 
-        btnGerenMsg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view2/imagens/icone-msg.png"))); // NOI18N
+        btnGerenMsg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-msg.png"))); // NOI18N
         btnGerenMsg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerenMsgActionPerformed(evt);
@@ -120,7 +121,7 @@ public class SelecaoPerfilView extends JFrame {
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
         lblSaudeCIA.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        lblSaudeCIA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view2/imagens/icone-consultorio.png"))); // NOI18N
+        lblSaudeCIA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-consultorio.png"))); // NOI18N
         lblSaudeCIA.setText("Saude & CIA");
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
@@ -174,40 +175,16 @@ public class SelecaoPerfilView extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGerenMsgActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SelecaoPerfilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SelecaoPerfilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SelecaoPerfilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SelecaoPerfilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    public JButton getBtnGerenMsg() {
+        return btnGerenMsg;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SelecaoPerfilView().setVisible(true);
-            }
-        });
+    public JButton getBtnSouMedico() {
+        return btnSouMedico;
+    }
+
+    public JButton getBtnSouSecretaria() {
+        return btnSouSecretaria;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
