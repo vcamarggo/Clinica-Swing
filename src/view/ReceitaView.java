@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,11 @@ public class ReceitaView extends javax.swing.JDialog {
 
     /**
      * Creates new form ReceitaView
+     *
+     * @param parent
+     * @param modal
      */
-    public ReceitaView(java.awt.Frame parent, boolean modal) {
+    public ReceitaView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,10 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
 
     /**
      * Creates new form EmailsEnviadosView
+     * @param parent
+     * @param modal
      */
-    public PacientesNotificadosView(java.awt.Frame parent, boolean modal) {
+    public PacientesNotificadosView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

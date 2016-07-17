@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,10 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
 
     /**
      * Creates new form AlterarDadosPacienteSecretariaView
+     * @param parent
+     * @param modal
      */
-    public CadastroEAlteracaoPacienteSecretariaView(java.awt.Frame parent, boolean modal) {
+    public CadastroEAlteracaoPacienteSecretariaView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

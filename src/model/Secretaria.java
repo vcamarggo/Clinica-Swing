@@ -8,6 +8,8 @@ package model;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.FlushModeType;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -18,24 +20,27 @@ public class Secretaria extends Usuario {
     /**
      * Remove um paciente recebido como parametro.
      *
-     * @param paciente
+     * @param entidade
      */
-    public void removePaciente(Paciente paciente) {
-        Paciente.getPacientes().remove(paciente);
+    public void removePaciente(Paciente entidade) {
+        entidade = entityManager.merge(entidade);
+        entityManager.getTransaction().begin();
+        entityManager.remove(entidade);
+        entityManager.getTransaction().commit();
+
     }
 
     /**
-     * Se o paciente nao esta na lista, adiciona.
+     * Adiciona um paciente recebido como parametro.
      *
-     * @param paciente
-     * @return 1, caso deu tudo certo, 0 caso haja erro.
+     * @param entidade
      */
-    public int adicionarPaciente(Paciente paciente) {
-        if (getPacienteByNome(paciente.getNome()) != null) {
-            return 0;
-        }
-        Paciente.getPacientes().add(paciente);
-        return 1;
+    public void adicionarPaciente(Paciente entidade) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(entidade);
+        entityManager.setFlushMode(FlushModeType.COMMIT);
+        entityManager.flush();
+        entityManager.getTransaction().commit();
     }
 
     /**

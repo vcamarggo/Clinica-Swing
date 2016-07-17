@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,11 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
 
     /**
      * Creates new form DeclaracaoAcompanhamentoView
+     *
+     * @param parent
+     * @param modal
      */
-    public DeclaracaoAcompanhamentoView(java.awt.Frame parent, boolean modal) {
+    public DeclaracaoAcompanhamentoView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

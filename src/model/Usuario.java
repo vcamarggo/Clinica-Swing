@@ -5,11 +5,32 @@
  */
 package model;
 
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author Camargo
  */
 public abstract class Usuario {
+
+    private static final long serialVersionUID = 1L;
+
+    protected static EntityManager entityManager = Persistence.createEntityManagerFactory("PU").createEntityManager();
+
+    public List<Paciente> listPacientes() {
+        return entityManager.createQuery(
+                new StringBuilder("SELECT ob FROM " + Paciente.class.getName() + "  ob ")
+                .toString(),
+                Paciente.class).getResultList();
+    }
+
+    public void updatePaciente(Paciente entidade) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(entidade);
+        entityManager.getTransaction().commit();
+    }
 
     /**
      * Procura um paciente na lista atraves do seu nome
@@ -18,7 +39,7 @@ public abstract class Usuario {
      * @return paciente encontrado.
      */
     protected Paciente getPacienteByNome(String nome) {
-        for (Paciente paciente : Paciente.getPacientes()) {
+        for (Paciente paciente : listPacientes()) {
             if (paciente.getNome().equals(nome)) {
                 return paciente;
             }

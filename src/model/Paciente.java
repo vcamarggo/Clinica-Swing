@@ -1,14 +1,22 @@
 package model;
 
 import enumeration.TipoConvenio;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class Paciente {
+@Entity
+public class Paciente implements Serializable {
 
     /**
      * Construtor padrao.
@@ -16,9 +24,11 @@ public class Paciente {
     public Paciente() {
     }
 
-    private static List<Paciente> pacientes = new ArrayList<>();
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
+    @Temporal(value = TemporalType.DATE)
     private Date dataNascimento;
     private String endereco;
     private String telefone;
@@ -311,12 +321,12 @@ public class Paciente {
         this.sintomas = sintomas;
     }
 
-    /**
-     *
-     * @return lista de pacientes da aplicacao.
-     */
-    public static List<Paciente> getPacientes() {
-        return pacientes;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

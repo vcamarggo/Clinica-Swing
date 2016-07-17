@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,10 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroEAlteracaoConsultaView
+     * @param parent
+     * @param modal
      */
-    public CadastroEAlteracaoConsultaView(java.awt.Frame parent, boolean modal) {
+    public CadastroEAlteracaoConsultaView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

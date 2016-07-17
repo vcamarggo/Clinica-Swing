@@ -1,7 +1,6 @@
 package controller;
 
 import java.awt.event.ActionEvent;
-import model.GerenciadorMensagem;
 import model.Medico;
 import model.Secretaria;
 import view.MedicoView;

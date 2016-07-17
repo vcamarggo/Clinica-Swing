@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,11 @@ public class ConsultasPorDataView extends javax.swing.JDialog {
 
     /**
      * Creates new form ConsultasPorDataView
+     *
+     * @param parent
+     * @param modal
      */
-    public ConsultasPorDataView(java.awt.Frame parent, boolean modal) {
+    public ConsultasPorDataView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

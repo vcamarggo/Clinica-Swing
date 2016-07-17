@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,10 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
 
     /**
      * Creates new form DetalhesPacienteMedicoView
+     * @param parent
+     * @param modal
      */
-    public DetalhesPacienteSecretariaView(java.awt.Frame parent, boolean modal) {
+    public DetalhesPacienteSecretariaView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

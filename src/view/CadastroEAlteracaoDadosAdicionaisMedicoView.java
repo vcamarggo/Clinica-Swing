@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author mayza
@@ -13,8 +15,10 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
 
     /**
      * Creates new form CadastroEAlteracaoDadosAdicionaisMedicoView
+     * @param parent
+     * @param modal
      */
-    public CadastroEAlteracaoDadosAdicionaisMedicoView(java.awt.Frame parent, boolean modal) {
+    public CadastroEAlteracaoDadosAdicionaisMedicoView(JFrame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
