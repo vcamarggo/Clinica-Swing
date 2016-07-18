@@ -41,7 +41,7 @@ public class ReceitaMedica extends RelatorioMedico {
      * @return receitaMedica
      */
     @Override
-    public String gerarRelatorio() {
+    public String geraRelatorio() {
         StringBuilder sb = new StringBuilder();
         sb.append("---------------------------------------------");
         sb.append("\n*****Receita Médica*****\n");

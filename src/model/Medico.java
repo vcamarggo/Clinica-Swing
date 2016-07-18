@@ -5,8 +5,6 @@
  */
 package model;
 
-import model.pojo.Paciente;
-
 /**
  *
  * @author Camargo
@@ -19,11 +17,9 @@ public class Medico extends Usuario {
      * @param paciente
      */
     public void removeDadosAdicionaisPaciente(Paciente paciente) {
-        paciente.setFuma(null);
-        paciente.setBebe(null);
-        paciente.setColesterol(null);
-        paciente.setDiabete(null);
-//        paciente.setCirurgias(new ArrayList<>());
+        // Colocar isso no MedicoController
+        paciente.removeDadosAdicionaisPaciente();
+        atualizaPaciente(paciente);
     }
 
     /**
@@ -32,8 +28,7 @@ public class Medico extends Usuario {
      * @param paciente
      */
     public void removeDadosProntuarioPaciente(Paciente paciente) {
-        paciente.setDiagnostico(null);
-        paciente.setTratamento(null);
-//        paciente.setSintomas(new ArrayList<>());
+        paciente.removeDadosProntuarioPaciente();
+        atualizaPaciente(paciente);
     }
 }

@@ -1,4 +1,4 @@
-package model.pojo;
+package model;
 
 import enumeration.TipoConvenio;
 import java.io.Serializable;
@@ -26,7 +26,7 @@ public class Paciente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long rg;
     private String nome;
     @Temporal(value = TemporalType.DATE)
     private Date dataNascimento;
@@ -296,12 +296,34 @@ public class Paciente implements Serializable {
         this.tratamento = tratamento;
     }
 
-    public Long getId() {
-        return id;
+    public Long getRg() {
+        return rg;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRg(Long rg) {
+        this.rg = rg;
+    }
+
+    /**
+     * Remove informações relacionadas aos dados adicionais do paciente
+     *
+     */
+    public void removeDadosAdicionaisPaciente() {
+        setFuma(null);
+        setBebe(null);
+        setColesterol(null);
+        setDiabete(null);
+        setCirurgias(null);
+    }
+
+    /**
+     * Remove informações relacionadas ao prontuario do paciente
+     *
+     */
+    public void removeDadosProntuarioPaciente() {
+        setDiagnostico(null);
+        setTratamento(null);
+        setSintomas(null);
     }
 
 }

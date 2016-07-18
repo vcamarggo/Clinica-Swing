@@ -40,7 +40,7 @@ public class AtestadoMedico extends RelatorioMedico {
      * @return atestado
      */
     @Override
-    public String gerarRelatorio() {
+    public String geraRelatorio() {
         StringBuilder sb = new StringBuilder();
         sb.append("----------------------------------------------------------\n");
         sb.append("*****Atestado Médico*****\n");

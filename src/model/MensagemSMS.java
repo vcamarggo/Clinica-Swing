@@ -1,7 +1,5 @@
 package model;
 
-import model.pojo.Consulta;
-
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -15,7 +13,7 @@ public class MensagemSMS extends GerenciadorMensagem {
      * @return mensagemSMS
      */
     @Override
-    public String gerarMensagem(Consulta consulta) {
+    public String geraMensagem(Consulta consulta) {
         StringBuilder sb = new StringBuilder();
         sb.append(" -------------------------");
         sb.append("\n|***SMS***");

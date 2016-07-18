@@ -38,7 +38,7 @@ public class DeclaracaoAcompanhamento extends RelatorioMedico {
      * @return declaracaoAcompanhamento
      */
     @Override
-    public String gerarRelatorio() {
+    public String geraRelatorio() {
         StringBuilder sb = new StringBuilder();
         sb.append("--------------------------------------------------------");
         sb.append("\n*****Declaracao de Acompanhamento*****\n");

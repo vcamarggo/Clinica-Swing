@@ -1,6 +1,5 @@
 package model;
 
-import model.pojo.Consulta;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -50,5 +49,5 @@ public abstract class GerenciadorMensagem {
      * @param consulta
      * @return mensagemGerada
      */
-    public abstract String gerarMensagem(Consulta consulta);
+    public abstract String geraMensagem(Consulta consulta);
 }

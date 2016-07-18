@@ -23,7 +23,7 @@ public abstract class RelatorioMedico {
      *
      * @return relatorioGerado
      */
-    public abstract String gerarRelatorio();
+    public abstract String geraRelatorio();
 
     /**
      * @return nome do paciente.

@@ -5,8 +5,6 @@
  */
 package model;
 
-import model.pojo.Consulta;
-import model.pojo.Paciente;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.FlushModeType;

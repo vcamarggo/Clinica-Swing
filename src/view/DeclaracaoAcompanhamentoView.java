@@ -98,7 +98,7 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
         lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
-        lblAssinatura.setText("ASSIANTURA");
+        lblAssinatura.setText("ASSINATURA");
 
         lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
         lblNomePaciente.setText("NOMEPACIENTE");

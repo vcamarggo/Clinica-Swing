@@ -1,4 +1,4 @@
-package model.pojo;
+package model;
 
 import enumeration.TipoConsulta;
 import java.io.Serializable;

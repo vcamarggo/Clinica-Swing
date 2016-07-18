@@ -5,8 +5,6 @@
  */
 package model;
 
-import model.pojo.Consulta;
-import model.pojo.Paciente;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.Query;
@@ -24,7 +22,6 @@ public class Secretaria extends Usuario {
      */
     public void removePaciente(Paciente paciente) {
         remove(paciente);
-
     }
 
     /**
@@ -45,9 +42,8 @@ public class Secretaria extends Usuario {
      */
     public List<Consulta> getConsultasDataDesejadaParaPacientesComEmail(Calendar dataDesejada) {
         Query q = entityManager.createQuery(
-                new StringBuilder("SELECT ob FROM Consulta ob,"
-                        + " INNER JOIN Paciente P WHERE"
-                        + " ob.p.email IS NOT NULL AND dataConsulta = :dataDesejada")
+                new StringBuilder("SELECT c FROM Consulta c WHERE"
+                        + " c.paciente.email IS NOT NULL AND c.dataConsulta = :dataDesejada")
                 .toString(),
                 Consulta.class);
         q.setParameter("dataDesejada", dataDesejada.getTime());
@@ -63,9 +59,8 @@ public class Secretaria extends Usuario {
      */
     public List<Consulta> getConsultasDataDesejadaParaPacientesComCelular(Calendar dataDesejada) {
         Query q = entityManager.createQuery(
-                new StringBuilder("SELECT ob FROM Consulta ob,"
-                        + " INNER JOIN Paciente P WHERE"
-                        + " ob.p.celular IS NOT NULL AND dataConsulta = :dataDesejada")
+                new StringBuilder("SELECT c FROM Consulta c WHERE"
+                        + " c.paciente.celular IS NOT NULL AND dataConsulta = :dataDesejada")
                 .toString(),
                 Consulta.class);
         q.setParameter("dataDesejada", dataDesejada.getTime());

@@ -112,7 +112,7 @@ public class AtestadoView extends javax.swing.JDialog {
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
         lblAssinaturaMedico.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
-        lblAssinaturaMedico.setText("ASSIANTURA");
+        lblAssinaturaMedico.setText("ASSINATURA");
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);

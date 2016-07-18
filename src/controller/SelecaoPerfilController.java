@@ -23,7 +23,6 @@ public class SelecaoPerfilController {
     private SelecaoPerfilView view;
 
     public void controla() {
-
         view.getBtnGerenMsg().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             GerenciadorMensagemController gerenciadorMensagemController = new GerenciadorMensagemController();
@@ -38,11 +37,6 @@ public class SelecaoPerfilController {
             view.dispose();
             SecretariaController secretariaController = new SecretariaController(new Secretaria(), new SecretariaView());
             secretariaController.controla();
-        });
-        view.getBtnGerenMsg().addActionListener((ActionEvent actionEvent) -> {
-            view.dispose();
-            /*GerenciadorMensagemController secretariaController = new GerenciadorMensagemController(new GerenciadorMensagem(), new SecretariaView());
-            secretariaController.controla();*/
         });
     }
 
