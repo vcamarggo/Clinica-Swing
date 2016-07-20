@@ -8,7 +8,6 @@ package controller;
 import java.awt.event.ActionEvent;
 import model.Paciente;
 import model.Secretaria;
-import view.CadastroEAlteracaoPacienteSecretariaView;
 import view.DetalhesPacienteSecretariaView;
 
 /**
@@ -37,6 +36,7 @@ public class DetalhesPacienteSecretariaController {
         view.getLblTelefonePaciente().setText(model.getTelefone());
         view.getLblCelularPaciente().setText(model.getCelular());
         view.getLblEmailPaciente().setText(model.getEmail());
+        view.getLblConvenioPaciente().setText(model.getTipoConvenio().toString());
         view.getBtnOK1().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });
