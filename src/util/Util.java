@@ -7,7 +7,7 @@ package util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -15,12 +15,8 @@ import java.util.Date;
  */
 public class Util {
 
-    public static Date geraDataString(String data) {
-        try {
-            return new SimpleDateFormat("dd/MM/yyyy").parse(data);
-        } catch (ParseException ex) {
-            return null;
-        }
+    public static Date geraDataString(String data) throws ParseException {
+        return new Date(new SimpleDateFormat("dd/MM/yyyy").parse(data).getTime());
     }
 
     public static String geraDataDate(Date data) {

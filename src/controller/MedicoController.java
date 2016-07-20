@@ -7,6 +7,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import model.Medico;
+import util.GeradorTabelas;
 import view.MedicoView;
 import view.SelecaoPerfilView;
 
@@ -29,11 +30,16 @@ class MedicoController {
     }
 
     public void controla() {
+        atualizaTabelaPacientes();
         view.getBtnVoltarSelecaoPerfil().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             SelecaoPerfilController selecaoPerfilController = new SelecaoPerfilController(new SelecaoPerfilView());
             selecaoPerfilController.controla();
         });
+    }
+
+    private void atualizaTabelaPacientes() {
+        view.getTabelaPacientes().setModel(GeradorTabelas.geraTabelaPacientes(usuario));
     }
 
 }

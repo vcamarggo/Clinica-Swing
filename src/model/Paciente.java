@@ -2,15 +2,13 @@ package model;
 
 import enumeration.TipoConvenio;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import util.Util;
 
 /**
@@ -29,7 +27,6 @@ public class Paciente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rg;
     private String nome;
-    @Temporal(value = TemporalType.DATE)
     private Date dataNascimento;
     private String endereco;
     private String telefone;
@@ -57,6 +54,7 @@ public class Paciente implements Serializable {
         this.telefone = telefone;
         this.celular = celular;
         this.email = email;
+        this.tipoConvenio = tipoConvenio;
     }
 
     /**

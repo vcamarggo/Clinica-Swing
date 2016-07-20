@@ -13,6 +13,7 @@ import model.Consulta;
 import model.Paciente;
 import model.Secretaria;
 import org.apache.commons.beanutils.PropertyUtils;
+import util.GeradorTabelas;
 import view.CadastroEAlteracaoPacienteSecretariaView;
 import view.DetalhesPacienteSecretariaView;
 import view.SecretariaView;
@@ -43,48 +44,41 @@ class SecretariaController {
             view.dispose();
             new SelecaoPerfilController(new SelecaoPerfilView()).controla();
         });
-        view.getBtnNovoPaciente().addActionListener((ActionEvent actionEvent) -> {
-            new CadastroPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario).controla();
-            atualizaTabelaPacientes();
-        });
         view.getBtnDetalhesPaciente().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
-                Paciente paciente = usuario.getPacienteByCodigo((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
                 new DetalhesPacienteSecretariaController(new DetalhesPacienteSecretariaView(view), usuario, paciente).controla();
             }
+        });
+        view.getBtnAlterarPaciente().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                new CadastroAlteracaoPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario, paciente).controla();
+            }
+            atualizaTabelaPacientes();
+        });
+        view.getBtnRemoverPaciente().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                usuario.removePaciente(paciente);
+            }
+            atualizaTabelaPacientes();
+        });
+        view.getBtnNovoPaciente().addActionListener((ActionEvent actionEvent) -> {
+            new CadastroAlteracaoPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario).controla();
+            atualizaTabelaPacientes();
         });
     }
 
     private void atualizaTabelaPacientes() {
-        view.getTabelaPacientes().setModel(geraTabelaPacientes());
+        view.getTabelaPacientes().setModel(GeradorTabelas.geraTabelaPacientes(usuario));
     }
 
     private void atualizaTabelaConsultas() {
         view.getTabelaConsultas().setModel(geraTabelaConsultas());
-    }
-
-    private DefaultTableModel geraTabelaPacientes() {
-        String[] header = {"RG", "Nome", "Data nascimento", "Endereço",
-            "Telefone", "Celular", "Email", "Convênio"};
-        Object[][] pacientes = new Object[usuario.listaPacientes().size()][Paciente.class.getDeclaredFields().length];
-        int i = 0;
-        int j = 0;
-        for (Paciente p : usuario.listaPacientes()) {
-            for (Field field : p.getClass().getDeclaredFields()) {
-                try {
-                    pacientes[i][j] = PropertyUtils.getSimpleProperty(p, field.getName());
-                } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException ex) {
-                    pacientes[i][j] = "";
-                }
-                j++;
-            }
-            j = 0;
-            i++;
-        }
-        return new javax.swing.table.DefaultTableModel(
-                pacientes, header);
-
     }
 
     private DefaultTableModel geraTabelaConsultas() {

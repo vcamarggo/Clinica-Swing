@@ -2,7 +2,7 @@ package model;
 
 import enumeration.TipoConsulta;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,8 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -24,7 +22,6 @@ public class Consulta implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
 
-    @Temporal(TemporalType.DATE)
     private Date dataConsulta;
     private String hora;
     private String medico;

@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 
 /**
  *
@@ -18,6 +19,10 @@ public class MedicoView extends javax.swing.JFrame {
      */
     public MedicoView() {
         initComponents();
+    }
+
+    public JTable getTabelaPacientes() {
+        return tabelaPacientes;
     }
 
     /**

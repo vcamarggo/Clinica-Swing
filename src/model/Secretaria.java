@@ -95,12 +95,12 @@ public class Secretaria extends Usuario {
     }
 
     /**
-     * @param codigo
+     * @param rg
      * @return O paciente com o codigo passado no parametro.
      */
     public Paciente
-            getPacienteByCodigo(Long codigo) {
-        return entityManager.find(Paciente.class, codigo);
+            getPacienteByRG(Long rg) {
+        return entityManager.find(Paciente.class, rg);
     }
 
     /**
@@ -120,6 +120,10 @@ public class Secretaria extends Usuario {
         dataAmanha.add(Calendar.DAY_OF_MONTH, 1);
         q.setParameter("dataAmanha", dataAmanha.getTime());
         return q.getResultList();
+    }
+
+    public boolean existePaciente(Long rg) {
+        return getPacienteByRG(rg) != null;
     }
 
 }

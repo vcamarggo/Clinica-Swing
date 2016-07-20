@@ -151,7 +151,7 @@ public class SecretariaView extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -262,13 +262,10 @@ public class SecretariaView extends javax.swing.JFrame {
         opcoesConsultaLayout.setHorizontalGroup(
             opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcoesConsultaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(opcoesConsultaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRemoverConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(opcoesConsultaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAlterarConsulta)))
+                    .addComponent(btnRemoverConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterarConsulta))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, opcoesConsultaLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
