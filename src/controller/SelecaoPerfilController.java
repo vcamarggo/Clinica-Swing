@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import model.Medico;
 import model.Secretaria;
+import model.Usuario;
 import view.MedicoView;
 import view.SecretariaView;
 import view.SelecaoPerfilView;
@@ -25,18 +26,15 @@ public class SelecaoPerfilController {
     public void controla() {
         view.getBtnGerenMsg().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
-            GerenciadorMensagemController gerenciadorMensagemController = new GerenciadorMensagemController();
-            gerenciadorMensagemController.controla();
+            new GerenciadorMensagemController().controla();
         });
         view.getBtnSouMedico().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
-            MedicoController medicoController = new MedicoController(new Medico(), new MedicoView());
-            medicoController.controla();
+            new MedicoController(new Medico(), new MedicoView()).controla();
         });
         view.getBtnSouSecretaria().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
-            SecretariaController secretariaController = new SecretariaController(new Secretaria(), new SecretariaView());
-            secretariaController.controla();
+            new SecretariaController(new Secretaria(), new SecretariaView()).controla();
         });
     }
 

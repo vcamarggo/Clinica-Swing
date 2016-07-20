@@ -48,6 +48,16 @@ public class Paciente implements Serializable {
     private String alergias;
     private String sintomas;
 
+    public Paciente(Long rg, String nome, Date dataNascimento, String endereco, String telefone, String celular, String email) {
+        this.rg = rg;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.email = email;
+    }
+
     /**
      * @return nome do paciente.
      */
@@ -324,6 +334,11 @@ public class Paciente implements Serializable {
         setDiagnostico(null);
         setTratamento(null);
         setSintomas(null);
+    }
+
+    @Override
+    public String toString() {
+        return getNome();
     }
 
 }

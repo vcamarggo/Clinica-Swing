@@ -6,12 +6,57 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
 
 /**
  *
  * @author mayza
  */
 public class SecretariaView extends javax.swing.JFrame {
+
+    public JButton getBtnAlterarConsulta() {
+        return btnAlterarConsulta;
+    }
+
+    public JButton getBtnAlterarPaciente() {
+        return btnAlterarPaciente;
+    }
+
+    public JButton getBtnConsultasDiaSeguinte() {
+        return btnConsultasDiaSeguinte;
+    }
+
+    public JButton getBtnDetalhesPaciente() {
+        return btnDetalhesPaciente;
+    }
+
+    public JButton getBtnDetalhesPaciente2() {
+        return btnDetalhesPaciente2;
+    }
+
+    public JButton getBtnNovaConsulta() {
+        return btnNovaConsulta;
+    }
+
+    public JButton getBtnNovoPaciente() {
+        return btnNovoPaciente;
+    }
+
+    public JButton getBtnRemoverConsulta() {
+        return btnRemoverConsulta;
+    }
+
+    public JButton getBtnRemoverPaciente() {
+        return btnRemoverPaciente;
+    }
+
+    public JTable getTabelaConsultas() {
+        return tabelaConsultas;
+    }
+
+    public JTable getTabelaPacientes() {
+        return tabelaPacientes;
+    }
 
     /**
      * Creates new form SecretariaView2
@@ -95,29 +140,31 @@ public class SecretariaView extends javax.swing.JFrame {
 
         tabelaPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"aa", null, null, null},
-                {"bbb", null, null, null},
-                {"cccc", null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {"ddddd", null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome do Paciente", "Celular", "Email", "Tipo de Convenio"
+                "RG", "Nome", "Data nascimento", "Celular", "Email", "Convênio"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];

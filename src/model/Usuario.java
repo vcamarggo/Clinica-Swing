@@ -49,7 +49,7 @@ public abstract class Usuario {
 
     protected void adiciona(Object entidade) {
         entityManager.getTransaction().begin();
-        entityManager.persist(entidade);
+        entityManager.merge(entidade);
         entityManager.setFlushMode(FlushModeType.COMMIT);
         entityManager.flush();
         entityManager.getTransaction().commit();

@@ -16,14 +16,14 @@ import view.SelecaoPerfilView;
  */
 class MedicoController {
 
-    private Medico model;
+    private Medico usuario;
     private MedicoView view;
 
     public MedicoController() {
     }
 
-    public MedicoController(Medico model, MedicoView view) {
-        this.model = model;
+    public MedicoController(Medico usuario, MedicoView view) {
+        this.usuario = usuario;
         this.view = view;
         this.view.setVisible(true);
     }

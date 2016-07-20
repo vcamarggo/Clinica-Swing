@@ -5,23 +5,58 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  *
  * @author mayza
  */
-public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialog {
+public class CadastroEAlteracaoPacienteSecretariaView extends JFrame {
 
     /**
      * Creates new form AlterarDadosPacienteSecretariaView
      *
-     * @param parent
-     * @param modal
      */
-    public CadastroEAlteracaoPacienteSecretariaView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public CadastroEAlteracaoPacienteSecretariaView() {
         initComponents();
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar() {
+        return btnGravar;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public JTextField getTxtEndereco() {
+        return txtEndereco;
+    }
+
+    public JTextField getTxtNascimento() {
+        return txtNascimento;
+    }
+
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
+
+    public JTextField getTxtTelefone() {
+        return txtTelefone;
+    }
+
+    public JTextField getTxtRG() {
+        return txtRG;
     }
 
     /**
@@ -53,6 +88,8 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
         txtCelular = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         boxConvenio = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        txtRG = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -94,7 +131,7 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
                 .addComponent(btnGravar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,6 +165,8 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
             }
         });
 
+        jLabel8.setText("RG:");
+
         javax.swing.GroupLayout panelAlterarPacienteLayout = new javax.swing.GroupLayout(panelAlterarPaciente);
         panelAlterarPaciente.setLayout(panelAlterarPacienteLayout);
         panelAlterarPacienteLayout.setHorizontalGroup(
@@ -140,7 +179,10 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelAlterarPacienteLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(72, 72, 72)))
                 .addGap(18, 18, 18)
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNome)
@@ -149,13 +191,18 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
                     .addComponent(txtTelefone)
                     .addComponent(txtCelular)
                     .addComponent(txtEmail)
-                    .addComponent(boxConvenio, 0, 193, Short.MAX_VALUE))
+                    .addComponent(boxConvenio, 0, 180, Short.MAX_VALUE)
+                    .addComponent(txtRG))
                 .addContainerGap())
         );
         panelAlterarPacienteLayout.setVerticalGroup(
             panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAlterarPacienteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -195,7 +242,7 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelOK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -203,10 +250,10 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(panelOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,6 +280,7 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel lblPaciente;
     private javax.swing.JPanel panelAlterarPaciente;
     private javax.swing.JPanel panelOK;
@@ -242,6 +290,7 @@ public class CadastroEAlteracaoPacienteSecretariaView extends javax.swing.JDialo
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNascimento;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtRG;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
