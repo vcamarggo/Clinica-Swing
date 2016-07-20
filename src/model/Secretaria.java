@@ -95,6 +95,15 @@ public class Secretaria extends Usuario {
     }
 
     /**
+     * @param codigo
+     * @return O paciente com o codigo passado no parametro.
+     */
+    public Paciente
+            getPacienteByCodigo(Long codigo) {
+        return entityManager.find(Paciente.class, codigo);
+    }
+
+    /**
      * Método que recebe como parâmetro a data de amanhã e verifica todas as
      * consultas cadastradas no sistema. Insere na lista consultasDoDiaSeguinte
      * apenas os pacientes que tem consulta nesta data recebida.

@@ -17,10 +17,9 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
      * Creates new form DeclaracaoAcompanhamentoView
      *
      * @param parent
-     * @param modal
      */
-    public DeclaracaoAcompanhamentoView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public DeclaracaoAcompanhamentoView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 

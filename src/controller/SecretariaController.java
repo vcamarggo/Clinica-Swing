@@ -14,6 +14,7 @@ import model.Paciente;
 import model.Secretaria;
 import org.apache.commons.beanutils.PropertyUtils;
 import view.CadastroEAlteracaoPacienteSecretariaView;
+import view.DetalhesPacienteSecretariaView;
 import view.SecretariaView;
 import view.SelecaoPerfilView;
 
@@ -36,15 +37,31 @@ class SecretariaController {
     }
 
     public void controla() {
-        view.getTabelaPacientes().setModel(geraTabelaPacientes());
+        atualizaTabelaPacientes();
+        atualizaTabelaConsultas();
         view.getBtnVoltarSelecaoPerfil().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new SelecaoPerfilController(new SelecaoPerfilView()).controla();
         });
         view.getBtnNovoPaciente().addActionListener((ActionEvent actionEvent) -> {
-            view.dispose();
-            new CadastraPacienteController(new CadastroEAlteracaoPacienteSecretariaView(), usuario).controla();
+            new CadastroPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario).controla();
+            atualizaTabelaPacientes();
         });
+        view.getBtnDetalhesPaciente().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByCodigo((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                new DetalhesPacienteSecretariaController(new DetalhesPacienteSecretariaView(view), usuario, paciente).controla();
+            }
+        });
+    }
+
+    private void atualizaTabelaPacientes() {
+        view.getTabelaPacientes().setModel(geraTabelaPacientes());
+    }
+
+    private void atualizaTabelaConsultas() {
+        view.getTabelaConsultas().setModel(geraTabelaConsultas());
     }
 
     private DefaultTableModel geraTabelaPacientes() {

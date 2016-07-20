@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import util.Util;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -48,7 +49,7 @@ public class Paciente implements Serializable {
     private String alergias;
     private String sintomas;
 
-    public Paciente(Long rg, String nome, Date dataNascimento, String endereco, String telefone, String celular, String email) {
+    public Paciente(Long rg, String nome, Date dataNascimento, String endereco, String telefone, String celular, String email, TipoConvenio tipoConvenio) {
         this.rg = rg;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -79,6 +80,13 @@ public class Paciente implements Serializable {
      */
     public Date getDataNascimento() {
         return dataNascimento;
+    }
+
+    /**
+     * @return data de nascimento.
+     */
+    public String getDataNascimentoString() {
+        return Util.geraDataDate(dataNascimento);
     }
 
     /**

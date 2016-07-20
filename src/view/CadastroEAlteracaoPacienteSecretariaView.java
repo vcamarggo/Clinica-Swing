@@ -5,7 +5,11 @@
  */
 package view;
 
+import enumeration.TipoConvenio;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -13,13 +17,15 @@ import javax.swing.JTextField;
  *
  * @author mayza
  */
-public class CadastroEAlteracaoPacienteSecretariaView extends JFrame {
+public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
 
     /**
      * Creates new form AlterarDadosPacienteSecretariaView
      *
+     * @param parent
      */
-    public CadastroEAlteracaoPacienteSecretariaView() {
+    public CadastroEAlteracaoPacienteSecretariaView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 
@@ -57,6 +63,10 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JFrame {
 
     public JTextField getTxtRG() {
         return txtRG;
+    }
+
+    public JComboBox<String> getBoxConvenio() {
+        return boxConvenio;
     }
 
     /**
@@ -164,6 +174,8 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JFrame {
                 txtEnderecoActionPerformed(evt);
             }
         });
+
+        boxConvenio.setModel(new DefaultComboBoxModel(TipoConvenio.enumsToStringArray()));
 
         jLabel8.setText("RG:");
 

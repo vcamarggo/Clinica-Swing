@@ -30,10 +30,6 @@ public class SecretariaView extends javax.swing.JFrame {
         return btnDetalhesPaciente;
     }
 
-    public JButton getBtnDetalhesPaciente2() {
-        return btnDetalhesPaciente2;
-    }
-
     public JButton getBtnNovaConsulta() {
         return btnNovaConsulta;
     }
@@ -90,7 +86,6 @@ public class SecretariaView extends javax.swing.JFrame {
         lblNovoPaciente = new javax.swing.JLabel();
         consultaPanel = new javax.swing.JPanel();
         opcoesConsulta = new javax.swing.JPanel();
-        btnDetalhesPaciente2 = new javax.swing.JButton();
         btnAlterarConsulta = new javax.swing.JButton();
         btnRemoverConsulta = new javax.swing.JButton();
         btnNovaConsulta = new javax.swing.JButton();
@@ -108,7 +103,7 @@ public class SecretariaView extends javax.swing.JFrame {
         lblSaudeCIA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-consultorio.png"))); // NOI18N
         lblSaudeCIA.setText("Saude & CIA");
 
-        btnVoltarSelecaoPerfil.setText("Voltar a Selecao de Perfis");
+        btnVoltarSelecaoPerfil.setText("Voltar a Seleção de Perfis");
         btnVoltarSelecaoPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarSelecaoPerfilActionPerformed(evt);
@@ -244,9 +239,12 @@ public class SecretariaView extends javax.swing.JFrame {
 
         opcoesConsulta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opcoes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        btnDetalhesPaciente2.setText("Detalhes do Paciente");
-
         btnAlterarConsulta.setText("Alterar Dados da Consulta");
+        btnAlterarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarConsultaActionPerformed(evt);
+            }
+        });
 
         btnRemoverConsulta.setText("Remover Consulta");
 
@@ -267,31 +265,30 @@ public class SecretariaView extends javax.swing.JFrame {
                 .addGroup(opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(opcoesConsultaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnRemoverConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDetalhesPaciente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAlterarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnRemoverConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(opcoesConsultaLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNovaConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnNovaConsulta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap()
+                        .addComponent(btnAlterarConsulta)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, opcoesConsultaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNovaConsulta)
+                    .addComponent(btnNovaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
         opcoesConsultaLayout.setVerticalGroup(
             opcoesConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcoesConsultaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnDetalhesPaciente2)
-                .addGap(18, 18, 18)
                 .addComponent(btnAlterarConsulta)
                 .addGap(18, 18, 18)
                 .addComponent(btnRemoverConsulta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnNovaConsulta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNovaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabelaConsultas.setModel(new javax.swing.table.DefaultTableModel(
@@ -415,13 +412,16 @@ public class SecretariaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNovaConsultaActionPerformed
 
+    private void btnAlterarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarConsultaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarConsulta;
     private javax.swing.JButton btnAlterarPaciente;
     private javax.swing.JButton btnConsultasDiaSeguinte;
     private javax.swing.JButton btnDetalhesPaciente;
-    private javax.swing.JButton btnDetalhesPaciente2;
     private javax.swing.JButton btnNovaConsulta;
     private javax.swing.JButton btnNovoPaciente;
     private javax.swing.JButton btnRemoverConsulta;

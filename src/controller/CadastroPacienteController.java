@@ -5,44 +5,33 @@
  */
 package controller;
 
+import enumeration.TipoConvenio;
 import java.awt.event.ActionEvent;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.Paciente;
 import model.Secretaria;
+import util.Util;
 import view.CadastroEAlteracaoPacienteSecretariaView;
-import view.SecretariaView;
 
 /**
  *
  * @author Camargo
  */
-public class CadastraPacienteController {
+public class CadastroPacienteController {
 
     private Secretaria usuario;
     private CadastroEAlteracaoPacienteSecretariaView view;
 
-    public CadastraPacienteController() {
+    public CadastroPacienteController() {
     }
 
-    public CadastraPacienteController(CadastroEAlteracaoPacienteSecretariaView view, Secretaria usuario) {
+    public CadastroPacienteController(CadastroEAlteracaoPacienteSecretariaView view, Secretaria usuario) {
         this.usuario = usuario;
         this.view = view;
-        this.view.setVisible(true);
     }
 
-    private void criaPaciente(String rg, String nome, String dataNascimentoString, String endereco, String telefone, String celular, String email) {
+    private void criaPaciente(String rg, String nome, String dataNascimentoString, String endereco, String telefone, String celular, String email, String tipoConvenio) {
         Long rgLong = new Long(rg);
-        Date dataNascimento;
-        try {
-            dataNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimentoString);
-        } catch (ParseException ex) {
-            dataNascimento = null;
-        }
-        Paciente paciente = new Paciente(rgLong, nome, dataNascimento, endereco, telefone, celular, email);
+        Paciente paciente = new Paciente(rgLong, nome, Util.geraDataString(dataNascimentoString), endereco, telefone, celular, email, TipoConvenio.valueOf(tipoConvenio));
         usuario.adicionaPaciente(paciente);
     }
 
@@ -52,12 +41,11 @@ public class CadastraPacienteController {
             criaPaciente(view.getTxtRG().getText(), view.getTxtNome().getText(),
                     view.getTxtNascimento().getText(), view.getTxtEndereco().getText(),
                     view.getTxtTelefone().getText(), view.getTxtCelular().getText(),
-                    view.getTxtEmail().getText());
-            new SecretariaController(usuario, new SecretariaView()).controla();
+                    view.getTxtEmail().getText(), view.getBoxConvenio().getSelectedItem().toString());
         });
         view.getBtnCancelar().addActionListener((ActionEvent actionEvent) -> {
-            new SecretariaController(usuario, new SecretariaView()).controla();
             view.dispose();
         });
+        this.view.setVisible(true);
     }
 }

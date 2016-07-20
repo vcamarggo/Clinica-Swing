@@ -5,7 +5,9 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,11 +19,42 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
      * Creates new form DetalhesPacienteMedicoView
      *
      * @param parent
-     * @param modal
      */
-    public DetalhesPacienteSecretariaView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public DetalhesPacienteSecretariaView(JFrame parent) {
+        super(parent, true);
         initComponents();
+    }
+
+    public JButton getBtnOK1() {
+        return btnOK1;
+    }
+
+    public JLabel getLblCelularPaciente() {
+        return lblCelularPaciente;
+    }
+
+    public JLabel getLblConvenioPaciente() {
+        return lblConvenioPaciente;
+    }
+
+    public JLabel getLblEmailPaciente() {
+        return lblEmailPaciente;
+    }
+
+    public JLabel getLblEnderecoPaciente() {
+        return lblEnderecoPaciente;
+    }
+
+    public JLabel getLblNascimentoPaciente() {
+        return lblNascimentoPaciente;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JLabel getLblTelefonePaciente() {
+        return lblTelefonePaciente;
     }
 
     /**
@@ -52,7 +85,6 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
         lblConvenioPaciente = new javax.swing.JLabel();
         panelOK = new javax.swing.JPanel();
         btnOK1 = new javax.swing.JButton();
-        btnOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -164,26 +196,20 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
         btnOK1.setText("OK");
         btnOK1.setSelected(true);
 
-        btnOK.setText("Alterar Dados");
-
         javax.swing.GroupLayout panelOKLayout = new javax.swing.GroupLayout(panelOK);
         panelOK.setLayout(panelOKLayout);
         panelOKLayout.setHorizontalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOKLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(87, Short.MAX_VALUE)
                 .addComponent(btnOK1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOK)
-                .addGap(78, 78, 78))
+                .addGap(187, 187, 187))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOK1)
-                    .addComponent(btnOK))
+                .addComponent(btnOK1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -214,7 +240,6 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOK;
     private javax.swing.JButton btnOK1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

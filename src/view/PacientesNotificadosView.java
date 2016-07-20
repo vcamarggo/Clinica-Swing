@@ -17,10 +17,9 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
      * Creates new form EmailsEnviadosView
      *
      * @param parent
-     * @param modal
      */
-    public PacientesNotificadosView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public PacientesNotificadosView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 

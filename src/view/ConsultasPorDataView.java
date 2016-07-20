@@ -17,10 +17,9 @@ public class ConsultasPorDataView extends javax.swing.JDialog {
      * Creates new form ConsultasPorDataView
      *
      * @param parent
-     * @param modal
      */
-    public ConsultasPorDataView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public ConsultasPorDataView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 

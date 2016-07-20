@@ -17,10 +17,9 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
      * Creates new form CadastroEAlteracaoDadosAdicionaisMedicoView
      *
      * @param parent
-     * @param modal
      */
-    public CadastroEAlteracaoDadosAdicionaisMedicoView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public CadastroEAlteracaoDadosAdicionaisMedicoView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 
