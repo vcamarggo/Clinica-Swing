@@ -80,5 +80,23 @@ public abstract class Usuario {
     public boolean pacientePossuiEmail(Consulta consulta) {
         return consulta.getPaciente().getEmail() != null;
     }
+    
+     /**
+     * @param codigo
+     * @return A consulta com o codigo passado no parametro.
+     */
+    public Consulta
+            getConsultaByCodigo(Long codigo) {
+        return entityManager.find(Consulta.class, codigo);
+    }
+
+    /**
+     * @param rg
+     * @return O paciente com o codigo passado no parametro.
+     */
+    public Paciente
+            getPacienteByRG(Long rg) {
+        return entityManager.find(Paciente.class, rg);
+    }
 
 }

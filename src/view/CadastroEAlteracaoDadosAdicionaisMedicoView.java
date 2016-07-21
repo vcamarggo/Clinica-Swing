@@ -5,7 +5,11 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -13,6 +17,57 @@ import javax.swing.JFrame;
  */
 public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDialog {
 
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar2() {
+        return btnGravar2;
+    }   
+
+    public JTextArea getTxtAlergias() {
+        return txtAlergias;
+    }
+
+    public JTextArea getTxtCirurgias() {
+        return txtCirurgias;
+    }
+
+    public JComboBox<String> getBoxBebe() {
+        return boxBebe;
+    }
+
+    public void setBoxBebe(JComboBox<String> boxBebe) {
+        this.boxBebe = boxBebe;
+    }
+
+    public JComboBox<String> getBoxColesterol() {
+        return boxColesterol;
+    }
+
+    public void setBoxColesterol(JComboBox<String> boxColesterol) {
+        this.boxColesterol = boxColesterol;
+    }
+
+    public JComboBox<String> getBoxDiabetes() {
+        return boxDiabetes;
+    }
+
+    public void setBoxDiabetes(JComboBox<String> boxDiabetes) {
+        this.boxDiabetes = boxDiabetes;
+    }
+
+    public JComboBox<String> getBoxFuma() {
+        return boxFuma;
+    }
+
+    public void setBoxFuma(JComboBox<String> boxFuma) {
+        this.boxFuma = boxFuma;
+    }
+
+    
+    
+    
     /**
      * Creates new form CadastroEAlteracaoDadosAdicionaisMedicoView
      *
@@ -42,16 +97,16 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        boxFuma = new javax.swing.JComboBox<>();
+        boxBebe = new javax.swing.JComboBox<>();
+        boxColesterol = new javax.swing.JComboBox<>();
+        boxDiabetes = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        scrollDiagnostico = new javax.swing.JScrollPane();
-        txtDiagnostico = new javax.swing.JTextArea();
-        scrollTratamento = new javax.swing.JScrollPane();
-        txtTratamento = new javax.swing.JTextArea();
+        scrollAlergias = new javax.swing.JScrollPane();
+        txtAlergias = new javax.swing.JTextArea();
+        scrollCirurgias = new javax.swing.JScrollPane();
+        txtCirurgias = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -119,32 +174,32 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
 
         jLabel24.setText("Diabetes:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        boxFuma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
+        boxFuma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                boxFumaActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
+        boxBebe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
+        boxColesterol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
+        boxDiabetes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
 
         jLabel28.setText("Alergias");
 
         jLabel29.setText("Cirurgias");
 
-        txtDiagnostico.setColumns(20);
-        txtDiagnostico.setLineWrap(true);
-        txtDiagnostico.setRows(5);
-        scrollDiagnostico.setViewportView(txtDiagnostico);
+        txtAlergias.setColumns(20);
+        txtAlergias.setLineWrap(true);
+        txtAlergias.setRows(5);
+        scrollAlergias.setViewportView(txtAlergias);
 
-        txtTratamento.setColumns(20);
-        txtTratamento.setLineWrap(true);
-        txtTratamento.setRows(5);
-        scrollTratamento.setViewportView(txtTratamento);
+        txtCirurgias.setColumns(20);
+        txtCirurgias.setLineWrap(true);
+        txtCirurgias.setRows(5);
+        scrollCirurgias.setViewportView(txtCirurgias);
 
         javax.swing.GroupLayout panelDadosAdicionaisLayout = new javax.swing.GroupLayout(panelDadosAdicionais);
         panelDadosAdicionais.setLayout(panelDadosAdicionaisLayout);
@@ -153,19 +208,19 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                 .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
-                        .addComponent(scrollDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(scrollAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scrollTratamento, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(scrollCirurgias, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                         .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxColesterol, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxFuma, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addGap(48, 48, 48)
                                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -174,11 +229,11 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxBebe, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(boxDiabetes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(panelDadosAdicionaisLayout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -191,22 +246,22 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
                 .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel22)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxFuma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxBebe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(jLabel24)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4))
+                    .addComponent(boxColesterol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxDiabetes))
                 .addGap(18, 18, 18)
                 .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelDadosAdicionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollDiagnostico, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                    .addComponent(scrollTratamento))
+                    .addComponent(scrollAlergias, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                    .addComponent(scrollCirurgias))
                 .addContainerGap())
         );
 
@@ -242,17 +297,17 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
         /*Retorna para a view de secretaria*/
     }//GEN-LAST:event_btnGravar2ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void boxFumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFumaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_boxFumaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> boxBebe;
+    private javax.swing.JComboBox<String> boxColesterol;
+    private javax.swing.JComboBox<String> boxDiabetes;
+    private javax.swing.JComboBox<String> boxFuma;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGravar2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -263,9 +318,9 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
     private javax.swing.JPanel panelDadosAdicionais;
     private javax.swing.JPanel panelOK2;
     private javax.swing.JPanel panelPaciente;
-    private javax.swing.JScrollPane scrollDiagnostico;
-    private javax.swing.JScrollPane scrollTratamento;
-    private javax.swing.JTextArea txtDiagnostico;
-    private javax.swing.JTextArea txtTratamento;
+    private javax.swing.JScrollPane scrollAlergias;
+    private javax.swing.JScrollPane scrollCirurgias;
+    private javax.swing.JTextArea txtAlergias;
+    private javax.swing.JTextArea txtCirurgias;
     // End of variables declaration//GEN-END:variables
 }

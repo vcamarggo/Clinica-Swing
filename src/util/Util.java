@@ -22,5 +22,12 @@ public class Util {
     public static String geraDataDate(Date data) {
         return new SimpleDateFormat("dd/MM/yyyy").format(data);
     }
+    
+    public static int retornaValorParaCampoBoxSimNao( Boolean campo ){
+        if (campo == null || !campo ){
+            return 0;
+        }
+        return 1;
+    }
 
 }

@@ -25,6 +25,43 @@ public class MedicoView extends javax.swing.JFrame {
         return tabelaPacientes;
     }
 
+    public JButton getBtnAlterarProntuario() {
+        return btnAlterarProntuario;
+    }
+
+    public JButton getBtnCadastrarProntuario() {
+        return btnCadastrarProntuario;
+    }
+
+    public JButton getBtnDetalhesPaciente() {
+        return btnDetalhesPaciente;
+    }
+
+    public JButton getBtnGerarAtestado() {
+        return btnGerarAtestado;
+    }
+
+    public JButton getBtnGerarDeclaracaoAcompanhamento() {
+        return btnGerarDeclaracaoAcompanhamento;
+    }
+
+    public JButton getBtnGerarReceita() {
+        return btnGerarReceita;
+    }
+
+    public JButton getBtnInserirDadosAdicionais() {
+        return btnInserirDadosAdicionais;
+    }
+
+    public JButton getBtnRemoverDadosAdicionais() {
+        return btnRemoverDadosAdicionais;
+    }
+
+    public JButton getBtnRemoverProntuario() {
+        return btnRemoverProntuario;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,7 +82,6 @@ public class MedicoView extends javax.swing.JFrame {
         opcoesPaciente = new javax.swing.JPanel();
         btnDetalhesPaciente = new javax.swing.JButton();
         btnInserirDadosAdicionais = new javax.swing.JButton();
-        btnAlterarDadosAdicionais = new javax.swing.JButton();
         btnRemoverDadosAdicionais = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnCadastrarProntuario = new javax.swing.JButton();
@@ -130,17 +166,10 @@ public class MedicoView extends javax.swing.JFrame {
 
         btnDetalhesPaciente.setText("Detalhes do Paciente");
 
-        btnInserirDadosAdicionais.setText("Inserir Dados Adicionais");
+        btnInserirDadosAdicionais.setText("Inserir / Alterar Dados Adicionais");
         btnInserirDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInserirDadosAdicionaisActionPerformed(evt);
-            }
-        });
-
-        btnAlterarDadosAdicionais.setText("Alterar Dados Adicionais");
-        btnAlterarDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarDadosAdicionaisActionPerformed(evt);
             }
         });
 
@@ -181,9 +210,8 @@ public class MedicoView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(opcoesPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCadastrarProntuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDetalhesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                    .addComponent(btnDetalhesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnInserirDadosAdicionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAlterarDadosAdicionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRemoverDadosAdicionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAlterarProntuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRemoverProntuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -192,13 +220,11 @@ public class MedicoView extends javax.swing.JFrame {
         opcoesPacienteLayout.setVerticalGroup(
             opcoesPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcoesPacienteLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(btnDetalhesPaciente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnInserirDadosAdicionais)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAlterarDadosAdicionais)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnRemoverDadosAdicionais)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,17 +370,12 @@ public class MedicoView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInserirDadosAdicionaisActionPerformed
 
-    private void btnAlterarDadosAdicionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarDadosAdicionaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarDadosAdicionaisActionPerformed
-
     private void btnRemoverDadosAdicionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverDadosAdicionaisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoverDadosAdicionaisActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
-    private javax.swing.JButton btnAlterarDadosAdicionais;
     private javax.swing.JButton btnAlterarProntuario;
     private javax.swing.JButton btnCadastrarProntuario;
     private javax.swing.JButton btnDetalhesPaciente;

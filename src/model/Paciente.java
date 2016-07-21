@@ -330,6 +330,7 @@ public class Paciente implements Serializable {
         setColesterol(null);
         setDiabete(null);
         setCirurgias(null);
+        setAlergias(null);
     }
 
     /**

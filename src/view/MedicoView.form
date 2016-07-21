@@ -210,9 +210,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="btnCadastrarProntuario" max="32767" attributes="0"/>
-                                  <Component id="btnDetalhesPaciente" alignment="0" pref="179" max="32767" attributes="0"/>
+                                  <Component id="btnDetalhesPaciente" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnInserirDadosAdicionais" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnAlterarDadosAdicionais" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnRemoverDadosAdicionais" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnAlterarProntuario" max="32767" attributes="0"/>
                                   <Component id="btnRemoverProntuario" alignment="0" max="32767" attributes="0"/>
@@ -224,13 +223,11 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="btnDetalhesPaciente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnInserirDadosAdicionais" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnAlterarDadosAdicionais" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnRemoverDadosAdicionais" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -253,18 +250,10 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnInserirDadosAdicionais">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Inserir Dados Adicionais"/>
+                        <Property name="text" type="java.lang.String" value="Inserir / Alterar Dados Adicionais"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirDadosAdicionaisActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="btnAlterarDadosAdicionais">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Alterar Dados Adicionais"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarDadosAdicionaisActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverDadosAdicionais">
