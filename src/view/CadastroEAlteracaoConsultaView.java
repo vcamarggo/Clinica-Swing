@@ -5,7 +5,12 @@
  */
 package view;
 
+import enumeration.TipoConsulta;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  *
@@ -23,6 +28,38 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         initComponents();
     }
 
+    public JTextField getTxtCodConsulta() {
+        return txtCodConsulta;
+    }
+
+    public JComboBox<String> getBoxTipoConsulta() {
+        return boxTipoConsulta;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar() {
+        return btnGravar;
+    }
+
+    public JTextField getTxtRGPaciente() {
+        return txtRGPaciente;
+    }
+
+    public JTextField getTxtDataConsulta() {
+        return txtDataConsulta;
+    }
+
+    public JTextField getTxtHorarioConsulta() {
+        return txtHorarioConsulta;
+    }
+
+    public JTextField getTxtMedicoResponsavel() {
+        return txtMedicoResponsavel;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,18 +75,18 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         btnGravar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         panelAlterarPaciente = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtCodigoConsulta = new javax.swing.JTextField();
-        txtNomePaciente = new javax.swing.JTextField();
+        txtCodConsulta = new javax.swing.JTextField();
         txtDataConsulta = new javax.swing.JTextField();
         txtHorarioConsulta = new javax.swing.JTextField();
         txtMedicoResponsavel = new javax.swing.JTextField();
         boxTipoConsulta = new javax.swing.JComboBox<>();
+        txtRGPaciente = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -95,7 +132,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
                 .addComponent(btnGravar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,9 +146,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 
         panelAlterarPaciente.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados da Consulta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        jLabel1.setText("Codigo da Consulta:");
-
-        jLabel2.setText("Nome do Paciente:");
+        jLabel2.setText("Código da Consulta:");
 
         jLabel3.setText("Data da Consulta:");
 
@@ -120,6 +155,12 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         jLabel5.setText("Medico Responsavel:");
 
         jLabel7.setText("Tipo de Consulta:");
+
+        txtCodConsulta.setEditable(false);
+
+        boxTipoConsulta.setModel(new DefaultComboBoxModel<String>(TipoConsulta.enumsToStringArray()));
+
+        jLabel6.setText("RG do Paciente:");
 
         javax.swing.GroupLayout panelAlterarPacienteLayout = new javax.swing.GroupLayout(panelAlterarPaciente);
         panelAlterarPaciente.setLayout(panelAlterarPacienteLayout);
@@ -131,29 +172,29 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoConsulta)
-                    .addComponent(txtNomePaciente)
+                    .addComponent(txtCodConsulta)
                     .addComponent(txtDataConsulta)
                     .addComponent(txtHorarioConsulta)
                     .addComponent(txtMedicoResponsavel)
-                    .addComponent(boxTipoConsulta, 0, 193, Short.MAX_VALUE))
+                    .addComponent(boxTipoConsulta, 0, 193, Short.MAX_VALUE)
+                    .addComponent(txtRGPaciente))
                 .addContainerGap())
         );
         panelAlterarPacienteLayout.setVerticalGroup(
             panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAlterarPacienteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCodigoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAlterarPacienteLayout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtRGPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -170,7 +211,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
                 .addGroup(panelAlterarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(boxTipoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62))
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,8 +222,8 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelOK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -190,7 +231,7 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelAlterarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -209,20 +250,20 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> boxTipoConsulta;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGravar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblPaciente;
     private javax.swing.JPanel panelAlterarPaciente;
     private javax.swing.JPanel panelOK;
     private javax.swing.JPanel panelPaciente;
-    private javax.swing.JTextField txtCodigoConsulta;
+    private javax.swing.JTextField txtCodConsulta;
     private javax.swing.JTextField txtDataConsulta;
     private javax.swing.JTextField txtHorarioConsulta;
     private javax.swing.JTextField txtMedicoResponsavel;
-    private javax.swing.JTextField txtNomePaciente;
+    private javax.swing.JTextField txtRGPaciente;
     // End of variables declaration//GEN-END:variables
 }

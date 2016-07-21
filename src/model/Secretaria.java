@@ -90,7 +90,7 @@ public class Secretaria extends Usuario {
      * @return A consulta com o codigo passado no parametro.
      */
     public Consulta
-            getConsultaByCodigo(int codigo) {
+            getConsultaByCodigo(Long codigo) {
         return entityManager.find(Consulta.class, codigo);
     }
 

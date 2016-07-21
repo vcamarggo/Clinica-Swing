@@ -14,6 +14,7 @@ import model.Paciente;
 import model.Secretaria;
 import org.apache.commons.beanutils.PropertyUtils;
 import util.GeradorTabelas;
+import view.CadastroEAlteracaoConsultaView;
 import view.CadastroEAlteracaoPacienteSecretariaView;
 import view.DetalhesPacienteSecretariaView;
 import view.SecretariaView;
@@ -70,6 +71,26 @@ class SecretariaController {
         view.getBtnNovoPaciente().addActionListener((ActionEvent actionEvent) -> {
             new CadastroAlteracaoPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario).controla();
             atualizaTabelaPacientes();
+        });
+        view.getBtnAlterarConsulta().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaConsultas().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Consulta paciente = usuario.getConsultaByCodigo((Long) view.getTabelaConsultas().getModel().getValueAt(linhaSelecionada, 0));
+                new CadastroAlteracaoConsultaController(new CadastroEAlteracaoConsultaView(view), usuario, paciente).controla();
+            }
+            atualizaTabelaConsultas();
+        });
+        view.getBtnRemoverConsulta().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaConsultas().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Consulta paciente = usuario.getConsultaByCodigo((Long) view.getTabelaConsultas().getModel().getValueAt(linhaSelecionada, 0));
+                usuario.removeConsulta(paciente);
+            }
+            atualizaTabelaConsultas();
+        });
+        view.getBtnNovaConsulta().addActionListener((ActionEvent actionEvent) -> {
+            new CadastroAlteracaoConsultaController(new CadastroEAlteracaoConsultaView(view), usuario).controla();
+            atualizaTabelaConsultas();
         });
     }
 

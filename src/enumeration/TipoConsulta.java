@@ -23,4 +23,14 @@ public enum TipoConsulta {
         return duracaoEmMinutos + " minutos";
     }
 
+    public static String[] enumsToStringArray() {
+        String[] results = new String[TipoConsulta.values().length];
+        int count = 0;
+        for (TipoConsulta each : TipoConsulta.values()) {
+            results[count] = each.toString();
+            count++;
+        }
+        return results;
+    }
+
 }

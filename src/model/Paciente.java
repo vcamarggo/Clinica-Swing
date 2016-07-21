@@ -81,7 +81,7 @@ public class Paciente implements Serializable {
     }
 
     /**
-     * @return data de nascimento.
+     * @return data de nascimento como string.
      */
     public String getDataNascimentoString() {
         return Util.geraDataDate(dataNascimento);

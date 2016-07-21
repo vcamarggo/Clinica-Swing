@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import util.Util;
 
 /**
  * @author F.Carvalho / M. Hirose / V.Camargo
@@ -20,7 +21,7 @@ public class Consulta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private Long codigo;
 
     private Date dataConsulta;
     private String hora;
@@ -31,6 +32,15 @@ public class Consulta implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private TipoConsulta tipoConsulta;
+
+    public Consulta(Long codConsulta, Date dataConsulta, String hora, String medico, Paciente paciente, TipoConsulta tipoConsulta) {
+        this.codigo = codConsulta;
+        this.dataConsulta = dataConsulta;
+        this.hora = hora;
+        this.medico = medico;
+        this.paciente = paciente;
+        this.tipoConsulta = tipoConsulta;
+    }
 
     /**
      *
@@ -121,7 +131,7 @@ public class Consulta implements Serializable {
      *
      * @return código da consulta
      */
-    public int getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
@@ -130,8 +140,15 @@ public class Consulta implements Serializable {
      *
      * @param codigo
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
+    }
+
+    /**
+     * @return data de consulta como string.
+     */
+    public String getDataConsultaString() {
+        return Util.geraDataDate(dataConsulta);
     }
 
     /**

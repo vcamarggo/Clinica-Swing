@@ -9,11 +9,11 @@ import enumeration.TipoConvenio;
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
 import java.sql.Date;
+import javax.swing.JOptionPane;
 import model.Paciente;
 import model.Secretaria;
 import util.Util;
 import view.CadastroEAlteracaoPacienteSecretariaView;
-import view.DialogErrorView;
 
 /**
  *
@@ -54,13 +54,13 @@ public class CadastroAlteracaoPacienteController {
             try {
                 rg = new Long(view.getTxtRG().getText());
             } catch (NumberFormatException nfe) {
-                new DialogErrorView(view, "Houve um erro, RG deve conter apenas números!").setVisible(true);
+                JOptionPane.showMessageDialog(view, "Houve um erro, RG deve conter apenas números!", "Erro", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             try {
                 dataNascimento = Util.geraDataString(view.getTxtNascimento().getText());
             } catch (ParseException pe) {
-                new DialogErrorView(view, "Sua data não tem o padrão correto dd/mm/aaaa!").setVisible(true);
+                JOptionPane.showMessageDialog(view, "Sua data não tem o padrão correto dd/mm/aaaa!", "Erro", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             view.dispose();
