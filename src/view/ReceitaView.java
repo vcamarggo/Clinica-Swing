@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class ReceitaView extends javax.swing.JDialog {
 
@@ -78,7 +78,7 @@ public class ReceitaView extends javax.swing.JDialog {
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
         lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
-        lblAssinatura.setText("ASSIANTURA");
+        lblAssinatura.setText("ASSINATURA");
 
         jLabel1.setText("Paciente:");
 

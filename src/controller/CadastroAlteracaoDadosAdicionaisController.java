@@ -6,8 +6,6 @@
 package controller;
 
 import java.awt.event.ActionEvent;
-import java.text.ParseException;
-import java.sql.Date;
 import javax.swing.JOptionPane;
 import model.Medico;
 import model.Paciente;

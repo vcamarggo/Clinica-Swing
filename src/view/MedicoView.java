@@ -10,7 +10,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class MedicoView extends javax.swing.JFrame {
 
@@ -60,8 +60,7 @@ public class MedicoView extends javax.swing.JFrame {
     public JButton getBtnRemoverProntuario() {
         return btnRemoverProntuario;
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

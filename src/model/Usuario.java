@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public abstract class Usuario {
 
@@ -80,8 +80,8 @@ public abstract class Usuario {
     public boolean pacientePossuiEmail(Consulta consulta) {
         return consulta.getPaciente().getEmail() != null;
     }
-    
-     /**
+
+    /**
      * @param codigo
      * @return A consulta com o codigo passado no parametro.
      */

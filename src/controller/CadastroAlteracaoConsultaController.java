@@ -18,7 +18,7 @@ import view.CadastroEAlteracaoConsultaView;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroAlteracaoConsultaController {
 
@@ -52,6 +52,12 @@ public class CadastroAlteracaoConsultaController {
             Long rg;
             Date dataConsulta;
             Paciente paciente;
+            Long codConsulta;
+            try {
+                codConsulta = Long.parseLong(view.getTxtCodConsulta().getText());
+            } catch (NumberFormatException nfe) {
+                codConsulta = null;
+            }
             try {
                 rg = new Long(view.getTxtRGPaciente().getText());
             } catch (NumberFormatException nfe) {
@@ -69,7 +75,7 @@ public class CadastroAlteracaoConsultaController {
                 JOptionPane.showMessageDialog(view, "Paciente não encontrado!", "Erro", JOptionPane.WARNING_MESSAGE);
             } else {
                 view.dispose();
-                criaConsulta(Long.parseLong(view.getTxtCodConsulta().getText()), dataConsulta, view.getTxtHorarioConsulta().getText(),
+                criaConsulta(codConsulta, dataConsulta, view.getTxtHorarioConsulta().getText(),
                         view.getTxtMedicoResponsavel().getText(), paciente,
                         view.getBoxTipoConsulta().getSelectedItem().toString());
             }

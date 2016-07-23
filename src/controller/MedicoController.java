@@ -16,7 +16,7 @@ import view.SelecaoPerfilView;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 class MedicoController {
 
@@ -39,23 +39,24 @@ class MedicoController {
             SelecaoPerfilController selecaoPerfilController = new SelecaoPerfilController(new SelecaoPerfilView());
             selecaoPerfilController.controla();
         });
-        
-        view.getBtnInserirDadosAdicionais().addActionListener((ActionEvent actionEvent) ->{
-           int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
-           if(linhaSelecionada >= 0){
-               Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+
+        view.getBtnInserirDadosAdicionais().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
                 new CadastroAlteracaoDadosAdicionaisController(new CadastroEAlteracaoDadosAdicionaisMedicoView(view), usuario, paciente).controla();
-           }
+            }
         });
-        
-        view.getBtnRemoverDadosAdicionais().addActionListener((ActionEvent actionEvent) ->{
-           int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
-           if(linhaSelecionada >= 0){
-               Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
-               paciente.removeDadosAdicionaisPaciente();System.out.println(paciente.getCirurgias());
-               usuario.atualizaPaciente(paciente);
-               JOptionPane.showMessageDialog(null, "Dados removidos com sucesso");
-           }
+
+        view.getBtnRemoverDadosAdicionais().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                paciente.removeDadosAdicionaisPaciente();
+                System.out.println(paciente.getCirurgias());
+                usuario.atualizaPaciente(paciente);
+                JOptionPane.showMessageDialog(null, "Dados removidos com sucesso");
+            }
         });
     }
 

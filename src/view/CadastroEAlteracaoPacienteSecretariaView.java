@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
 

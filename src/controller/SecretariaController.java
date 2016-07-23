@@ -16,13 +16,13 @@ import org.apache.commons.beanutils.PropertyUtils;
 import util.GeradorTabelas;
 import view.CadastroEAlteracaoConsultaView;
 import view.CadastroEAlteracaoPacienteSecretariaView;
+import view.ConsultaPorDataView;
 import view.DetalhesPacienteSecretariaView;
 import view.SecretariaView;
 import view.SelecaoPerfilView;
 
 /**
- *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 class SecretariaController {
 
@@ -49,7 +49,7 @@ class SecretariaController {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
                 Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
-                new DetalhesPacienteSecretariaController(new DetalhesPacienteSecretariaView(view), usuario, paciente).controla();
+                new DetalhesPacienteSecretariaController(new DetalhesPacienteSecretariaView(view), paciente).controla();
             }
         });
         view.getBtnAlterarPaciente().addActionListener((ActionEvent actionEvent) -> {
@@ -91,6 +91,12 @@ class SecretariaController {
         view.getBtnNovaConsulta().addActionListener((ActionEvent actionEvent) -> {
             new CadastroAlteracaoConsultaController(new CadastroEAlteracaoConsultaView(view), usuario).controla();
             atualizaTabelaConsultas();
+        });
+        view.getBtnConsultasDiaSeguinteEmail().addActionListener((ActionEvent actionEvent) -> {
+            new ConsultaPorDataController(new ConsultaPorDataView(view), usuario, false).controla();
+        });
+        view.getBtnConsultasDiaSeguinteSMS().addActionListener((ActionEvent actionEvent) -> {
+            new ConsultaPorDataController(new ConsultaPorDataView(view), usuario, true).controla();
         });
     }
 

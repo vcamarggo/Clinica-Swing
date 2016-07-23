@@ -14,7 +14,7 @@ import org.apache.commons.beanutils.PropertyUtils;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GeradorTabelas {
 
@@ -38,7 +38,6 @@ public class GeradorTabelas {
         }
         return new javax.swing.table.DefaultTableModel(
                 pacientes, header);
-
     }
 
 }

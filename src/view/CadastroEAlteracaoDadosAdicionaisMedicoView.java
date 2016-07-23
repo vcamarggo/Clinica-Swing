@@ -8,12 +8,11 @@ package view;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDialog {
 
@@ -23,7 +22,7 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
 
     public JButton getBtnGravar2() {
         return btnGravar2;
-    }   
+    }
 
     public JTextArea getTxtAlergias() {
         return txtAlergias;
@@ -65,9 +64,6 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
         this.boxFuma = boxFuma;
     }
 
-    
-    
-    
     /**
      * Creates new form CadastroEAlteracaoDadosAdicionaisMedicoView
      *

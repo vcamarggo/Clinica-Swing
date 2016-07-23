@@ -1,18 +1,14 @@
 package model;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public abstract class GerenciadorMensagem {
+public class GerenciadorMensagem extends Usuario {
 
     private static final String NUMERO_CONSULTORIO = "(44) 3034-0608";
     private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
     private static final String EMAIL_CONSULTORIO = "consultoriosaudeecia@gmail.com";
-    private static final DateFormat FORMATTER = new SimpleDateFormat("dd/MM/yy");
 
     /**
      * @return telefone do consultório
@@ -36,18 +32,4 @@ public abstract class GerenciadorMensagem {
         return EMAIL_CONSULTORIO;
     }
 
-    /**
-     * @return formato padrão das datas
-     */
-    public DateFormat getDateFormat() {
-        return FORMATTER;
-    }
-
-    /**
-     * Método abstrato para a exibição de mensagens.
-     *
-     * @param consulta
-     * @return mensagemGerada
-     */
-    public abstract String geraMensagem(Consulta consulta);
 }

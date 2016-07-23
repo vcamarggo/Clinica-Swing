@@ -3,7 +3,6 @@ package controller;
 import java.awt.event.ActionEvent;
 import model.Medico;
 import model.Secretaria;
-import model.Usuario;
 import view.MedicoView;
 import view.SecretariaView;
 import view.SelecaoPerfilView;

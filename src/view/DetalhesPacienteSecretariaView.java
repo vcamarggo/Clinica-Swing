@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
 

@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 

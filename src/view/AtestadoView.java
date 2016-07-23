@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class AtestadoView extends javax.swing.JDialog {
 

@@ -11,7 +11,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class Secretaria extends Usuario {
 
@@ -43,7 +43,7 @@ public class Secretaria extends Usuario {
     public List<Consulta> getConsultasDataDesejadaParaPacientesComEmail(Calendar dataDesejada) {
         Query q = entityManager.createQuery(
                 new StringBuilder("SELECT c FROM Consulta c WHERE"
-                        + " c.paciente.email IS NOT NULL AND c.dataConsulta = :dataDesejada")
+                        + " coalesce(c.paciente.email, '') <> '' AND c.dataConsulta = :dataDesejada")
                 .toString(),
                 Consulta.class);
         q.setParameter("dataDesejada", dataDesejada.getTime());
@@ -60,7 +60,7 @@ public class Secretaria extends Usuario {
     public List<Consulta> getConsultasDataDesejadaParaPacientesComCelular(Calendar dataDesejada) {
         Query q = entityManager.createQuery(
                 new StringBuilder("SELECT c FROM Consulta c WHERE"
-                        + " c.paciente.celular IS NOT NULL AND dataConsulta = :dataDesejada")
+                        + "  coalesce(c.paciente.celular, '') <> '' AND dataConsulta = :dataDesejada")
                 .toString(),
                 Consulta.class);
         q.setParameter("dataDesejada", dataDesejada.getTime());
@@ -83,25 +83,6 @@ public class Secretaria extends Usuario {
      */
     public void removeConsulta(Consulta consulta) {
         remove(consulta);
-    }
-
-    /**
-     * Método que recebe como parâmetro a data de amanhã e verifica todas as
-     * consultas cadastradas no sistema. Insere na lista consultasDoDiaSeguinte
-     * apenas os pacientes que tem consulta nesta data recebida.
-     *
-     * @return consultasDeAmanha
-     */
-    public List<Consulta> listaConsultasDeAmanha() {
-        Query q = entityManager.createQuery(
-                new StringBuilder("SELECT ob FROM Consulta ob where dataConsulta = :dataAmanha")
-                .toString(),
-                Consulta.class
-        );
-        Calendar dataAmanha = Calendar.getInstance();
-        dataAmanha.add(Calendar.DAY_OF_MONTH, 1);
-        q.setParameter("dataAmanha", dataAmanha.getTime());
-        return q.getResultList();
     }
 
     public boolean existePaciente(Long rg) {

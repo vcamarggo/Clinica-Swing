@@ -7,28 +7,25 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import model.Paciente;
-import model.Secretaria;
 import view.DetalhesPacienteSecretariaView;
 
 /**
  *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class DetalhesPacienteSecretariaController {
-    
-    private Secretaria usuario;
+
     private Paciente model;
     private DetalhesPacienteSecretariaView view;
-    
+
     public DetalhesPacienteSecretariaController() {
     }
-    
-    public DetalhesPacienteSecretariaController(DetalhesPacienteSecretariaView view, Secretaria usuario, Paciente model) {
-        this.usuario = usuario;
+
+    public DetalhesPacienteSecretariaController(DetalhesPacienteSecretariaView view, Paciente model) {
         this.model = model;
         this.view = view;
     }
-    
+
     public void controla() {
         view.getLblNomePaciente().setText(model.getNome());
         view.getLblEnderecoPaciente().setText(model.getEndereco());

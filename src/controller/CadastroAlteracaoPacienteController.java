@@ -16,8 +16,7 @@ import util.Util;
 import view.CadastroEAlteracaoPacienteSecretariaView;
 
 /**
- *
- * @author Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroAlteracaoPacienteController {
 

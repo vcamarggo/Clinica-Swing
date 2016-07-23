@@ -10,7 +10,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class SecretariaView extends javax.swing.JFrame {
 
@@ -20,10 +20,6 @@ public class SecretariaView extends javax.swing.JFrame {
 
     public JButton getBtnAlterarPaciente() {
         return btnAlterarPaciente;
-    }
-
-    public JButton getBtnConsultasDiaSeguinte() {
-        return btnConsultasDiaSeguinte;
     }
 
     public JButton getBtnDetalhesPaciente() {
@@ -44,6 +40,14 @@ public class SecretariaView extends javax.swing.JFrame {
 
     public JButton getBtnRemoverPaciente() {
         return btnRemoverPaciente;
+    }
+
+    public JButton getBtnConsultasDiaSeguinteEmail() {
+        return btnConsultasDiaSeguinteEmail;
+    }
+
+    public JButton getBtnConsultasDiaSeguinteSMS() {
+        return btnConsultasDiaSeguinteSMS;
     }
 
     public JTable getTabelaConsultas() {
@@ -93,7 +97,8 @@ public class SecretariaView extends javax.swing.JFrame {
         scrollConsulta = new javax.swing.JScrollPane();
         tabelaConsultas = new javax.swing.JTable();
         relatorioPanel = new javax.swing.JPanel();
-        btnConsultasDiaSeguinte = new javax.swing.JButton();
+        btnConsultasDiaSeguinteSMS = new javax.swing.JButton();
+        btnConsultasDiaSeguinteEmail = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -349,7 +354,14 @@ public class SecretariaView extends javax.swing.JFrame {
 
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
-        btnConsultasDiaSeguinte.setText("Consultas do dia seguinte");
+        btnConsultasDiaSeguinteSMS.setText("Consultas do dia seguinte - SMS");
+        btnConsultasDiaSeguinteSMS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultasDiaSeguinteSMSActionPerformed(evt);
+            }
+        });
+
+        btnConsultasDiaSeguinteEmail.setText("Consultas do dia seguinte - Email\n");
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
         relatorioPanel.setLayout(relatorioPanelLayout);
@@ -357,14 +369,18 @@ public class SecretariaView extends javax.swing.JFrame {
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relatorioPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(btnConsultasDiaSeguinte)
+                .addComponent(btnConsultasDiaSeguinteSMS)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConsultasDiaSeguinteEmail)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         relatorioPanelLayout.setVerticalGroup(
             relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(relatorioPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(btnConsultasDiaSeguinte)
+                .addGroup(relatorioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultasDiaSeguinteSMS)
+                    .addComponent(btnConsultasDiaSeguinteEmail))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -409,11 +425,16 @@ public class SecretariaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarConsultaActionPerformed
 
+    private void btnConsultasDiaSeguinteSMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasDiaSeguinteSMSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultasDiaSeguinteSMSActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarConsulta;
     private javax.swing.JButton btnAlterarPaciente;
-    private javax.swing.JButton btnConsultasDiaSeguinte;
+    private javax.swing.JButton btnConsultasDiaSeguinteEmail;
+    private javax.swing.JButton btnConsultasDiaSeguinteSMS;
     private javax.swing.JButton btnDetalhesPaciente;
     private javax.swing.JButton btnNovaConsulta;
     private javax.swing.JButton btnNovoPaciente;

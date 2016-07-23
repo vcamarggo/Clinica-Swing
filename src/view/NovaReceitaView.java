@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class NovaReceitaView extends javax.swing.JFrame {
 

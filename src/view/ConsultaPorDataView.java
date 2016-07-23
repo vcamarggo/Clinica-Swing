@@ -5,22 +5,32 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTable;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class ConsultasPorDataView extends javax.swing.JDialog {
+public class ConsultaPorDataView extends javax.swing.JDialog {
 
     /**
      * Creates new form ConsultasPorDataView
      *
      * @param parent
      */
-    public ConsultasPorDataView(JFrame parent) {
+    public ConsultaPorDataView(JFrame parent) {
         super(parent, true);
         initComponents();
+    }
+
+    public JButton getBtnOK1() {
+        return btnOK1;
+    }
+
+    public JTable getTabelaPacientesComConsulta() {
+        return tabelaPacientesComConsulta;
     }
 
     /**
@@ -56,7 +66,7 @@ public class ConsultasPorDataView extends javax.swing.JDialog {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addComponent(lblConsultas)
-                .addGap(0, 139, Short.MAX_VALUE))
+                .addGap(0, 158, Short.MAX_VALUE))
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

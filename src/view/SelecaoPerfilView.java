@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author mayza
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class SelecaoPerfilView extends JFrame {
 
