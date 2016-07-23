@@ -213,7 +213,6 @@
                                   <Component id="btnDetalhesPaciente" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnInserirDadosAdicionais" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnRemoverDadosAdicionais" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnAlterarProntuario" max="32767" attributes="0"/>
                                   <Component id="btnRemoverProntuario" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -225,19 +224,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace pref="28" max="32767" attributes="0"/>
                               <Component id="btnDetalhesPaciente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="btnInserirDadosAdicionais" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnRemoverDadosAdicionais" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnCadastrarProntuario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnAlterarProntuario" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnRemoverProntuario" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -268,18 +265,11 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="btnCadastrarProntuario">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Cadastrar Prontuario"/>
+                        <Property name="text" type="java.lang.String" value="Cadastrar  / Alterar Prontuario"/>
+                        <Property name="actionCommand" type="java.lang.String" value="CadastrarProntuario"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarProntuarioActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="btnAlterarProntuario">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Alterar Prontuario"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarProntuarioActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverProntuario">

@@ -25,10 +25,6 @@ public class MedicoView extends javax.swing.JFrame {
         return tabelaPacientes;
     }
 
-    public JButton getBtnAlterarProntuario() {
-        return btnAlterarProntuario;
-    }
-
     public JButton getBtnCadastrarProntuario() {
         return btnCadastrarProntuario;
     }
@@ -84,7 +80,6 @@ public class MedicoView extends javax.swing.JFrame {
         btnRemoverDadosAdicionais = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnCadastrarProntuario = new javax.swing.JButton();
-        btnAlterarProntuario = new javax.swing.JButton();
         btnRemoverProntuario = new javax.swing.JButton();
         relatorioPanel = new javax.swing.JPanel();
         btnGerarReceita = new javax.swing.JButton();
@@ -179,17 +174,11 @@ public class MedicoView extends javax.swing.JFrame {
             }
         });
 
-        btnCadastrarProntuario.setText("Cadastrar Prontuario");
+        btnCadastrarProntuario.setText("Cadastrar  / Alterar Prontuario");
+        btnCadastrarProntuario.setActionCommand("CadastrarProntuario");
         btnCadastrarProntuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarProntuarioActionPerformed(evt);
-            }
-        });
-
-        btnAlterarProntuario.setText("Alterar Prontuario");
-        btnAlterarProntuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarProntuarioActionPerformed(evt);
             }
         });
 
@@ -212,7 +201,6 @@ public class MedicoView extends javax.swing.JFrame {
                     .addComponent(btnDetalhesPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnInserirDadosAdicionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRemoverDadosAdicionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAlterarProntuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRemoverProntuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -221,19 +209,17 @@ public class MedicoView extends javax.swing.JFrame {
             .addGroup(opcoesPacienteLayout.createSequentialGroup()
                 .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(btnDetalhesPaciente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addComponent(btnInserirDadosAdicionais)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverDadosAdicionais)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCadastrarProntuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAlterarProntuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverProntuario)
-                .addGap(4, 4, 4))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout pacientePanelLayout = new javax.swing.GroupLayout(pacientePanel);
@@ -357,10 +343,6 @@ public class MedicoView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCadastrarProntuarioActionPerformed
 
-    private void btnAlterarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarProntuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarProntuarioActionPerformed
-
     private void btnRemoverProntuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverProntuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoverProntuarioActionPerformed
@@ -375,7 +357,6 @@ public class MedicoView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
-    private javax.swing.JButton btnAlterarProntuario;
     private javax.swing.JButton btnCadastrarProntuario;
     private javax.swing.JButton btnDetalhesPaciente;
     private javax.swing.JButton btnGerarAtestado;

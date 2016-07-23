@@ -5,7 +5,9 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -17,11 +19,30 @@ public class CadastroEAlteracaoProntuarioMedicoView extends javax.swing.JDialog 
      * Creates new form CadastroEAlteracaoProntuarioMedicoView
      *
      * @param parent
-     * @param modal
      */
-    public CadastroEAlteracaoProntuarioMedicoView(JFrame parent, boolean modal) {
-        super(parent, modal);
+    public CadastroEAlteracaoProntuarioMedicoView(JFrame parent) {
+        super(parent, true);
         initComponents();
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar2() {
+        return btnGravar2;
+    }
+
+    public JTextArea getTxtDiagnostico() {
+        return txtDiagnostico;
+    }
+
+    public JTextArea getTxtSintomas() {
+        return txtSintomas;
+    }
+
+    public JTextArea getTxtTratamento() {
+        return txtTratamento;
     }
 
     /**

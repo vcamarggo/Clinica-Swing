@@ -5,7 +5,10 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -22,6 +25,81 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         super(parent, true);
         initComponents();
     }
+
+    public JLabel getLblBebe() {
+        return lblBebe;
+    }
+
+    public JLabel getLblCelularPaciente() {
+        return lblCelularPaciente;
+    }
+
+    public JLabel getLblColesterol() {
+        return lblColesterol;
+    }
+
+    public JLabel getLblConvenioPaciente() {
+        return lblConvenioPaciente;
+    }
+
+    public JLabel getLblDiabetes() {
+        return lblDiabetes;
+    }
+
+    public JLabel getLblEmailPaciente() {
+        return lblEmailPaciente;
+    }
+
+    public JLabel getLblEnderecoPaciente() {
+        return lblEnderecoPaciente;
+    }
+
+    public JLabel getLblFuma() {
+        return lblFuma;
+    }
+
+    public JLabel getLblNascimentoPaciente() {
+        return lblNascimentoPaciente;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JLabel getLblPaciente() {
+        return lblPaciente;
+    }
+
+    public JTextArea getTxtTratamento() {
+        return txtTratamento;
+    }
+
+    public JTextArea getTxtAlergias() {
+        return txtAlergias;
+    }
+
+    public JTextArea getTxtCirurgias() {
+        return txtCirurgias;
+    }
+
+    public JTextArea getTxtDiagnostico() {
+        return txtDiagnostico;
+    }
+
+    public JTextArea getTxtSintomas() {
+        return txtSintomas;
+    }
+
+    public JLabel getLblTelefonePaciente() {
+        return lblTelefonePaciente;
+    }
+
+    public JButton getBtnOK() {
+        return btnOK;
+    }
+
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,16 +145,15 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         scrollTratamento1 = new javax.swing.JScrollPane();
-        txtTratamento1 = new javax.swing.JTextArea();
+        txtSintomas = new javax.swing.JTextArea();
         scrollTratamento2 = new javax.swing.JScrollPane();
-        txtTratamento2 = new javax.swing.JTextArea();
+        txtDiagnostico = new javax.swing.JTextArea();
         scrollTratamento3 = new javax.swing.JScrollPane();
-        txtTratamento3 = new javax.swing.JTextArea();
+        txtAlergias = new javax.swing.JTextArea();
         scrollTratamento4 = new javax.swing.JScrollPane();
-        txtTratamento4 = new javax.swing.JTextArea();
+        txtCirurgias = new javax.swing.JTextArea();
         panelOK = new javax.swing.JPanel();
         btnOK = new javax.swing.JButton();
-        btnOK1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -223,29 +300,29 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
 
         jLabel29.setText("Tratamento:");
 
-        txtTratamento1.setEditable(false);
-        txtTratamento1.setColumns(20);
-        txtTratamento1.setLineWrap(true);
-        txtTratamento1.setRows(2);
-        scrollTratamento1.setViewportView(txtTratamento1);
+        txtSintomas.setEditable(false);
+        txtSintomas.setColumns(20);
+        txtSintomas.setLineWrap(true);
+        txtSintomas.setRows(2);
+        scrollTratamento1.setViewportView(txtSintomas);
 
-        txtTratamento2.setEditable(false);
-        txtTratamento2.setColumns(20);
-        txtTratamento2.setLineWrap(true);
-        txtTratamento2.setRows(2);
-        scrollTratamento2.setViewportView(txtTratamento2);
+        txtDiagnostico.setEditable(false);
+        txtDiagnostico.setColumns(20);
+        txtDiagnostico.setLineWrap(true);
+        txtDiagnostico.setRows(2);
+        scrollTratamento2.setViewportView(txtDiagnostico);
 
-        txtTratamento3.setEditable(false);
-        txtTratamento3.setColumns(20);
-        txtTratamento3.setLineWrap(true);
-        txtTratamento3.setRows(2);
-        scrollTratamento3.setViewportView(txtTratamento3);
+        txtAlergias.setEditable(false);
+        txtAlergias.setColumns(20);
+        txtAlergias.setLineWrap(true);
+        txtAlergias.setRows(2);
+        scrollTratamento3.setViewportView(txtAlergias);
 
-        txtTratamento4.setEditable(false);
-        txtTratamento4.setColumns(20);
-        txtTratamento4.setLineWrap(true);
-        txtTratamento4.setRows(2);
-        scrollTratamento4.setViewportView(txtTratamento4);
+        txtCirurgias.setEditable(false);
+        txtCirurgias.setColumns(20);
+        txtCirurgias.setLineWrap(true);
+        txtCirurgias.setRows(2);
+        scrollTratamento4.setViewportView(txtCirurgias);
 
         javax.swing.GroupLayout panelDadosAdicionaisLayout = new javax.swing.GroupLayout(panelDadosAdicionais);
         panelDadosAdicionais.setLayout(panelDadosAdicionaisLayout);
@@ -347,18 +424,11 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
                     .addComponent(scrollTratamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnOK.setText("Alterar Dados Adicionais");
+        btnOK.setText("OK");
+        btnOK.setSelected(true);
         btnOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOKActionPerformed(evt);
-            }
-        });
-
-        btnOK1.setText("OK");
-        btnOK1.setSelected(true);
-        btnOK1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOK1ActionPerformed(evt);
             }
         });
 
@@ -366,20 +436,16 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         panelOK.setLayout(panelOKLayout);
         panelOKLayout.setHorizontalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOKLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOK1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnOK)
-                .addGap(195, 195, 195))
+            .addGroup(panelOKLayout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOK1)
-                    .addComponent(btnOK))
+                .addComponent(btnOK)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -416,18 +482,11 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnOKActionPerformed
-
-    private void btnOK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOK1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnOK1ActionPerformed
+    }//GEN-LAST:event_btnOKActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOK;
-    private javax.swing.JButton btnOK1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
@@ -466,10 +525,11 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
     private javax.swing.JScrollPane scrollTratamento2;
     private javax.swing.JScrollPane scrollTratamento3;
     private javax.swing.JScrollPane scrollTratamento4;
+    private javax.swing.JTextArea txtAlergias;
+    private javax.swing.JTextArea txtCirurgias;
+    private javax.swing.JTextArea txtDiagnostico;
+    private javax.swing.JTextArea txtSintomas;
     private javax.swing.JTextArea txtTratamento;
-    private javax.swing.JTextArea txtTratamento1;
-    private javax.swing.JTextArea txtTratamento2;
-    private javax.swing.JTextArea txtTratamento3;
-    private javax.swing.JTextArea txtTratamento4;
     // End of variables declaration//GEN-END:variables
+
 }

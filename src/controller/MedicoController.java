@@ -11,6 +11,8 @@ import model.Medico;
 import model.Paciente;
 import util.GeradorTabelas;
 import view.CadastroEAlteracaoDadosAdicionaisMedicoView;
+import view.CadastroEAlteracaoProntuarioMedicoView;
+import view.DetalhesPacienteMedicoView;
 import view.MedicoView;
 import view.SelecaoPerfilView;
 
@@ -53,10 +55,35 @@ class MedicoController {
             if (linhaSelecionada >= 0) {
                 Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
                 paciente.removeDadosAdicionaisPaciente();
-                System.out.println(paciente.getCirurgias());
                 usuario.atualizaPaciente(paciente);
                 JOptionPane.showMessageDialog(null, "Dados removidos com sucesso");
             }
+        });
+        
+        view.getBtnDetalhesPaciente().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                DetalhesPacienteMedicoController detalhesPacienteMedicoController =  new DetalhesPacienteMedicoController( new DetalhesPacienteMedicoView(view), usuario, paciente);
+                detalhesPacienteMedicoController.controla();
+            }
+        });
+        
+        view.getBtnCadastrarProntuario().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            if (linhaSelecionada >= 0) {
+                Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+                CadastroEAlteracaoProntuarioMedicoController cadastroEAlteracaoProntuarioMedicoController =  new CadastroEAlteracaoProntuarioMedicoController( new CadastroEAlteracaoProntuarioMedicoView(view), usuario, paciente);
+                cadastroEAlteracaoProntuarioMedicoController.controla();
+            }
+        });
+        
+        view.getBtnRemoverProntuario().addActionListener((ActionEvent actionEvent) -> {
+            int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
+            Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
+            paciente.removeDadosProntuarioPaciente();
+            usuario.atualizaPaciente(paciente);
+            JOptionPane.showMessageDialog(null, "Prontuario removido com sucesso");
         });
     }
 
