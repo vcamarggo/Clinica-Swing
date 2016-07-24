@@ -560,9 +560,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnOK1" min="-2" pref="99" max="-2" attributes="0"/>
+                  <Component id="btnOK" min="-2" pref="99" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnOK" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAlterarDadosAdicionais" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -572,8 +572,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnOK1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnOK" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAlterarDadosAdicionais" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -581,22 +581,16 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnOK">
+        <Component class="javax.swing.JButton" name="btnAlterarDadosAdicionais">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alterar Dados Adicionais"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOKActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnOK1">
+        <Component class="javax.swing.JButton" name="btnOK">
           <Properties>
             <Property name="text" type="java.lang.String" value="OK"/>
             <Property name="selected" type="boolean" value="true"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOK1ActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

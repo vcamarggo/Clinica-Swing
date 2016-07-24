@@ -5,16 +5,22 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author mayza
  */
-public class NovaReceitaView extends javax.swing.JFrame {
+public class NovaReceitaView extends javax.swing.JDialog {
 
     /**
-     * Creates new form NovaReceitaView
+     * Creates new form NovaRec
      */
-    public NovaReceitaView() {
+    public NovaReceitaView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 
@@ -43,7 +49,7 @@ public class NovaReceitaView extends javax.swing.JFrame {
         btnGerarReceita = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -172,7 +178,6 @@ public class NovaReceitaView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGerarReceita;
@@ -190,4 +195,31 @@ public class NovaReceitaView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomePaciente;
     private javax.swing.JTextArea txtRemedios;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGerarReceita() {
+        return btnGerarReceita;
+    }
+
+    public JTextField getTxtAssinaturaMedico() {
+        return txtAssinaturaMedico;
+    }
+
+    public JTextField getTxtDataConsulta() {
+        return txtDataConsulta;
+    }
+
+    public JTextField getTxtNomePaciente() {
+        return txtNomePaciente;
+    }
+
+    public JTextArea getTxtRemedios() {
+        return txtRemedios;
+    }
+
+
+
 }

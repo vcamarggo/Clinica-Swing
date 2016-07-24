@@ -48,26 +48,11 @@ public class SelecaoPerfilView extends JFrame {
         lblSelecionePerfil.setText("Selecione seu Perfil:");
 
         btnSouMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-medico.png"))); // NOI18N
-        btnSouMedico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSouMedicoActionPerformed(evt);
-            }
-        });
 
         btnSouSecretaria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-secretaria.png"))); // NOI18N
         btnSouSecretaria.setSelected(true);
-        btnSouSecretaria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSouSecretariaActionPerformed(evt);
-            }
-        });
 
         btnGerenMsg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/icone-msg.png"))); // NOI18N
-        btnGerenMsg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerenMsgActionPerformed(evt);
-            }
-        });
 
         lblSouMedico.setText("Sou Medico");
 
@@ -84,21 +69,22 @@ public class SelecaoPerfilView extends JFrame {
                 .addComponent(lblSelecionePerfil)
                 .addContainerGap(488, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLoginLayout.createSequentialGroup()
-                        .addComponent(btnSouMedico)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnSouSecretaria)
-                        .addGap(32, 32, 32)
-                        .addComponent(btnGerenMsg))
-                    .addGroup(panelLoginLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addContainerGap(129, Short.MAX_VALUE)
                         .addComponent(lblSouMedico)
                         .addGap(78, 78, 78)
                         .addComponent(lblSouSecretaria)
                         .addGap(34, 34, 34)
-                        .addComponent(lblGerenMsg)))
+                        .addComponent(lblGerenMsg))
+                    .addGroup(panelLoginLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(btnSouMedico)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnSouSecretaria)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnGerenMsg)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(99, 99, 99))
         );
         panelLoginLayout.setVerticalGroup(
@@ -163,18 +149,6 @@ public class SelecaoPerfilView extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSouMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSouMedicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSouMedicoActionPerformed
-
-    private void btnSouSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSouSecretariaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSouSecretariaActionPerformed
-
-    private void btnGerenMsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenMsgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerenMsgActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGerenMsg;

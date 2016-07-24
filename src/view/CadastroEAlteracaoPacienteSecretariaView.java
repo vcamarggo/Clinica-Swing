@@ -29,46 +29,6 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
         initComponents();
     }
 
-    public JButton getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public JButton getBtnGravar() {
-        return btnGravar;
-    }
-
-    public JTextField getTxtCelular() {
-        return txtCelular;
-    }
-
-    public JTextField getTxtEmail() {
-        return txtEmail;
-    }
-
-    public JTextField getTxtEndereco() {
-        return txtEndereco;
-    }
-
-    public JTextField getTxtNascimento() {
-        return txtNascimento;
-    }
-
-    public JTextField getTxtNome() {
-        return txtNome;
-    }
-
-    public JTextField getTxtTelefone() {
-        return txtTelefone;
-    }
-
-    public JTextField getTxtRG() {
-        return txtRG;
-    }
-
-    public JComboBox<String> getBoxConvenio() {
-        return boxConvenio;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,11 +84,6 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
 
         btnGravar.setText("Gravar Paciente");
         btnGravar.setSelected(true);
-        btnGravar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravarActionPerformed(evt);
-            }
-        });
 
         btnCancelar.setText("Cancelar");
 
@@ -168,12 +123,6 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
         jLabel6.setText("Email:");
 
         jLabel7.setText("Tipo de Convenio:");
-
-        txtEndereco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEnderecoActionPerformed(evt);
-            }
-        });
 
         boxConvenio.setModel(new DefaultComboBoxModel(TipoConvenio.enumsToStringArray()));
 
@@ -296,16 +245,6 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnGravarActionPerformed
-
-    private void txtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEnderecoActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxConvenio;
     private javax.swing.JButton btnCancelar;
@@ -330,4 +269,45 @@ public class CadastroEAlteracaoPacienteSecretariaView extends JDialog {
     private javax.swing.JTextField txtRG;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar() {
+        return btnGravar;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public JTextField getTxtEndereco() {
+        return txtEndereco;
+    }
+
+    public JTextField getTxtNascimento() {
+        return txtNascimento;
+    }
+
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
+
+    public JTextField getTxtTelefone() {
+        return txtTelefone;
+    }
+
+    public JTextField getTxtRG() {
+        return txtRG;
+    }
+
+    public JComboBox<String> getBoxConvenio() {
+        return boxConvenio;
+    }
+    
 }

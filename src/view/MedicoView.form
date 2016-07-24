@@ -96,9 +96,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar a Selecao de Perfis"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarSelecaoPerfilActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -252,17 +249,11 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Inserir / Alterar Dados Adicionais"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirDadosAdicionaisActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverDadosAdicionais">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Remover Dados Adicionais"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverDadosAdicionaisActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator1">
                     </Component>
@@ -270,25 +261,16 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Cadastrar Prontuario"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarProntuarioActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnAlterarProntuario">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Alterar Prontuario"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarProntuarioActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverProntuario">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Remover Prontuario"/>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverProntuarioActionPerformed"/>
-                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -340,25 +322,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerar Receita Medica"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarReceitaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnGerarAtestado">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerar Atestado Medico"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarAtestadoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnGerarDeclaracaoAcompanhamento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerar Declaracao de Acompanhamento"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarDeclaracaoAcompanhamentoActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

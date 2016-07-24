@@ -5,14 +5,16 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTable;
 
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class PacientesNotificadosView extends javax.swing.JDialog {
-
+    
     /**
      * Creates new form EmailsEnviadosView
      *
@@ -178,4 +180,13 @@ public class PacientesNotificadosView extends javax.swing.JDialog {
     private javax.swing.JScrollPane scrollPacientesNotificados;
     private javax.swing.JTable tabelaPacientesNotificados;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getTabelaPacientesComConsulta() {
+        return tabelaPacientesNotificados;
+    }
+    
+    public JButton getBtnOK() {
+        return btnOK1;
+    }
+
 }

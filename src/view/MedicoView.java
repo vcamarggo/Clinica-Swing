@@ -21,46 +21,6 @@ public class MedicoView extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JTable getTabelaPacientes() {
-        return tabelaPacientes;
-    }
-
-    public JButton getBtnAlterarProntuario() {
-        return btnAlterarProntuario;
-    }
-
-    public JButton getBtnCadastrarProntuario() {
-        return btnCadastrarProntuario;
-    }
-
-    public JButton getBtnDetalhesPaciente() {
-        return btnDetalhesPaciente;
-    }
-
-    public JButton getBtnGerarAtestado() {
-        return btnGerarAtestado;
-    }
-
-    public JButton getBtnGerarDeclaracaoAcompanhamento() {
-        return btnGerarDeclaracaoAcompanhamento;
-    }
-
-    public JButton getBtnGerarReceita() {
-        return btnGerarReceita;
-    }
-
-    public JButton getBtnInserirDadosAdicionais() {
-        return btnInserirDadosAdicionais;
-    }
-
-    public JButton getBtnRemoverDadosAdicionais() {
-        return btnRemoverDadosAdicionais;
-    }
-
-    public JButton getBtnRemoverProntuario() {
-        return btnRemoverProntuario;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,11 +60,6 @@ public class MedicoView extends javax.swing.JFrame {
         jLabel1.setText("Saude & CIA");
 
         btnVoltarSelecaoPerfil.setText("Voltar a Selecao de Perfis");
-        btnVoltarSelecaoPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarSelecaoPerfilActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
@@ -166,39 +121,14 @@ public class MedicoView extends javax.swing.JFrame {
         btnDetalhesPaciente.setText("Detalhes do Paciente");
 
         btnInserirDadosAdicionais.setText("Inserir / Alterar Dados Adicionais");
-        btnInserirDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirDadosAdicionaisActionPerformed(evt);
-            }
-        });
 
         btnRemoverDadosAdicionais.setText("Remover Dados Adicionais");
-        btnRemoverDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoverDadosAdicionaisActionPerformed(evt);
-            }
-        });
 
         btnCadastrarProntuario.setText("Cadastrar Prontuario");
-        btnCadastrarProntuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarProntuarioActionPerformed(evt);
-            }
-        });
 
         btnAlterarProntuario.setText("Alterar Prontuario");
-        btnAlterarProntuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarProntuarioActionPerformed(evt);
-            }
-        });
 
         btnRemoverProntuario.setText("Remover Prontuario");
-        btnRemoverProntuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoverProntuarioActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout opcoesPacienteLayout = new javax.swing.GroupLayout(opcoesPaciente);
         opcoesPaciente.setLayout(opcoesPacienteLayout);
@@ -267,25 +197,10 @@ public class MedicoView extends javax.swing.JFrame {
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
         btnGerarReceita.setText("Gerar Receita Medica");
-        btnGerarReceita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarReceitaActionPerformed(evt);
-            }
-        });
 
         btnGerarAtestado.setText("Gerar Atestado Medico");
-        btnGerarAtestado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarAtestadoActionPerformed(evt);
-            }
-        });
 
         btnGerarDeclaracaoAcompanhamento.setText("Gerar Declaracao de Acompanhamento");
-        btnGerarDeclaracaoAcompanhamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarDeclaracaoAcompanhamentoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
         relatorioPanel.setLayout(relatorioPanelLayout);
@@ -337,42 +252,6 @@ public class MedicoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarSelecaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarSelecaoPerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltarSelecaoPerfilActionPerformed
-
-    private void btnGerarReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarReceitaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerarReceitaActionPerformed
-
-    private void btnGerarAtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarAtestadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerarAtestadoActionPerformed
-
-    private void btnGerarDeclaracaoAcompanhamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarDeclaracaoAcompanhamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerarDeclaracaoAcompanhamentoActionPerformed
-
-    private void btnCadastrarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarProntuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastrarProntuarioActionPerformed
-
-    private void btnAlterarProntuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarProntuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarProntuarioActionPerformed
-
-    private void btnRemoverProntuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverProntuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoverProntuarioActionPerformed
-
-    private void btnInserirDadosAdicionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirDadosAdicionaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInserirDadosAdicionaisActionPerformed
-
-    private void btnRemoverDadosAdicionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverDadosAdicionaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRemoverDadosAdicionaisActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarProntuario;
@@ -398,5 +277,45 @@ public class MedicoView extends javax.swing.JFrame {
 
     public JButton getBtnVoltarSelecaoPerfil() {
         return btnVoltarSelecaoPerfil;
+    }
+    
+    public JTable getTabelaPacientes() {
+        return tabelaPacientes;
+    }
+
+    public JButton getBtnAlterarProntuario() {
+        return btnAlterarProntuario;
+    }
+
+    public JButton getBtnCadastrarProntuario() {
+        return btnCadastrarProntuario;
+    }
+
+    public JButton getBtnDetalhesPaciente() {
+        return btnDetalhesPaciente;
+    }
+
+    public JButton getBtnGerarAtestado() {
+        return btnGerarAtestado;
+    }
+
+    public JButton getBtnGerarDeclaracaoAcompanhamento() {
+        return btnGerarDeclaracaoAcompanhamento;
+    }
+
+    public JButton getBtnGerarReceita() {
+        return btnGerarReceita;
+    }
+
+    public JButton getBtnInserirDadosAdicionais() {
+        return btnInserirDadosAdicionais;
+    }
+
+    public JButton getBtnRemoverDadosAdicionais() {
+        return btnRemoverDadosAdicionais;
+    }
+
+    public JButton getBtnRemoverProntuario() {
+        return btnRemoverProntuario;
     }
 }

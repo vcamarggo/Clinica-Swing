@@ -25,14 +25,6 @@ public class ConsultaPorDataView extends javax.swing.JDialog {
         initComponents();
     }
 
-    public JButton getBtnOK1() {
-        return btnOK1;
-    }
-
-    public JTable getTabelaPacientesComConsulta() {
-        return tabelaPacientesComConsulta;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -188,4 +180,13 @@ public class ConsultaPorDataView extends javax.swing.JDialog {
     private javax.swing.JScrollPane scrollPacientesComConsulta;
     private javax.swing.JTable tabelaPacientesComConsulta;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnOK1() {
+        return btnOK1;
+    }
+
+    public JTable getTabelaPacientesComConsulta() {
+        return tabelaPacientesComConsulta;
+    }
+    
 }

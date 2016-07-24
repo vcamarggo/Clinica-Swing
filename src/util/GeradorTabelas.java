@@ -13,7 +13,8 @@ import model.Usuario;
 import org.apache.commons.beanutils.PropertyUtils;
 
 /**
- *
+ * Classe responsável por gerar uma Tabela de Pacientes
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GeradorTabelas {

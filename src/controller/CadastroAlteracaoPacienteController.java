@@ -5,6 +5,7 @@
  */
 package controller;
 
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import enumeration.TipoConvenio;
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
@@ -14,8 +15,11 @@ import model.Paciente;
 import model.Secretaria;
 import util.Util;
 import view.CadastroEAlteracaoPacienteSecretariaView;
+//</editor-fold>
 
 /**
+ * Classe responsável por controlar as ações da View de cadastro e alteração de Pacientes.
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroAlteracaoPacienteController {
@@ -24,9 +28,12 @@ public class CadastroAlteracaoPacienteController {
     private CadastroEAlteracaoPacienteSecretariaView view;
     private Paciente model;
 
+    /* Contrutor padrão */
     public CadastroAlteracaoPacienteController() {
     }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. 
+      Este é chamado quando é solicitada a edição de um Paciente, por isso recebe um Paciente como parametro*/
     public CadastroAlteracaoPacienteController(CadastroEAlteracaoPacienteSecretariaView view, Secretaria usuario, Paciente model) {
         this.usuario = usuario;
         this.view = view;
@@ -34,18 +41,20 @@ public class CadastroAlteracaoPacienteController {
         this.view.getTxtRG().setEnabled(false);
         preencheCampos();
     }
-
+    /*Contrutor parametrizado chamado para novo paciente*/
     public CadastroAlteracaoPacienteController(CadastroEAlteracaoPacienteSecretariaView view, Secretaria usuario) {
         this.usuario = usuario;
         this.view = view;
         this.model = new Paciente();
     }
 
+    /*Cria um novo paciente*/
     private void criaPaciente(Long rg, String nome, Date dataNascimento, String endereco, String telefone, String celular, String email, String tipoConvenio) {
         model = new Paciente(rg, nome, dataNascimento, endereco, telefone, celular, email, TipoConvenio.valueOf(tipoConvenio));
         usuario.adicionaPaciente(model);
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         view.getBtnGravar().addActionListener((ActionEvent actionEvent) -> {
             Long rg;
@@ -75,6 +84,7 @@ public class CadastroAlteracaoPacienteController {
         view.setVisible(true);
     }
 
+    /*Preenche os textfields com os valores correspondentes, caso seja solicitada alteração de um paciente*/
     private void preencheCampos() {
         view.getTxtRG().setText(model.getRg().toString());
         view.getTxtNome().setText(model.getNome());

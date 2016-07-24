@@ -75,8 +75,8 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         scrollTratamento4 = new javax.swing.JScrollPane();
         txtTratamento4 = new javax.swing.JTextArea();
         panelOK = new javax.swing.JPanel();
+        btnAlterarDadosAdicionais = new javax.swing.JButton();
         btnOK = new javax.swing.JButton();
-        btnOK1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -347,20 +347,10 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
                     .addComponent(scrollTratamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnOK.setText("Alterar Dados Adicionais");
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOKActionPerformed(evt);
-            }
-        });
+        btnAlterarDadosAdicionais.setText("Alterar Dados Adicionais");
 
-        btnOK1.setText("OK");
-        btnOK1.setSelected(true);
-        btnOK1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOK1ActionPerformed(evt);
-            }
-        });
+        btnOK.setText("OK");
+        btnOK.setSelected(true);
 
         javax.swing.GroupLayout panelOKLayout = new javax.swing.GroupLayout(panelOK);
         panelOK.setLayout(panelOKLayout);
@@ -368,9 +358,9 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOKLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOK1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnOK)
+                .addComponent(btnAlterarDadosAdicionais)
                 .addGap(195, 195, 195))
         );
         panelOKLayout.setVerticalGroup(
@@ -378,8 +368,8 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOK1)
-                    .addComponent(btnOK))
+                    .addComponent(btnOK)
+                    .addComponent(btnAlterarDadosAdicionais))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -415,19 +405,9 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnOKActionPerformed
-
-    private void btnOK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOK1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOK1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarDadosAdicionais;
     private javax.swing.JButton btnOK;
-    private javax.swing.JButton btnOK1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;

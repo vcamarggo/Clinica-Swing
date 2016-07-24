@@ -14,50 +14,6 @@ import javax.swing.JTable;
  */
 public class SecretariaView extends javax.swing.JFrame {
 
-    public JButton getBtnAlterarConsulta() {
-        return btnAlterarConsulta;
-    }
-
-    public JButton getBtnAlterarPaciente() {
-        return btnAlterarPaciente;
-    }
-
-    public JButton getBtnDetalhesPaciente() {
-        return btnDetalhesPaciente;
-    }
-
-    public JButton getBtnNovaConsulta() {
-        return btnNovaConsulta;
-    }
-
-    public JButton getBtnNovoPaciente() {
-        return btnNovoPaciente;
-    }
-
-    public JButton getBtnRemoverConsulta() {
-        return btnRemoverConsulta;
-    }
-
-    public JButton getBtnRemoverPaciente() {
-        return btnRemoverPaciente;
-    }
-
-    public JButton getBtnConsultasDiaSeguinteEmail() {
-        return btnConsultasDiaSeguinteEmail;
-    }
-
-    public JButton getBtnConsultasDiaSeguinteSMS() {
-        return btnConsultasDiaSeguinteSMS;
-    }
-
-    public JTable getTabelaConsultas() {
-        return tabelaConsultas;
-    }
-
-    public JTable getTabelaPacientes() {
-        return tabelaPacientes;
-    }
-
     /**
      * Creates new form SecretariaView2
      */
@@ -109,11 +65,6 @@ public class SecretariaView extends javax.swing.JFrame {
         lblSaudeCIA.setText("Saude & CIA");
 
         btnVoltarSelecaoPerfil.setText("Voltar a Seleção de Perfis");
-        btnVoltarSelecaoPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarSelecaoPerfilActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
@@ -181,11 +132,6 @@ public class SecretariaView extends javax.swing.JFrame {
         btnRemoverPaciente.setText("Remover Paciente");
 
         btnNovoPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/add-paciente.png"))); // NOI18N
-        btnNovoPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovoPacienteActionPerformed(evt);
-            }
-        });
 
         lblNovoPaciente.setText("Novo Paciente");
 
@@ -245,20 +191,10 @@ public class SecretariaView extends javax.swing.JFrame {
         opcoesConsulta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opcoes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         btnAlterarConsulta.setText("Alterar Dados da Consulta");
-        btnAlterarConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarConsultaActionPerformed(evt);
-            }
-        });
 
         btnRemoverConsulta.setText("Remover Consulta");
 
         btnNovaConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/nova-consulta.png"))); // NOI18N
-        btnNovaConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovaConsultaActionPerformed(evt);
-            }
-        });
 
         lblNovaConsulta.setText("Nova Consulta");
 
@@ -355,11 +291,6 @@ public class SecretariaView extends javax.swing.JFrame {
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
         btnConsultasDiaSeguinteSMS.setText("Consultas do dia seguinte - SMS");
-        btnConsultasDiaSeguinteSMS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultasDiaSeguinteSMSActionPerformed(evt);
-            }
-        });
 
         btnConsultasDiaSeguinteEmail.setText("Consultas do dia seguinte - Email\n");
 
@@ -409,26 +340,6 @@ public class SecretariaView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarSelecaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarSelecaoPerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltarSelecaoPerfilActionPerformed
-
-    private void btnNovoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoPacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovoPacienteActionPerformed
-
-    private void btnNovaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovaConsultaActionPerformed
-
-    private void btnAlterarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarConsultaActionPerformed
-
-    private void btnConsultasDiaSeguinteSMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasDiaSeguinteSMSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnConsultasDiaSeguinteSMSActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abasSecretaria;
     private javax.swing.JButton btnAlterarConsulta;
@@ -459,5 +370,49 @@ public class SecretariaView extends javax.swing.JFrame {
 
     public JButton getBtnVoltarSelecaoPerfil() {
         return btnVoltarSelecaoPerfil;
+    }
+    
+    public JButton getBtnAlterarConsulta() {
+        return btnAlterarConsulta;
+    }
+
+    public JButton getBtnAlterarPaciente() {
+        return btnAlterarPaciente;
+    }
+
+    public JButton getBtnDetalhesPaciente() {
+        return btnDetalhesPaciente;
+    }
+
+    public JButton getBtnNovaConsulta() {
+        return btnNovaConsulta;
+    }
+
+    public JButton getBtnNovoPaciente() {
+        return btnNovoPaciente;
+    }
+
+    public JButton getBtnRemoverConsulta() {
+        return btnRemoverConsulta;
+    }
+
+    public JButton getBtnRemoverPaciente() {
+        return btnRemoverPaciente;
+    }
+
+    public JButton getBtnConsultasDiaSeguinteEmail() {
+        return btnConsultasDiaSeguinteEmail;
+    }
+
+    public JButton getBtnConsultasDiaSeguinteSMS() {
+        return btnConsultasDiaSeguinteSMS;
+    }
+
+    public JTable getTabelaConsultas() {
+        return tabelaConsultas;
+    }
+
+    public JTable getTabelaPacientes() {
+        return tabelaPacientes;
     }
 }

@@ -5,6 +5,8 @@
  */
 package controller;
 
+
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import enumeration.TipoConsulta;
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
@@ -15,9 +17,11 @@ import model.Paciente;
 import model.Secretaria;
 import util.Util;
 import view.CadastroEAlteracaoConsultaView;
+//</editor-fold>
 
 /**
- *
+ * Classe responsável por controlar as ações da View de cadastro e alteração de Consultas.
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroAlteracaoConsultaController {
@@ -26,27 +30,32 @@ public class CadastroAlteracaoConsultaController {
     private CadastroEAlteracaoConsultaView view;
     private Consulta model;
 
+    /* Contrutor padrão */
     public CadastroAlteracaoConsultaController() {
     }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. 
+      Este é chamado quando é solicitada a edição de uma consulta, por isso recebe uma Consulta como parametro*/
     public CadastroAlteracaoConsultaController(CadastroEAlteracaoConsultaView view, Secretaria usuario, Consulta model) {
         this.usuario = usuario;
         this.view = view;
         this.model = model;
         preencheCampos();
     }
-
+    /*Construtor parametrizado chamado para nova Consulta*/
     public CadastroAlteracaoConsultaController(CadastroEAlteracaoConsultaView view, Secretaria usuario) {
         this.usuario = usuario;
         this.view = view;
         this.model = new Consulta();
     }
 
+    /*Cria uma nova consulta*/
     private void criaConsulta(Long codConsulta, Date dataConsulta, String hora, String medico, Paciente paciente, String tipoConsulta) {
         model = new Consulta(codConsulta, dataConsulta, hora, medico, paciente, TipoConsulta.valueOf(tipoConsulta));
         usuario.adicionaConsulta(model);
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         view.getBtnGravar().addActionListener((ActionEvent actionEvent) -> {
             Long rg;
@@ -87,6 +96,7 @@ public class CadastroAlteracaoConsultaController {
         view.setVisible(true);
     }
 
+    /*Preenche os textfields com os valores correspondentes, caso seja solicitada alteração de uma consulta*/
     private void preencheCampos() {
         view.getTxtCodConsulta().setText(model.getCodigo().toString());
         view.getTxtRGPaciente().setText(model.getPaciente().getRg().toString());

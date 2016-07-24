@@ -25,38 +25,6 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
         initComponents();
     }
 
-    public JButton getBtnOK1() {
-        return btnOK1;
-    }
-
-    public JLabel getLblCelularPaciente() {
-        return lblCelularPaciente;
-    }
-
-    public JLabel getLblConvenioPaciente() {
-        return lblConvenioPaciente;
-    }
-
-    public JLabel getLblEmailPaciente() {
-        return lblEmailPaciente;
-    }
-
-    public JLabel getLblEnderecoPaciente() {
-        return lblEnderecoPaciente;
-    }
-
-    public JLabel getLblNascimentoPaciente() {
-        return lblNascimentoPaciente;
-    }
-
-    public JLabel getLblNomePaciente() {
-        return lblNomePaciente;
-    }
-
-    public JLabel getLblTelefonePaciente() {
-        return lblTelefonePaciente;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -200,10 +168,10 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
         panelOK.setLayout(panelOKLayout);
         panelOKLayout.setHorizontalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelOKLayout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
+            .addGroup(panelOKLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
                 .addComponent(btnOK1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(187, 187, 187))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,4 +228,37 @@ public class DetalhesPacienteSecretariaView extends javax.swing.JDialog {
     private javax.swing.JPanel panelOK;
     private javax.swing.JPanel panelPaciente;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnOK1() {
+        return btnOK1;
+    }
+
+    public JLabel getLblCelularPaciente() {
+        return lblCelularPaciente;
+    }
+
+    public JLabel getLblConvenioPaciente() {
+        return lblConvenioPaciente;
+    }
+
+    public JLabel getLblEmailPaciente() {
+        return lblEmailPaciente;
+    }
+
+    public JLabel getLblEnderecoPaciente() {
+        return lblEnderecoPaciente;
+    }
+
+    public JLabel getLblNascimentoPaciente() {
+        return lblNascimentoPaciente;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JLabel getLblTelefonePaciente() {
+        return lblTelefonePaciente;
+    }
+
 }

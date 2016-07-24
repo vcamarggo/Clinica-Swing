@@ -76,11 +76,6 @@ public class CadastroEAlteracaoProntuarioMedicoView extends javax.swing.JDialog 
 
         btnGravar2.setText("Gravar Dados");
         btnGravar2.setSelected(true);
-        btnGravar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravar2ActionPerformed(evt);
-            }
-        });
 
         btnCancelar.setText("Cancelar");
 
@@ -195,12 +190,6 @@ public class CadastroEAlteracaoProntuarioMedicoView extends javax.swing.JDialog 
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnGravar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravar2ActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnGravar2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

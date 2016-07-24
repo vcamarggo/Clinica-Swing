@@ -5,16 +5,22 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
 /**
  *
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author mayza
  */
-public class NovoAtestadoView extends javax.swing.JFrame {
+public class NovoAtestadoView extends javax.swing.JDialog {
 
     /**
-     * Creates new form NovoAtestadoView
+     * Creates new form NovoAtest
      */
-    public NovoAtestadoView() {
+    public NovoAtestadoView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 
@@ -46,7 +52,7 @@ public class NovoAtestadoView extends javax.swing.JFrame {
         btnGerarAtestado = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -206,4 +212,37 @@ public class NovoAtestadoView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomePaciente;
     private javax.swing.JTextField txtRgPaciente;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnGerarAtestado() {
+        return btnGerarAtestado;
+    }
+    
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JTextField getTxtAssinaturaMedico() {
+        return txtAssinaturaMedico;
+    }
+
+    public JTextField getTxtDataConsulta() {
+        return txtDataConsulta;
+    }
+
+    public JTextField getTxtDiasDescanso() {
+        return txtDiasDescanso;
+    }
+
+    public JTextField getTxtHorarioConsulta() {
+        return txtHorarioConsulta;
+    }
+
+    public JTextField getTxtNomePaciente() {
+        return txtNomePaciente;
+    }
+
+    public JTextField getTxtRgPaciente() {
+        return txtRgPaciente;
+    }
+
 }

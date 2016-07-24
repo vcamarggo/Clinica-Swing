@@ -5,16 +5,22 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
 /**
  *
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author mayza
  */
-public class NovaDeclaracaoAcompanhamentoView extends javax.swing.JFrame {
+public class NovaDeclaracaoAcompanhamentoView extends javax.swing.JDialog {
 
     /**
-     * Creates new form NovoAtestadoAcompanhamento
+     * Creates new form NovaDeclaracaoAcompanhamento
+     * @param parent
      */
-    public NovaDeclaracaoAcompanhamentoView() {
+    public NovaDeclaracaoAcompanhamentoView(JFrame parent) {
+        super(parent, true);
         initComponents();
     }
 
@@ -44,7 +50,7 @@ public class NovaDeclaracaoAcompanhamentoView extends javax.swing.JFrame {
         btnGerarDeclaracao = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelHeader.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -87,7 +93,7 @@ public class NovaDeclaracaoAcompanhamentoView extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNomePaciente)
@@ -193,4 +199,35 @@ public class NovaDeclaracaoAcompanhamentoView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeAcompanhante;
     private javax.swing.JTextField txtNomePaciente;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGerarDeclaracao() {
+        return btnGerarDeclaracao;
+    }
+
+    public JTextField getTxtAssinaturaMedico() {
+        return txtAssinaturaMedico;
+    }
+
+    public JTextField getTxtDataConsulta() {
+        return txtDataConsulta;
+    }
+
+    public JTextField getTxtHorarioConsulta() {
+        return txtHorarioConsulta;
+    }
+
+    public JTextField getTxtNomeAcompanhante() {
+        return txtNomeAcompanhante;
+    }
+
+    public JTextField getTxtNomePaciente() {
+        return txtNomePaciente;
+    }
+
+
+
 }

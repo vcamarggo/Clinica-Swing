@@ -5,7 +5,9 @@
  */
 package view;
 
-import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 
 /**
  *
@@ -18,7 +20,7 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
      *
      * @param parent
      */
-    public DeclaracaoAcompanhamentoView(JFrame parent) {
+    public DeclaracaoAcompanhamentoView(JDialog parent) {
         super(parent, true);
         initComponents();
     }
@@ -79,27 +81,27 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
 
         jLabel3.setText("Atesto, para os devidos fins, a pedido do interessado, que o senhor");
 
-        lblNomeAcompanhante.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblNomeAcompanhante.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblNomeAcompanhante.setText("NOME ACOMPANHANETE");
 
         jLabel5.setText("acompanhou o paciente");
 
-        lblHorario.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblHorario.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblHorario.setText("HORARIO");
 
         jLabel9.setText("horas.");
 
         jLabel13.setText("Data:");
 
-        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblDataConsulta.setText("DATA CONSULTA");
 
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
-        lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblAssinatura.setText("ASSINATURA");
 
-        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblNomePaciente.setText("NOMEPACIENTE");
 
         jLabel1.setText("à consulta médica nesta data, ");
@@ -122,9 +124,9 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
                             .addComponent(lblNomeAcompanhante, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
                             .addComponent(lblNomePaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -241,4 +243,33 @@ public class DeclaracaoAcompanhamentoView extends javax.swing.JDialog {
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelOK;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnOK() {
+        return btnOK;
+    }
+
+    public JLabel getLblAssinatura() {
+        return lblAssinatura;
+    }
+
+    public JLabel getLblDataConsulta() {
+        return lblDataConsulta;
+    }
+
+    public JLabel getLblNomeAcompanhante() {
+        return lblNomeAcompanhante;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JLabel getLblHorario() {
+        return lblHorario;
+    }
+    
+    
+
+
+
 }
