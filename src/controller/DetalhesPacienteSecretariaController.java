@@ -5,12 +5,15 @@
  */
 package controller;
 
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import java.awt.event.ActionEvent;
 import model.Paciente;
 import view.DetalhesPacienteSecretariaView;
+//</editor-fold>
 
 /**
- *
+ * Classe responsável por carregar os detalhes do paciente solicitado.
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class DetalhesPacienteSecretariaController {
@@ -18,14 +21,17 @@ public class DetalhesPacienteSecretariaController {
     private Paciente model;
     private DetalhesPacienteSecretariaView view;
 
+    /* Contrutor padrão */
     public DetalhesPacienteSecretariaController() {
     }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. */
     public DetalhesPacienteSecretariaController(DetalhesPacienteSecretariaView view, Paciente model) {
         this.model = model;
         this.view = view;
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         view.getLblNomePaciente().setText(model.getNome());
         view.getLblEnderecoPaciente().setText(model.getEndereco());

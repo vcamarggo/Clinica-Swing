@@ -16,54 +16,6 @@ import javax.swing.JTextArea;
  */
 public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDialog {
 
-    public JButton getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public JButton getBtnGravar2() {
-        return btnGravar2;
-    }
-
-    public JTextArea getTxtAlergias() {
-        return txtAlergias;
-    }
-
-    public JTextArea getTxtCirurgias() {
-        return txtCirurgias;
-    }
-
-    public JComboBox<String> getBoxBebe() {
-        return boxBebe;
-    }
-
-    public void setBoxBebe(JComboBox<String> boxBebe) {
-        this.boxBebe = boxBebe;
-    }
-
-    public JComboBox<String> getBoxColesterol() {
-        return boxColesterol;
-    }
-
-    public void setBoxColesterol(JComboBox<String> boxColesterol) {
-        this.boxColesterol = boxColesterol;
-    }
-
-    public JComboBox<String> getBoxDiabetes() {
-        return boxDiabetes;
-    }
-
-    public void setBoxDiabetes(JComboBox<String> boxDiabetes) {
-        this.boxDiabetes = boxDiabetes;
-    }
-
-    public JComboBox<String> getBoxFuma() {
-        return boxFuma;
-    }
-
-    public void setBoxFuma(JComboBox<String> boxFuma) {
-        this.boxFuma = boxFuma;
-    }
-
     /**
      * Creates new form CadastroEAlteracaoDadosAdicionaisMedicoView
      *
@@ -131,11 +83,6 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
 
         btnGravar2.setText("Gravar Dados");
         btnGravar2.setSelected(true);
-        btnGravar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravar2ActionPerformed(evt);
-            }
-        });
 
         btnCancelar.setText("Cancelar");
 
@@ -171,11 +118,6 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
         jLabel24.setText("Diabetes:");
 
         boxFuma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
-        boxFuma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxFumaActionPerformed(evt);
-            }
-        });
 
         boxBebe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nao", "Sim" }));
 
@@ -287,16 +229,6 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGravar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravar2ActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnGravar2ActionPerformed
-
-    private void boxFumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxFumaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boxFumaActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxBebe;
     private javax.swing.JComboBox<String> boxColesterol;
@@ -319,4 +251,53 @@ public class CadastroEAlteracaoDadosAdicionaisMedicoView extends javax.swing.JDi
     private javax.swing.JTextArea txtAlergias;
     private javax.swing.JTextArea txtCirurgias;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar2() {
+        return btnGravar2;
+    }
+
+    public JTextArea getTxtAlergias() {
+        return txtAlergias;
+    }
+
+    public JTextArea getTxtCirurgias() {
+        return txtCirurgias;
+    }
+
+    public JComboBox<String> getBoxBebe() {
+        return boxBebe;
+    }
+
+    public void setBoxBebe(JComboBox<String> boxBebe) {
+        this.boxBebe = boxBebe;
+    }
+
+    public JComboBox<String> getBoxColesterol() {
+        return boxColesterol;
+    }
+
+    public void setBoxColesterol(JComboBox<String> boxColesterol) {
+        this.boxColesterol = boxColesterol;
+    }
+
+    public JComboBox<String> getBoxDiabetes() {
+        return boxDiabetes;
+    }
+
+    public void setBoxDiabetes(JComboBox<String> boxDiabetes) {
+        this.boxDiabetes = boxDiabetes;
+    }
+
+    public JComboBox<String> getBoxFuma() {
+        return boxFuma;
+    }
+
+    public void setBoxFuma(JComboBox<String> boxFuma) {
+        this.boxFuma = boxFuma;
+    }
+
 }

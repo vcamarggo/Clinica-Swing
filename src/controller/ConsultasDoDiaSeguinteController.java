@@ -7,40 +7,45 @@ package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
 import java.awt.event.ActionEvent;
+import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.Consulta;
-import model.Secretaria;
-import view.ConsultaPorDataView;
+import model.GerenciadorMensagem;
+import view.PacientesNotificadosView;
 //</editor-fold>
 
 /**
- * Classe responsável por gerenciar os relatórios da secretária a respeito das Consultas agendadas.
+ * Classe responsável por filtrar e notificar os pacientes que possuem Consultas relativas 
+ * ao dia seguinte a data inserida.
  * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
-public class ConsultaPorDataController {
+public class ConsultasDoDiaSeguinteController {
 
-    private Secretaria usuario;
-    private ConsultaPorDataView view;
+    private GerenciadorMensagem usuario;
+    private PacientesNotificadosView view;
     private boolean isCelular;
+    private Date dataConsulta;
     public List<Consulta> consultas;
 
     /* Contrutor padrão */
-    public ConsultaPorDataController() {
+    public ConsultasDoDiaSeguinteController() {
     }
 
     /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. */
-    public ConsultaPorDataController(ConsultaPorDataView view, Secretaria usuario, boolean isCelular) {
+    public ConsultasDoDiaSeguinteController(PacientesNotificadosView view, GerenciadorMensagem usuario, boolean isCelular, Date dataConsulta) {
         this.usuario = usuario;
         this.view = view;
         this.isCelular = isCelular;
+        this.dataConsulta = dataConsulta;
     }
 
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         Calendar amanha = Calendar.getInstance();
+        amanha.setTime(dataConsulta);
         amanha.add(Calendar.DAY_OF_MONTH, 1);
         if (isCelular) {
             consultas = usuario.getConsultasDataDesejadaParaPacientesComCelular(amanha);
@@ -48,15 +53,20 @@ public class ConsultaPorDataController {
             consultas = usuario.getConsultasDataDesejadaParaPacientesComEmail(amanha);
         }
         view.getTabelaPacientesComConsulta().setModel(geraTabelaConsulta());
-        view.getBtnOK1()
+        view.getBtnOK()
+                .addActionListener((ActionEvent actionEvent) -> {
+                    view.dispose();
+                });
+        view.getBtnOK()
                 .addActionListener((ActionEvent actionEvent) -> {
                     view.dispose();
                 });
         view.setVisible(true);
+
     }
 
-    /* Método responsável por criar uma tabela personalizada das consultas do dia seguinte. 
-       Verifica se o usuário solicitou filtro por email ou sms */
+    /* Método responsável por criar uma tabela personalizada dos pacientes que tem consulta no dia seguinte. 
+       Verifica se o gerenciador de mensagens solicitou enviar email ou sms */
     private DefaultTableModel geraTabelaConsulta() {
         String[] header = {"Paciente", "Email/Celular", "Data consulta"};
         Object[][] consultasObject = new Object[consultas.size()][3];
@@ -79,5 +89,4 @@ public class ConsultaPorDataController {
         return new javax.swing.table.DefaultTableModel(
                 consultasObject, header);
     }
-
 }

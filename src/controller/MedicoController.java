@@ -5,6 +5,7 @@
  */
 package controller;
 
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import model.Medico;
@@ -14,10 +15,15 @@ import view.CadastroEAlteracaoDadosAdicionaisMedicoView;
 import view.CadastroEAlteracaoProntuarioMedicoView;
 import view.DetalhesPacienteMedicoView;
 import view.MedicoView;
+import view.NovaDeclaracaoAcompanhamentoView;
+import view.NovaReceitaView;
+import view.NovoAtestadoView;
 import view.SelecaoPerfilView;
+//</editor-fold>
 
 /**
- *
+ * Classe responsável por gerenciar as ações do usuário Médico. 
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 class MedicoController {
@@ -25,15 +31,18 @@ class MedicoController {
     private Medico usuario;
     private MedicoView view;
 
+    /* Contrutor padrão */
     public MedicoController() {
     }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. */
     public MedicoController(Medico usuario, MedicoView view) {
         this.usuario = usuario;
         this.view = view;
         this.view.setVisible(true);
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         atualizaTabelaPacientes();
         view.getBtnVoltarSelecaoPerfil().addActionListener((ActionEvent actionEvent) -> {
@@ -85,8 +94,21 @@ class MedicoController {
             usuario.atualizaPaciente(paciente);
             JOptionPane.showMessageDialog(null, "Prontuario removido com sucesso");
         });
+        
+        view.getBtnGerarAtestado().addActionListener((ActionEvent actionEvent) -> {
+            new NovoAtestadoController(new NovoAtestadoView(view)).controla();
+        });
+        
+        view.getBtnGerarReceita().addActionListener((ActionEvent actionEvent) -> {
+            new NovaReceitaController(new NovaReceitaView(view)).controla();
+        });
+        
+        view.getBtnGerarDeclaracaoAcompanhamento().addActionListener((ActionEvent actionEvent) ->   {
+            new NovaDeclaracaoController(new NovaDeclaracaoAcompanhamentoView(view)).controla();
+        });
     }
 
+    /* Método responsável pela atualização da tabela de pacientes */
     private void atualizaTabelaPacientes() {
         view.getTabelaPacientes().setModel(GeradorTabelas.geraTabelaPacientes(usuario));
     }

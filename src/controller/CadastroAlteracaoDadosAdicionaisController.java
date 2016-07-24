@@ -5,23 +5,32 @@
  */
 package controller;
 
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import model.Medico;
 import model.Paciente;
 import util.Util;
 import view.CadastroEAlteracaoDadosAdicionaisMedicoView;
+//</editor-fold>
 
 /**
- *
- * @author Fernando
+ * Classe responsável por controlar as ações da View de cadastro e alteração de Dados.
+ * adicionais dos pacientes
+ * 
+ * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class CadastroAlteracaoDadosAdicionaisController {
     
     private Medico usuario;
     private CadastroEAlteracaoDadosAdicionaisMedicoView view;
     private Paciente model;
+    
+    /* Contrutor padrão */
+    public CadastroAlteracaoDadosAdicionaisController(){
+    }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador*/
     public CadastroAlteracaoDadosAdicionaisController(CadastroEAlteracaoDadosAdicionaisMedicoView view, Medico usuario, Paciente paciente) {
         this.usuario = usuario;
         this.view = view;
@@ -29,6 +38,7 @@ public class CadastroAlteracaoDadosAdicionaisController {
         preencheCampos();
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         view.getBtnGravar2().addActionListener((ActionEvent actionEvent) -> {
             if (this.model == null) {
@@ -51,6 +61,7 @@ public class CadastroAlteracaoDadosAdicionaisController {
         view.setVisible(true);
     }
     
+    /*Preenche os textfields com os valores correspondentes, caso seja solicitada alteração de dados adicionais*/
     private void preencheCampos(){
         view.getTxtAlergias().setText(model.getAlergias());
         view.getTxtCirurgias().setText(model.getCirurgias());

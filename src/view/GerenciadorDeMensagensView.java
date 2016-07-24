@@ -5,12 +5,15 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GerenciadorDeMensagensView extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form GerenciadorDeMensagensView
      */
@@ -63,7 +66,7 @@ public class GerenciadorDeMensagensView extends javax.swing.JFrame {
         );
 
         lblDescricaoGerenciador.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        lblDescricaoGerenciador.setText("<html>O Gerenciador de Mensagens envia uma notificacao (por email ou SMS) aos Pacientes que possuem Consulta agendada no dia seguinte. Para isto, insira a data de hoje e selecione o tipo de notificacao.</html>");
+        lblDescricaoGerenciador.setText("<html>O Gerenciador de Mensagens envia uma notificacao (por email ou SMS) aos Pacientes que possuem Consulta agendada no dia seguinte. Para isto, insira a data desejada e selecione o tipo de notificacao.</html>");
 
         javax.swing.GroupLayout panelDescricaoGerenciadorLayout = new javax.swing.GroupLayout(panelDescricaoGerenciador);
         panelDescricaoGerenciador.setLayout(panelDescricaoGerenciadorLayout);
@@ -80,13 +83,7 @@ public class GerenciadorDeMensagensView extends javax.swing.JFrame {
 
         contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Selecione uma Opcao", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        jLabel2.setText("Insira a Data Atual (dd/MM/yyyy)");
-
-        txtDataAtual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataAtualActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Insira a Data Desejada (dd/MM/yyyy)");
 
         jLabel5.setText("Enviar Email");
 
@@ -108,9 +105,7 @@ public class GerenciadorDeMensagensView extends javax.swing.JFrame {
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contentPanelLayout.createSequentialGroup()
-                                .addComponent(btnEnviarEmail)
-                                .addGap(2, 2, 2))
+                            .addComponent(btnEnviarEmail)
                             .addComponent(jLabel5))
                         .addGap(31, 31, 31)
                         .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,10 +181,6 @@ public class GerenciadorDeMensagensView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDataAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataAtualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataAtualActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviarEmail;
     private javax.swing.JButton btnEnviarSMS;
@@ -205,4 +196,21 @@ public class GerenciadorDeMensagensView extends javax.swing.JFrame {
     private javax.swing.JPanel panelOkVoltar;
     private javax.swing.JTextField txtDataAtual;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnVoltarSelecaoPerfil() {
+        return btnVoltarSelecaoPerfil;
+    }
+    
+     public JButton getBtnNotificarEmail() {
+        return btnEnviarEmail;
+    }
+
+    public JButton getBtnNotificarSMS() {
+        return btnEnviarSMS;
+    }
+    
+    public JTextField getTxtDataConsulta() {
+        return txtDataAtual;
+    }
+    
 }

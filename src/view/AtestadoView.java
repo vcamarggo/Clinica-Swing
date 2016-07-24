@@ -5,7 +5,9 @@
  */
 package view;
 
-import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 
 /**
  *
@@ -18,7 +20,7 @@ public class AtestadoView extends javax.swing.JDialog {
      *
      * @param parent
      */
-    public AtestadoView(JFrame parent) {
+    public AtestadoView(JDialog parent) {
         super(parent, true);
         initComponents();
     }
@@ -81,36 +83,36 @@ public class AtestadoView extends javax.swing.JDialog {
 
         jLabel3.setText("Atesto, para os devidos fins, a pedido do interessado, que o paciente");
 
-        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblNomePaciente.setText("NOME PACIENTE");
 
         jLabel5.setText("portador do RG");
 
-        lblNumRG.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblNumRG.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblNumRG.setText("NUM RG");
 
         jLabel7.setText("foi submetido à consulta médica nesta data, no horário das");
 
-        lblHorario.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblHorario.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblHorario.setText("HORARIO");
 
         jLabel9.setText("horas. Em decorrência, deverá permanecer afastado de suas");
 
         jLabel10.setText(" atividades por um periodo de");
 
-        lblDias.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblDias.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblDias.setText("DIAS");
 
         jLabel12.setText("dias.");
 
         jLabel13.setText("Data:");
 
-        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblDataConsulta.setText("DATA CONSULTA");
 
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
-        lblAssinaturaMedico.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblAssinaturaMedico.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblAssinaturaMedico.setText("ASSINATURA");
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
@@ -255,4 +257,32 @@ public class AtestadoView extends javax.swing.JDialog {
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelOK;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getLblAssinaturaMedico() {
+        return lblAssinaturaMedico;
+    }
+
+    public JLabel getLblDataConsulta() {
+        return lblDataConsulta;
+    }
+
+    public JLabel getLblDias() {
+        return lblDias;
+    }
+
+    public JLabel getLblHorario() {
+        return lblHorario;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JLabel getLblNumRG() {
+        return lblNumRG;
+    }
+
+    public JButton getBtnOK() {
+        return btnOK;
+    }
 }

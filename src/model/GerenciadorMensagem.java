@@ -1,35 +1,47 @@
 package model;
 
+import java.util.Calendar;
+import java.util.List;
+import javax.persistence.Query;
+import static model.Usuario.entityManager;
+
 /**
  *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 public class GerenciadorMensagem extends Usuario {
 
-    private static final String NUMERO_CONSULTORIO = "(44) 3034-0608";
-    private static final String CELULAR_CONSULTORIO = "(44) 9809-6677";
-    private static final String EMAIL_CONSULTORIO = "consultoriosaudeecia@gmail.com";
-
     /**
-     * @return telefone do consultório
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e
+     * possuem email cadastrado no sistema.
+     *
+     * @param dataDesejada
+     * @return
      */
-    public String getNumeroConsultorio() {
-        return NUMERO_CONSULTORIO;
+    public List<Consulta> getConsultasDataDesejadaParaPacientesComEmail(Calendar dataDesejada) {
+        Query q = entityManager.createQuery(
+                new StringBuilder("SELECT c FROM Consulta c WHERE"
+                        + " coalesce(c.paciente.email, '') <> '' AND c.dataConsulta = :dataDesejada")
+                .toString(),
+                Consulta.class);
+        q.setParameter("dataDesejada", dataDesejada.getTime());
+        return q.getResultList();
     }
 
     /**
-     * *
-     * @return celular do consultório
+     * Adiciona na lista os pacientes que tem consulta na data solicitada e
+     * possuem celular cadastrado no sistema.
+     *
+     * @param dataDesejada
+     * @return
      */
-    public String getCelularConsultorio() {
-        return CELULAR_CONSULTORIO;
+    public List<Consulta> getConsultasDataDesejadaParaPacientesComCelular(Calendar dataDesejada) {
+        Query q = entityManager.createQuery(
+                new StringBuilder("SELECT c FROM Consulta c WHERE"
+                        + "  coalesce(c.paciente.celular, '') <> '' AND dataConsulta = :dataDesejada")
+                .toString(),
+                Consulta.class);
+        q.setParameter("dataDesejada", dataDesejada.getTime());
+        return q.getResultList();
     }
-
-    /**
-     * @return email do consultório
-     */
-    public String getEmailConsultorio() {
-        return EMAIL_CONSULTORIO;
-    }
-
 }

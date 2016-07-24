@@ -5,6 +5,7 @@
  */
 package controller;
 
+//<editor-fold defaultstate="collapsed" desc="Importações">
 import java.awt.event.ActionEvent;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -20,8 +21,11 @@ import view.ConsultaPorDataView;
 import view.DetalhesPacienteSecretariaView;
 import view.SecretariaView;
 import view.SelecaoPerfilView;
+//</editor-fold>
 
 /**
+ * Classe responsável por gerenciar as ações do usuário Secretária.
+ * 
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 class SecretariaController {
@@ -29,15 +33,18 @@ class SecretariaController {
     private Secretaria usuario;
     private SecretariaView view;
 
+    /* Contrutor padrão */
     public SecretariaController() {
     }
 
+    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. */
     public SecretariaController(Secretaria usuario, SecretariaView view) {
         this.usuario = usuario;
         this.view = view;
         this.view.setVisible(true);
     }
 
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
         atualizaTabelaPacientes();
         atualizaTabelaConsultas();

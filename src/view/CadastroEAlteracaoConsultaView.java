@@ -28,38 +28,6 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         initComponents();
     }
 
-    public JTextField getTxtCodConsulta() {
-        return txtCodConsulta;
-    }
-
-    public JComboBox<String> getBoxTipoConsulta() {
-        return boxTipoConsulta;
-    }
-
-    public JButton getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public JButton getBtnGravar() {
-        return btnGravar;
-    }
-
-    public JTextField getTxtRGPaciente() {
-        return txtRGPaciente;
-    }
-
-    public JTextField getTxtDataConsulta() {
-        return txtDataConsulta;
-    }
-
-    public JTextField getTxtHorarioConsulta() {
-        return txtHorarioConsulta;
-    }
-
-    public JTextField getTxtMedicoResponsavel() {
-        return txtMedicoResponsavel;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -115,11 +83,6 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
 
         btnGravar.setText("Gravar Consulta");
         btnGravar.setSelected(true);
-        btnGravar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGravarActionPerformed(evt);
-            }
-        });
 
         btnCancelar.setText("Cancelar");
 
@@ -240,12 +203,6 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarActionPerformed
-        // TODO add your handling code here
-
-        /*Retorna para a view de secretaria*/
-    }//GEN-LAST:event_btnGravarActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxTipoConsulta;
     private javax.swing.JButton btnCancelar;
@@ -266,4 +223,37 @@ public class CadastroEAlteracaoConsultaView extends javax.swing.JDialog {
     private javax.swing.JTextField txtMedicoResponsavel;
     private javax.swing.JTextField txtRGPaciente;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getTxtCodConsulta() {
+        return txtCodConsulta;
+    }
+
+    public JComboBox<String> getBoxTipoConsulta() {
+        return boxTipoConsulta;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnGravar() {
+        return btnGravar;
+    }
+
+    public JTextField getTxtRGPaciente() {
+        return txtRGPaciente;
+    }
+
+    public JTextField getTxtDataConsulta() {
+        return txtDataConsulta;
+    }
+
+    public JTextField getTxtHorarioConsulta() {
+        return txtHorarioConsulta;
+    }
+
+    public JTextField getTxtMedicoResponsavel() {
+        return txtMedicoResponsavel;
+    }
+
 }

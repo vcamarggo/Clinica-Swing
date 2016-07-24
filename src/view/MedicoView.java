@@ -95,11 +95,6 @@ public class MedicoView extends javax.swing.JFrame {
         jLabel1.setText("Saude & CIA");
 
         btnVoltarSelecaoPerfil.setText("Voltar a Selecao de Perfis");
-        btnVoltarSelecaoPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarSelecaoPerfilActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelHeaderLayout = new javax.swing.GroupLayout(panelHeader);
         panelHeader.setLayout(panelHeaderLayout);
@@ -161,18 +156,8 @@ public class MedicoView extends javax.swing.JFrame {
         btnDetalhesPaciente.setText("Detalhes do Paciente");
 
         btnInserirDadosAdicionais.setText("Inserir / Alterar Dados Adicionais");
-        btnInserirDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirDadosAdicionaisActionPerformed(evt);
-            }
-        });
 
         btnRemoverDadosAdicionais.setText("Remover Dados Adicionais");
-        btnRemoverDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoverDadosAdicionaisActionPerformed(evt);
-            }
-        });
 
         btnCadastrarProntuario.setText("Cadastrar  / Alterar Prontuario");
         btnCadastrarProntuario.setActionCommand("CadastrarProntuario");
@@ -183,11 +168,6 @@ public class MedicoView extends javax.swing.JFrame {
         });
 
         btnRemoverProntuario.setText("Remover Prontuario");
-        btnRemoverProntuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoverProntuarioActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout opcoesPacienteLayout = new javax.swing.GroupLayout(opcoesPaciente);
         opcoesPaciente.setLayout(opcoesPacienteLayout);
@@ -253,25 +233,10 @@ public class MedicoView extends javax.swing.JFrame {
         relatorioPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
         btnGerarReceita.setText("Gerar Receita Medica");
-        btnGerarReceita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarReceitaActionPerformed(evt);
-            }
-        });
 
         btnGerarAtestado.setText("Gerar Atestado Medico");
-        btnGerarAtestado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarAtestadoActionPerformed(evt);
-            }
-        });
 
         btnGerarDeclaracaoAcompanhamento.setText("Gerar Declaracao de Acompanhamento");
-        btnGerarDeclaracaoAcompanhamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarDeclaracaoAcompanhamentoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout relatorioPanelLayout = new javax.swing.GroupLayout(relatorioPanel);
         relatorioPanel.setLayout(relatorioPanelLayout);
@@ -323,6 +288,32 @@ public class MedicoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane abasSecretaria;
+    private javax.swing.JButton btnCadastrarProntuario;
+    private javax.swing.JButton btnDetalhesPaciente;
+    private javax.swing.JButton btnGerarAtestado;
+    private javax.swing.JButton btnGerarDeclaracaoAcompanhamento;
+    private javax.swing.JButton btnGerarReceita;
+    private javax.swing.JButton btnInserirDadosAdicionais;
+    private javax.swing.JButton btnRemoverDadosAdicionais;
+    private javax.swing.JButton btnRemoverProntuario;
+    private javax.swing.JButton btnVoltarSelecaoPerfil;
+    private javax.swing.JPanel contentPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel opcoesPaciente;
+    private javax.swing.JPanel pacientePanel;
+    private javax.swing.JPanel panelHeader;
+    private javax.swing.JPanel relatorioPanel;
+    private javax.swing.JScrollPane scrollPaciente;
+    private javax.swing.JTable tabelaPacientes;
+    // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnVoltarSelecaoPerfil() {
+        return btnVoltarSelecaoPerfil;
+    }
+    
     private void btnVoltarSelecaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarSelecaoPerfilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVoltarSelecaoPerfilActionPerformed
@@ -354,30 +345,4 @@ public class MedicoView extends javax.swing.JFrame {
     private void btnRemoverDadosAdicionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverDadosAdicionaisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRemoverDadosAdicionaisActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane abasSecretaria;
-    private javax.swing.JButton btnCadastrarProntuario;
-    private javax.swing.JButton btnDetalhesPaciente;
-    private javax.swing.JButton btnGerarAtestado;
-    private javax.swing.JButton btnGerarDeclaracaoAcompanhamento;
-    private javax.swing.JButton btnGerarReceita;
-    private javax.swing.JButton btnInserirDadosAdicionais;
-    private javax.swing.JButton btnRemoverDadosAdicionais;
-    private javax.swing.JButton btnRemoverProntuario;
-    private javax.swing.JButton btnVoltarSelecaoPerfil;
-    private javax.swing.JPanel contentPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel opcoesPaciente;
-    private javax.swing.JPanel pacientePanel;
-    private javax.swing.JPanel panelHeader;
-    private javax.swing.JPanel relatorioPanel;
-    private javax.swing.JScrollPane scrollPaciente;
-    private javax.swing.JTable tabelaPacientes;
-    // End of variables declaration//GEN-END:variables
-
-    public JButton getBtnVoltarSelecaoPerfil() {
-        return btnVoltarSelecaoPerfil;
-    }
 }

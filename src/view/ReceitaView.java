@@ -5,7 +5,10 @@
  */
 package view;
 
-import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -18,7 +21,7 @@ public class ReceitaView extends javax.swing.JDialog {
      *
      * @param parent
      */
-    public ReceitaView(JFrame parent) {
+    public ReceitaView(JDialog parent) {
         super(parent, true);
         initComponents();
     }
@@ -72,23 +75,24 @@ public class ReceitaView extends javax.swing.JDialog {
 
         jLabel13.setText("Data:");
 
-        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblDataConsulta.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblDataConsulta.setText("DATA CONSULTA");
 
         jLabel15.setText("Assinatura do Medico Responsavel:");
 
-        lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblAssinatura.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblAssinatura.setText("ASSINATURA");
 
         jLabel1.setText("Paciente:");
 
-        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 11)); // NOI18N
+        lblNomePaciente.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblNomePaciente.setText("PACIENTE");
 
         jLabel2.setText("Remedios:");
 
         txtRemedios.setEditable(false);
         txtRemedios.setColumns(20);
+        txtRemedios.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         txtRemedios.setLineWrap(true);
         txtRemedios.setRows(5);
         jScrollPane1.setViewportView(txtRemedios);
@@ -201,4 +205,27 @@ public class ReceitaView extends javax.swing.JDialog {
     private javax.swing.JPanel panelOK;
     private javax.swing.JTextArea txtRemedios;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnOK() {
+        return btnOK;
+    }
+
+    public JLabel getLblAssinatura() {
+        return lblAssinatura;
+    }
+
+    public JLabel getLblDataConsulta() {
+        return lblDataConsulta;
+    }
+
+    public JLabel getLblNomePaciente() {
+        return lblNomePaciente;
+    }
+
+    public JTextArea getTxtRemedios() {
+        return txtRemedios;
+    }
+
+
+
 }

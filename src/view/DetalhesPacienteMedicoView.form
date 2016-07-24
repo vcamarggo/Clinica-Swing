@@ -576,7 +576,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnOK">
+        <Component class="javax.swing.JButton" name="btnAlterarDadosAdicionais">
           <Properties>
             <Property name="text" type="java.lang.String" value="OK"/>
             <Property name="selected" type="boolean" value="true"/>

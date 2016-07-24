@@ -153,6 +153,7 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         scrollTratamento4 = new javax.swing.JScrollPane();
         txtCirurgias = new javax.swing.JTextArea();
         panelOK = new javax.swing.JPanel();
+        btnAlterarDadosAdicionais = new javax.swing.JButton();
         btnOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -486,6 +487,7 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
     }//GEN-LAST:event_btnOKActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterarDadosAdicionais;
     private javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
