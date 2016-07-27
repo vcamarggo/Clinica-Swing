@@ -9,6 +9,8 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import javax.persistence.RollbackException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Consulta;
 import model.Paciente;
@@ -25,7 +27,7 @@ import view.SelecaoPerfilView;
 
 /**
  * Classe responsável por gerenciar as ações do usuário Secretária.
- * 
+ *
  * @author F.Carvalho / M. Hirose / V.Camargo
  */
 class SecretariaController {
@@ -71,7 +73,12 @@ class SecretariaController {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
                 Paciente paciente = usuario.getPacienteByRG((Long) view.getTabelaPacientes().getModel().getValueAt(linhaSelecionada, 0));
-                usuario.removePaciente(paciente);
+                try {
+                    usuario.removePaciente(paciente);
+                } catch (RollbackException cve) {
+                    JOptionPane.showMessageDialog(view, "Paciente com consulta não pode ser removido.", "Erro", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
             }
             atualizaTabelaPacientes();
         });
