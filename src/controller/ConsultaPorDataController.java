@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -18,7 +13,7 @@ import view.ConsultaPorDataView;
 /**
  * Classe responsável por gerenciar os relatórios da secretária a respeito das Consultas agendadas.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class ConsultaPorDataController {
 

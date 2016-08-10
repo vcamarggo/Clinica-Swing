@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -20,14 +15,14 @@ class DetalhesPacienteMedicoController {
     private DetalhesPacienteMedicoView view;
     private Paciente model;
     
-    
+    /*Método construtor da controller "DetalhesPacientesController" parametrizada*/
     public DetalhesPacienteMedicoController(DetalhesPacienteMedicoView view, Medico usuario, Paciente paciente) {
         this.usuario = usuario;
         this.view = view;
         this.model = paciente;
         preencheCampos();
     }
-
+    /*Método que preenche os campos da view "DetalhesPacienteMedicoView" com todas as informações armazenadas no banco de dados do paciente selecionado.*/
     private void preencheCampos() {
         view.getLblBebe().setText( converteCamposBooleanosParaString(model.getBebe()));
         view.getLblCelularPaciente().setText(model.getCelular());
@@ -48,8 +43,9 @@ class DetalhesPacienteMedicoController {
         view.getTxtTratamento().setText( model.getTratamento());
     }
     
-    
+    /*Método que controla a view "DetalhesPacienteMedicoView".*/
     public void controla(){
+        //Ao acionar o botão "OK": encerra a view
         view.getBtnOK().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });

@@ -15,7 +15,7 @@ import view.SelecaoPerfilView;
 /**
  * Classe responsável por gerenciar a entrada da view do gerenciador de mensagens. 
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class GerenciadorMensagemController {
     
@@ -35,10 +35,12 @@ public class GerenciadorMensagemController {
     
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla(){
+        //Se acionado o botão "Voltar à Seleção de Perfis": retorna a tela de Seleção de Perfis.
         view.getBtnVoltarSelecaoPerfil().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new SelecaoPerfilController(new SelecaoPerfilView()).controla();
         });
+        //Pede-se a digitação da data e a seleção do botão "Enviar Email": gera view dos pacientes com email e com consulta para o dia seguinte.
         view.getBtnNotificarEmail().addActionListener((ActionEvent actionEvent) -> {
             Date dataConsulta;
             try {
@@ -49,6 +51,7 @@ public class GerenciadorMensagemController {
             }
             new ConsultasDoDiaSeguinteController(new PacientesNotificadosView(view), usuario, false, dataConsulta).controla();
         });
+        //Pede-se a digitação da data e a seleção do botão "Enviar SMS": gera view dos pacientes com celular e com consulta para o dia seguinte.
         view.getBtnNotificarSMS().addActionListener((ActionEvent actionEvent) -> {
             Date dataConsulta;
             try {

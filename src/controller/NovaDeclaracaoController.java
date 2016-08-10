@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -19,10 +14,9 @@ import view.NovaDeclaracaoAcompanhamentoView;
 /**
  * Classe responsável por gerenciar o recebimento dos dados da nova Declaração de Acompanhamento.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class NovaDeclaracaoController {
-    private Medico usuario;
     private NovaDeclaracaoAcompanhamentoView view;
     
     private String lblPaciente;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -27,11 +22,13 @@ class CadastroEAlteracaoProntuarioMedicoController {
         this.model = paciente;
         preencheCampos();
     }
-
+    /*Método que controla a view "CadastroEAlteracaoProntuarioMedicoView"*/
     public void controla() {
+        //Se acionar o botão "Cancelar": sai da view sem salvar as alterações feitas.
         view.getBtnCancelar().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });
+        //Se acionar o botão "Gravar Dados": grava as informações dos campos editáveis do prontuário do paciente no Banco de Dados.
         view.getBtnGravar2().addActionListener((ActionEvent actionEvent) -> {
             if (this.model == null) {
                 JOptionPane.showMessageDialog(view, "Paciente não encontrado!", "Erro", JOptionPane.WARNING_MESSAGE);
@@ -45,7 +42,7 @@ class CadastroEAlteracaoProntuarioMedicoController {
         });
         view.setVisible(true);
     }
-
+    /*Método que preenche os campos da view do prontuário com as informações anteriormente gravadas no Banco de Dados*/
     private void preencheCampos() {
         view.getTxtSintomas().setText(model.getSintomas());
         view.getTxtDiagnostico().setText(model.getDiagnostico());

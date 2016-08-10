@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -14,7 +9,7 @@ import view.DetalhesPacienteSecretariaView;
 /**
  * Classe responsável por carregar os detalhes do paciente solicitado.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class DetalhesPacienteSecretariaController {
 
@@ -33,6 +28,7 @@ public class DetalhesPacienteSecretariaController {
 
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Mostra as informações cadastradas do paciente selecionado através da view "DetalhesPacienteSecretariaView".
         view.getLblNomePaciente().setText(model.getNome());
         view.getLblEnderecoPaciente().setText(model.getEndereco());
         view.getLblNascimentoPaciente().setText(model.getDataNascimentoString());
@@ -40,6 +36,7 @@ public class DetalhesPacienteSecretariaController {
         view.getLblCelularPaciente().setText(model.getCelular());
         view.getLblEmailPaciente().setText(model.getEmail());
         view.getLblConvenioPaciente().setText(model.getTipoConvenio().toString());
+        //Ao acionar o botão "OK": encerra a view.
         view.getBtnOK1().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });

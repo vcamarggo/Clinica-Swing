@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -13,7 +8,7 @@ import view.AtestadoView;
 /**
  * Classe responsável por organizar e exibir os dados do novo Atestado. 
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class GerarAtestadoController {
 
@@ -42,13 +37,14 @@ public class GerarAtestadoController {
 
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Copia as informações parametrizadas em "GerarAtestadoController" para a view "AtestadoView" gerada.
         view.getLblAssinaturaMedico().setText(lblAssinaturaMedico);
         view.getLblDataConsulta().setText(lblDataConsulta);
         view.getLblDias().setText(lblDias);
         view.getLblHorario().setText(lblHorario);
         view.getLblNomePaciente().setText(lblNomePaciente);
         view.getLblNumRG().setText(lblNumRG);
-        
+        //Ao acionar o botão "OK": encerra a view do atestado.
         view.getBtnOK().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });

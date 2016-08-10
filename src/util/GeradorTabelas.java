@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
 
 import java.lang.reflect.Field;
@@ -19,6 +14,11 @@ import org.apache.commons.beanutils.PropertyUtils;
  */
 public class GeradorTabelas {
 
+    /**
+     *  Gera as tabelas de pacientes
+     * @param usuario
+     * @return tabela de pacientes
+     */
     public static DefaultTableModel geraTabelaPacientes(Usuario usuario) {
         String[] header = {"RG", "Nome", "Data nascimento", "Endereço",
             "Telefone", "Celular", "Email", "Convênio"};

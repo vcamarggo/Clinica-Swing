@@ -14,7 +14,7 @@ import view.SelecaoPerfilView;
 /**
  * Classe responsável por gerenciar a tela de login do sistema e retornar a interface correta.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class SelecaoPerfilController {
     
@@ -31,14 +31,17 @@ public class SelecaoPerfilController {
     }
 
     public void controla() {
+        //Se acionado o botão "Gerenciador de Mensagens": instancia o controller, o gerenciador e e a view correspondentes e ativa o controller.
         view.getBtnGerenMsg().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new GerenciadorMensagemController(new GerenciadorMensagem(), new GerenciadorDeMensagensView()).controla();
         });
+        //Se acionado o botão "Sou Médico": instancia o controller, o gerenciador e e a view correspondentes e ativa o controller.
         view.getBtnSouMedico().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new MedicoController(new Medico(), new MedicoView()).controla();
         });
+        //Se acionado o botão "Sou Secretaria": instancia o controller, o gerenciador e e a view correspondentes e ativa o controller.
         view.getBtnSouSecretaria().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new SecretariaController(new Secretaria(), new SecretariaView()).controla();

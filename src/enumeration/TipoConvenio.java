@@ -8,6 +8,10 @@ public enum TipoConvenio {
     PARTICULAR,
     EMPRESARIAL;
 
+    /**
+     *  Converte os enums em array de String
+     * @return array dos valores de enum
+     */
     public static String[] enumsToStringArray() {
         String[] results = new String[TipoConvenio.values().length];
         int count = 0;

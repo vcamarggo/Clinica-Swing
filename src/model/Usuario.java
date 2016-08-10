@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.util.List;
@@ -20,6 +15,10 @@ public abstract class Usuario {
 
     protected static EntityManager entityManager = Persistence.createEntityManagerFactory("PU").createEntityManager();
 
+    /**
+     *  Lista todas os pacientes
+     * @return pacientes
+     */
     public List<Paciente> listaPacientes() {
         return entityManager.createQuery(
                 new StringBuilder("SELECT ob FROM Paciente  ob ")
@@ -27,6 +26,10 @@ public abstract class Usuario {
                 Paciente.class).getResultList();
     }
 
+     /**
+     *  Lista todas as consultas
+     * @return consultas
+     */
     public List<Consulta> listaConsultas() {
         return entityManager.createQuery(
                 new StringBuilder("SELECT ob FROM Consulta  ob ")
@@ -34,6 +37,10 @@ public abstract class Usuario {
                 Consulta.class).getResultList();
     }
 
+     /**
+     *  Remove um objeto passado como parâmetro
+     * @param entidade 
+     */
     protected void remove(Object entidade) {
         entidade = entityManager.merge(entidade);
         entityManager.getTransaction().begin();
@@ -41,12 +48,20 @@ public abstract class Usuario {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     *  Dá merge em um objeto passado como parâmetro
+     * @param entidade 
+     */
     protected void atualiza(Object entidade) {
         entityManager.getTransaction().begin();
         entityManager.merge(entidade);
         entityManager.getTransaction().commit();
     }
 
+     /**
+     *  Commita um objeto passado como parâmetro
+     * @param entidade 
+     */
     protected void adiciona(Object entidade) {
         entityManager.getTransaction().begin();
         entityManager.merge(entidade);
@@ -55,6 +70,10 @@ public abstract class Usuario {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * Atualiza um paciente passado como parâmetro
+     * @param paciente
+     */
     public void atualizaPaciente(Paciente paciente) {
         atualiza(paciente);
     }
@@ -64,7 +83,7 @@ public abstract class Usuario {
      * paciente possui celular.
      *
      * @param consulta
-     * @return
+     * @return indicacao se paciente possui celular
      */
     public boolean pacientePossuiCelular(Consulta consulta) {
         return consulta.getPaciente().getCelular() != null;
@@ -75,7 +94,7 @@ public abstract class Usuario {
      * paciente possui email.
      *
      * @param consulta
-     * @return
+     * @return indicacao se paciente possui email
      */
     public boolean pacientePossuiEmail(Consulta consulta) {
         return consulta.getPaciente().getEmail() != null;

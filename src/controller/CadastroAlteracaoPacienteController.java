@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -20,7 +15,7 @@ import view.CadastroEAlteracaoPacienteSecretariaView;
 /**
  * Classe responsável por controlar as ações da View de cadastro e alteração de Pacientes.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class CadastroAlteracaoPacienteController {
 
@@ -56,6 +51,7 @@ public class CadastroAlteracaoPacienteController {
 
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Ao acionar o botão "Gravar": as informações contidas nos campos da view "CadastroEAlteracaoPacienteSecretariaView" serão gravadas no banco de dados.
         view.getBtnGravar().addActionListener((ActionEvent actionEvent) -> {
             Long rg;
             Date dataNascimento;
@@ -77,6 +73,7 @@ public class CadastroAlteracaoPacienteController {
                     view.getTxtTelefone().getText(), view.getTxtCelular().getText(),
                     view.getTxtEmail().getText(), view.getBoxConvenio().getSelectedItem().toString());
         });
+        //Ao acionar o botão "Cancelar": não serão alteradas nenhuma das informações do banco de dados.
         view.getBtnCancelar()
                 .addActionListener((ActionEvent actionEvent) -> {
                     view.dispose();

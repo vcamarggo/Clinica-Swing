@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -19,7 +14,7 @@ import view.NovoAtestadoView;
 /**
  * Classe responsável por gerenciar o recebimento dos dados do novo Atestado.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class NovoAtestadoController {
     
@@ -44,6 +39,7 @@ public class NovoAtestadoController {
     
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Ao acionar o botão "Gerar Atestado!": gera o atestado com as informações que foram digitadas nos campos da view "NovoAtestadoView".
         view.getBtnGerarAtestado().addActionListener((ActionEvent actionEvent) -> {
             Long rg;
             Date dataConsulta;
@@ -69,6 +65,7 @@ public class NovoAtestadoController {
             view.dispose();
             new GerarAtestadoController(new AtestadoView(view), lblAssinaturaMedico, lblDataConsulta, lblDias, lblHorario, lblNomePaciente, lblNumRG).controla();
         });
+        //Ao acionar o botão "Cancelar": não será gerado nenhum atestado.
         view.getBtnCancelar()
                 .addActionListener((ActionEvent actionEvent) -> {
                     view.dispose();

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import javax.swing.JButton;
@@ -95,7 +90,7 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
     }
 
     public JButton getBtnOK() {
-        return btnOK;
+        return btnAlterarDadosAdicionais;
     }
 
     
@@ -154,7 +149,6 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
         txtCirurgias = new javax.swing.JTextArea();
         panelOK = new javax.swing.JPanel();
         btnAlterarDadosAdicionais = new javax.swing.JButton();
-        btnOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -425,9 +419,9 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
                     .addComponent(scrollTratamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btnOK.setText("OK");
-        btnOK.setSelected(true);
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterarDadosAdicionais.setText("OK");
+        btnAlterarDadosAdicionais.setSelected(true);
+        btnAlterarDadosAdicionais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOKActionPerformed(evt);
             }
@@ -439,14 +433,14 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addGap(281, 281, 281)
-                .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterarDadosAdicionais, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelOKLayout.setVerticalGroup(
             panelOKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOKLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnOK)
+                .addComponent(btnAlterarDadosAdicionais)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -488,7 +482,6 @@ public class DetalhesPacienteMedicoView extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarDadosAdicionais;
-    private javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;

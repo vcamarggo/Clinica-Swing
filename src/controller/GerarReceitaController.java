@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -13,7 +8,7 @@ import view.ReceitaView;
 /**
  * Classe responsável por organizar e exibir os dados da nova Receita. 
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class GerarReceitaController {
     
@@ -38,11 +33,12 @@ public class GerarReceitaController {
     
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Copia as informações parametrizadas em "GerarReceitaController" para a view "ReceitaView" gerada.
         view.getLblAssinatura().setText(lblAssinaturaMedico);
         view.getLblDataConsulta().setText(lblDataConsulta);
         view.getLblNomePaciente().setText(lblPaciente);
         view.getTxtRemedios().setText(lblRemedios);
-        
+        //Ao acionar o botão "OK": encerra a view da receita.
         view.getBtnOK().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });

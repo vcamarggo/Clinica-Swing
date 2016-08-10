@@ -3,7 +3,7 @@ package controller;
 import view.SelecaoPerfilView;
 
 /**
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class TrabalhoPOO1 {
 

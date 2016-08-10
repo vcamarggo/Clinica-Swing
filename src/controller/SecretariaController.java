@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -28,7 +23,7 @@ import view.SelecaoPerfilView;
 /**
  * Classe responsável por gerenciar as ações do usuário Secretária.
  *
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 class SecretariaController {
 
@@ -50,10 +45,12 @@ class SecretariaController {
     public void controla() {
         atualizaTabelaPacientes();
         atualizaTabelaConsultas();
+        //Se acionado o botão "Voltar à Seleção de Perfis": retorna a tela de Seleção de Perfis.
         view.getBtnVoltarSelecaoPerfil().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
             new SelecaoPerfilController(new SelecaoPerfilView()).controla();
         });
+        //Se acionado o botão "Detalhes do Paciente": mostra view com as informações do paciente selecionado na tabela de pacientes.
         view.getBtnDetalhesPaciente().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
@@ -61,6 +58,7 @@ class SecretariaController {
                 new DetalhesPacienteSecretariaController(new DetalhesPacienteSecretariaView(view), paciente).controla();
             }
         });
+        //Se acionado o botão "Alterar Dados Paciente": mostra view com as informações do paciente, em campos editáveis. 
         view.getBtnAlterarPaciente().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
@@ -69,6 +67,7 @@ class SecretariaController {
             }
             atualizaTabelaPacientes();
         });
+        //Se acionado o botão "Remover Paciente": remove o paciente selecionado do banco de dados.
         view.getBtnRemoverPaciente().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaPacientes().getSelectedRow();
             if (linhaSelecionada >= 0) {
@@ -82,10 +81,12 @@ class SecretariaController {
             }
             atualizaTabelaPacientes();
         });
+        //Se acionado o botão "Novo Paciente": abre uma view para inserção das informações do novo paciente.
         view.getBtnNovoPaciente().addActionListener((ActionEvent actionEvent) -> {
             new CadastroAlteracaoPacienteController(new CadastroEAlteracaoPacienteSecretariaView(view), usuario).controla();
             atualizaTabelaPacientes();
         });
+        //Se acionado o botão "Alterar Consulta": mostra view com as informações da consulta, em campos editáveis.
         view.getBtnAlterarConsulta().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaConsultas().getSelectedRow();
             if (linhaSelecionada >= 0) {
@@ -94,6 +95,7 @@ class SecretariaController {
             }
             atualizaTabelaConsultas();
         });
+        //Se acionado o botão "Remover Consulta": remove a consulta selecionada do banco de dados.
         view.getBtnRemoverConsulta().addActionListener((ActionEvent actionEvent) -> {
             int linhaSelecionada = view.getTabelaConsultas().getSelectedRow();
             if (linhaSelecionada >= 0) {
@@ -102,26 +104,38 @@ class SecretariaController {
             }
             atualizaTabelaConsultas();
         });
+        //Se acionado o botão "Nova Consulta": abre uma view para inserção das informações da nova consulta.
         view.getBtnNovaConsulta().addActionListener((ActionEvent actionEvent) -> {
             new CadastroAlteracaoConsultaController(new CadastroEAlteracaoConsultaView(view), usuario).controla();
             atualizaTabelaConsultas();
         });
+        //Se acionado o botão "Consultas do dia seguinte - Email": mostra view dos pacientes com email, com consulta para o dia seguinte.
         view.getBtnConsultasDiaSeguinteEmail().addActionListener((ActionEvent actionEvent) -> {
             new ConsultaPorDataController(new ConsultaPorDataView(view), usuario, false).controla();
         });
+        //Se acionado o botão "Consultas do dia seguinte - SMS": mostra view dos pacientes com celular, com consulta para o dia seguinte.
         view.getBtnConsultasDiaSeguinteSMS().addActionListener((ActionEvent actionEvent) -> {
             new ConsultaPorDataController(new ConsultaPorDataView(view), usuario, true).controla();
         });
     }
 
+    /**
+     * Atualiza a tabela dos pacientes
+     */
     private void atualizaTabelaPacientes() {
         view.getTabelaPacientes().setModel(GeradorTabelas.geraTabelaPacientes(usuario));
     }
 
+    /**
+     * Atualiza as tabelas de consulta
+     */
     private void atualizaTabelaConsultas() {
         view.getTabelaConsultas().setModel(geraTabelaConsultas());
     }
 
+    /**
+     * Gera as tabelas de consulta
+     */
     private DefaultTableModel geraTabelaConsultas() {
         Object[][] consultas = new Object[usuario.listaConsultas().size()][Consulta.class.getDeclaredFields().length];
         int i = 0;

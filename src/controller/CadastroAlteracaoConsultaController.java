@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 
@@ -22,7 +17,7 @@ import view.CadastroEAlteracaoConsultaView;
 /**
  * Classe responsável por controlar as ações da View de cadastro e alteração de Consultas.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class CadastroAlteracaoConsultaController {
 
@@ -34,7 +29,7 @@ public class CadastroAlteracaoConsultaController {
     public CadastroAlteracaoConsultaController() {
     }
 
-    /*Contrutor parametrizado. Define os elementos que serão utilizados dentro do controlador. 
+    /*Construtor parametrizado. Define os elementos que serão utilizados dentro do controlador. 
       Este é chamado quando é solicitada a edição de uma consulta, por isso recebe uma Consulta como parametro*/
     public CadastroAlteracaoConsultaController(CadastroEAlteracaoConsultaView view, Secretaria usuario, Consulta model) {
         this.usuario = usuario;
@@ -57,6 +52,7 @@ public class CadastroAlteracaoConsultaController {
 
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Ao acionar o botão "Gravar": as informações editadas nos campos da view "CadastroEAlteracaoConsultaView" serão gravadas no banco de dados de consultas.
         view.getBtnGravar().addActionListener((ActionEvent actionEvent) -> {
             Long rg;
             Date dataConsulta;
@@ -89,6 +85,7 @@ public class CadastroAlteracaoConsultaController {
                         view.getBoxTipoConsulta().getSelectedItem().toString());
             }
         });
+        //Ao acionar o botão "Cancelar": as informações do banco de dados de consultas não serão alteradas.
         view.getBtnCancelar()
                 .addActionListener((ActionEvent actionEvent) -> {
                     view.dispose();

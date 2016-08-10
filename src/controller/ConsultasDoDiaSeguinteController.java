@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -20,7 +15,7 @@ import view.PacientesNotificadosView;
  * Classe responsável por filtrar e notificar os pacientes que possuem Consultas relativas 
  * ao dia seguinte a data inserida.
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class ConsultasDoDiaSeguinteController {
 
@@ -42,7 +37,8 @@ public class ConsultasDoDiaSeguinteController {
         this.dataConsulta = dataConsulta;
     }
 
-    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
+    /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views
+    Gera relatórios de consultas do dia seguinte de pacientes que possuem email /ou celular, conforme o parâmetro "isCelular".*/
     public void controla() {
         Calendar amanha = Calendar.getInstance();
         amanha.setTime(dataConsulta);

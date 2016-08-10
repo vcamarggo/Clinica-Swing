@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 //<editor-fold defaultstate="collapsed" desc="Importações">
@@ -13,7 +8,7 @@ import view.DeclaracaoAcompanhamentoView;
 /**
  * Classe responsável por organizar e exibir os dados da nova Declaração de acompanhamento. 
  * 
- * @author F.Carvalho / M. Hirose / V.Camargo
+ * @author F.Carvalho / M. Hirose / V.Camargo / T. Hara
  */
 public class GerarDeclaracaoAcompanhamentoController {
     
@@ -40,12 +35,13 @@ public class GerarDeclaracaoAcompanhamentoController {
     
     /*Método responsável por gerenciar os eventos dos botões e solicitar criação de models e novas Views*/
     public void controla() {
+        //Copia as informações parametrizadas em "GerarDeclaracaoAcompanhamentoController" para a view "DeclaracaoAcompanhamentoView" gerada.
         view.getLblAssinatura().setText(lblAssinaturaMedico);
         view.getLblDataConsulta().setText(lblDataConsulta);
         view.getLblNomePaciente().setText(lblPaciente);
         view.getLblNomeAcompanhante().setText(lblAcompanhante);
         view.getLblHorario().setText(lblHorario);
-        
+        //Ao acionar o botão "OK": encerra a view da declaração de acompanhamento.
         view.getBtnOK().addActionListener((ActionEvent actionEvent) -> {
             view.dispose();
         });

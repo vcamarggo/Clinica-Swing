@@ -23,6 +23,11 @@ public enum TipoConsulta {
         return duracaoEmMinutos + " minutos";
     }
 
+    /**
+     * Converte os enums em array de String
+     *
+     * @return array dos valores de enum
+     */
     public static String[] enumsToStringArray() {
         String[] results = new String[TipoConsulta.values().length];
         int count = 0;
